@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add dependencies for Jackson core/databind/annotations to pom.xml">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/Company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/Geo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +175,10 @@
       <option name="presentableId" value="Default" />
       <updated>1695377320438</updated>
       <workItem from="1695377321426" duration="3912000" />
-      <workItem from="1695393231379" duration="2095000" />
+      <workItem from="1695393231379" duration="2233000" />
+      <workItem from="1695473580044" duration="651000" />
+      <workItem from="1695477537742" duration="175000" />
+      <workItem from="1695478848216" duration="374000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -190,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695390173523</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add dependencies for Jackson core/databind/annotations to pom.xml">
+      <option name="closed" value="true" />
+      <created>1695400264911</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695400264911</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +214,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First commit" />
     <MESSAGE value="Add JDBC driver" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add JDBC driver" />
+    <MESSAGE value="Add dependencies for Jackson core/databind/annotations to pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add dependencies for Jackson core/databind/annotations to pom.xml" />
   </component>
 </project>
