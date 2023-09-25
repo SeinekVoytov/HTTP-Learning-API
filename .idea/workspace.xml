@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add model of User data">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add field country to Address class.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/Geo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/Geo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningservice/model/user/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +180,7 @@
       <workItem from="1695477537742" duration="175000" />
       <workItem from="1695478848216" duration="497000" />
       <workItem from="1695499932097" duration="42000" />
-      <workItem from="1695665839996" duration="699000" />
+      <workItem from="1695665839996" duration="3186000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -215,7 +214,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695479267068</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Prepare classes Address, Company, Geo, User for next utilizing with Hibernate">
+      <option name="closed" value="true" />
+      <created>1695666635732</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695666635732</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add field country to Address class.">
+      <option name="closed" value="true" />
+      <created>1695667405175</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695667405175</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +242,8 @@
     <MESSAGE value="Add JDBC driver" />
     <MESSAGE value="Add dependencies for Jackson core/databind/annotations to pom.xml" />
     <MESSAGE value="Add model of User data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add model of User data" />
+    <MESSAGE value="Prepare classes Address, Company, Geo, User for next utilizing with Hibernate" />
+    <MESSAGE value="Add field country to Address class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add field country to Address class." />
   </component>
 </project>
