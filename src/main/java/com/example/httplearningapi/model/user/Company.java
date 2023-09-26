@@ -11,6 +11,7 @@ public class Company {
 
     @Id
     private int id;
+
     private String name;
 
     @Column(name = "catch_phrase")

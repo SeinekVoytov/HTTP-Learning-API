@@ -8,6 +8,7 @@ public class Address {
 
     @Id
     private String country;
+
     private String city;
     private String street;
 

@@ -10,6 +10,7 @@ public class Geo {
 
     @Id
     private int id;
+
     private float lat;
     private float lon;
 
