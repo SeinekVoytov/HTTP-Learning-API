@@ -16,8 +16,15 @@ public class UserControllerTest {
 
     @Test
     public void testGetUserById() {
-        Optional<User> testUser = USER_CONTROLLER.getUserById(1);
-        assertTrue(testUser.isPresent());
+        Optional<User> testUserOptional = USER_CONTROLLER.getUserById(1);
+        if (testUserOptional.isEmpty()) {
+            fail();
+        }
+
+        User testUser = testUserOptional.get();
+        assertTrue(testUser.getAddress() != null &&
+                testUser.getAddress().getGeo() != null &&
+                testUser.getCompany() != null);
     }
 
     @Test
