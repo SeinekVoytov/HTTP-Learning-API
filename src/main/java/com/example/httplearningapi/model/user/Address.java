@@ -15,7 +15,18 @@ public class Address {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Geo geo;
+
     public Address() {
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", geo=" + geo +
+                '}';
     }
 
     public String getCountry() {

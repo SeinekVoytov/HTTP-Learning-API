@@ -8,16 +8,23 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Companies")
 public class Company {
-
     @Id
     private int id;
-
     private String name;
 
     @Column(name = "catch_phrase")
     private String catchPhrase;
 
     public Company() {
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", catchPhrase='" + catchPhrase + '\'' +
+                '}';
     }
 
     public int getId() {

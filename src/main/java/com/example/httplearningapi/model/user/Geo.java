@@ -17,6 +17,15 @@ public class Geo {
     public Geo() {
     }
 
+    @Override
+    public String toString() {
+        return "Geo{" +
+                "id=" + id +
+                ", lat=" + lat +
+                ", lon=" + lon +
+                '}';
+    }
+
     public int getId() {
         return id;
     }
