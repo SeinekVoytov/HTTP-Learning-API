@@ -7,8 +7,9 @@ import jakarta.persistence.*;
 public class Address {
 
     @Id
-    private String country;
+    private int id;
 
+    private String country;
     private String city;
     private String street;
 
