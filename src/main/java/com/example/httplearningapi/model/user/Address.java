@@ -1,4 +1,4 @@
-package com.example.httplearningservice.model.user;
+package com.example.httplearningapi.model.user;
 
 public class Address {
 
