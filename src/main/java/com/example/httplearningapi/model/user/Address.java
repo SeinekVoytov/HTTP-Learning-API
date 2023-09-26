@@ -1,10 +1,18 @@
 package com.example.httplearningapi.model.user;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Addresses")
 public class Address {
 
+    @Id
     private String country;
     private String city;
     private String street;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
     private Geo geo;
     public Address() {
     }

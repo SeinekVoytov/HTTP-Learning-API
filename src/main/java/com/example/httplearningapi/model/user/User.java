@@ -1,12 +1,27 @@
 package com.example.httplearningapi.model.user;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Users")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String email;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
     private Address address;
+
+    @Column(name = "phone_number")
     private String phone;
     private String website;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
     private Company company;
 
     public User() {
