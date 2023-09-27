@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class HibernateUtilTest {
 
     @Test
-    public void classInitializationTest() {
+    public void sessionFactoryInitializationTest() {
         assertNotNull(HibernateUtil.getSessionFactory(), "SessionFactory shouldn't be null");
     }
 }

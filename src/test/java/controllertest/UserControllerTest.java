@@ -15,7 +15,7 @@ public class UserControllerTest {
     private static final UserController USER_CONTROLLER = new UserController();
 
     @Test
-    public void testGetUserById() {
+    public void retrievedUserFromDBIsNotNullTest() {
         Optional<User> testUserOptional = USER_CONTROLLER.getUserById(1);
         if (testUserOptional.isEmpty()) {
             fail("User is not retrieved from Database");
@@ -28,7 +28,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void testGetUsers() {
+    public void numberOfUsersRetrievedFromDBIsEqualToExpectedNumberTest() {
         List<User> users = USER_CONTROLLER.getUsers();
         assertEquals(NUMBER_OF_USERS_IN_DATABASE, users.size(),
                 "Actual number of Users in Database is not equal to Expected number");

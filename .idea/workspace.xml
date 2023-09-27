@@ -9,15 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Annotate User, Company, Geo, Address classes as ready for serialization to JSON.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/utiltest/HibernateUtilTest.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add HibernateUtilTest class in which functionality of HibernateUtil class is tested.">
       <change afterPath="$PROJECT_DIR$/src/test/java/utiltest/JsonSerializationUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/HibernateUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/controllertest/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controllertest/UserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utiltest/HibernateUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utiltest/HibernateUtilTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +268,7 @@
       <workItem from="1695754838573" duration="155000" />
       <workItem from="1695817633006" duration="292000" />
       <workItem from="1695819156504" duration="974000" />
-      <workItem from="1695820333977" duration="2985000" />
+      <workItem from="1695820333977" duration="3708000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -450,7 +446,31 @@
       <option name="project" value="LOCAL" />
       <updated>1695826190652</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add messages for each test method.">
+      <option name="closed" value="true" />
+      <created>1695831936283</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1695831936283</updated>
+    </task>
+    <task id="LOCAL-00024" summary="FIX: code style in HibernateUtil class: name of private static field is not uppercase.">
+      <option name="closed" value="true" />
+      <created>1695832074183</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1695832074183</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add HibernateUtilTest class in which functionality of HibernateUtil class is tested.">
+      <option name="closed" value="true" />
+      <created>1695832153670</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1695832153670</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,6 +500,9 @@
     <MESSAGE value="Add class JsonSerializationUtil class that is responsible for serializing objects to JSON." />
     <MESSAGE value="FIX: util class has public constructor. Add private no-args construstor to JsonSerializationUtil class." />
     <MESSAGE value="Annotate User, Company, Geo, Address classes as ready for serialization to JSON." />
-    <option name="LAST_COMMIT_MESSAGE" value="Annotate User, Company, Geo, Address classes as ready for serialization to JSON." />
+    <MESSAGE value="Add messages for each test method." />
+    <MESSAGE value="FIX: code style in HibernateUtil class: name of private static field is not uppercase." />
+    <MESSAGE value="Add HibernateUtilTest class in which functionality of HibernateUtil class is tested." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add HibernateUtilTest class in which functionality of HibernateUtil class is tested." />
   </component>
 </project>
