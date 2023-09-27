@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: bug in testGetUserById method">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JSONSerializer.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: static class hasn't private constructor. Add private constructor to HibernateUtil class.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JsonSerializationUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,6 +245,8 @@
       <workItem from="1695754369947" duration="338000" />
       <workItem from="1695754838573" duration="155000" />
       <workItem from="1695817633006" duration="292000" />
+      <workItem from="1695819156504" duration="974000" />
+      <workItem from="1695820333977" duration="353000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -384,7 +384,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695747583947</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Create util package. Move HibernateUtil class to this package.">
+      <option name="closed" value="true" />
+      <created>1695819457244</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1695819457244</updated>
+    </task>
+    <task id="LOCAL-00019" summary="FIX: static class hasn't private constructor. Add private constructor to HibernateUtil class.">
+      <option name="closed" value="true" />
+      <created>1695819523038</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1695819523038</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,6 +425,8 @@
     <MESSAGE value="FIX: bug with connection establishing in UserController" />
     <MESSAGE value="Provide tests for methods gerUserById() and getAllUsers() from UserController class" />
     <MESSAGE value="FIX: bug in testGetUserById method" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX: bug in testGetUserById method" />
+    <MESSAGE value="Create util package. Move HibernateUtil class to this package." />
+    <MESSAGE value="FIX: static class hasn't private constructor. Add private constructor to HibernateUtil class." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: static class hasn't private constructor. Add private constructor to HibernateUtil class." />
   </component>
 </project>
