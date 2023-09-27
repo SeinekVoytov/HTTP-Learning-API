@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
-import java.io.OutputStream;
+import java.io.Writer;
 
 public class JsonSerializationUtil {
 
@@ -16,9 +16,9 @@ public class JsonSerializationUtil {
         return MAPPER.writeValueAsString(obj);
     }
 
-    public static <T> void serializeObjectToJsonStream(T obj, OutputStream os) throws IOException {
+    public static <T> void serializeObjectToJsonStream(T obj, Writer writer) throws IOException {
         String serializationResult = serializeObjectToJsonString(obj);
-        os.write(serializationResult.getBytes());
+        writer.write(serializationResult);
     }
 
 
