@@ -10,6 +10,8 @@ public class JsonSerializationUtil {
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
+    private JsonSerializationUtil() {}
+
     public static <T> String serializeObjectToJsonString(T obj) throws JsonProcessingException {
         return MAPPER.writeValueAsString(obj);
     }
