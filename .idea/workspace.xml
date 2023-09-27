@@ -9,12 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: util class has public constructor. Add private no-args construstor to JsonSerializationUtil class.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Annotate User, Company, Geo, Address classes as ready for serialization to JSON.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/utiltest/HibernateUtilTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/utiltest/JsonSerializationUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Geo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Geo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controllertest/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controllertest/UserControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,20 +76,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JUnit.UserControllerTest">
-    <configuration name="TEst" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.httplearningservice.TEst" />
-      <module name="HTTPLearningService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.httplearningapi.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.HibernateUtilTest.classInitializationTest">
     <configuration name="UserController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.httplearningapi.controller.UserController" />
       <module name="HTTPLearningService" />
@@ -96,6 +86,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HibernateUtilTest.classInitializationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utiltest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="utiltest" />
+      <option name="MAIN_CLASS_NAME" value="utiltest.HibernateUtilTest" />
+      <option name="METHOD_NAME" value="classInitializationTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,6 +132,22 @@
       <option name="PACKAGE_NAME" value="databasetest" />
       <option name="MAIN_CLASS_NAME" value="controllertest.UserControllerTest" />
       <option name="METHOD_NAME" value="testGetUserById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.testGetUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controllertest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controllertest" />
+      <option name="MAIN_CLASS_NAME" value="controllertest.UserControllerTest" />
+      <option name="METHOD_NAME" value="testGetUsers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -219,10 +241,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HibernateUtilTest.classInitializationTest" />
         <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.UserControllerTest.testGetUserById" />
+        <item itemvalue="JUnit.UserControllerTest.testGetUsers" />
         <item itemvalue="Application.UserController" />
-        <item itemvalue="Application.TEst" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +272,7 @@
       <workItem from="1695754838573" duration="155000" />
       <workItem from="1695817633006" duration="292000" />
       <workItem from="1695819156504" duration="974000" />
-      <workItem from="1695820333977" duration="1120000" />
+      <workItem from="1695820333977" duration="2985000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -419,7 +442,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695825940317</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Annotate User, Company, Geo, Address classes as ready for serialization to JSON.">
+      <option name="closed" value="true" />
+      <created>1695826190652</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1695826190652</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,6 +479,7 @@
     <MESSAGE value="FIX: static class hasn't private constructor. Add private constructor to HibernateUtil class." />
     <MESSAGE value="Add class JsonSerializationUtil class that is responsible for serializing objects to JSON." />
     <MESSAGE value="FIX: util class has public constructor. Add private no-args construstor to JsonSerializationUtil class." />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX: util class has public constructor. Add private no-args construstor to JsonSerializationUtil class." />
+    <MESSAGE value="Annotate User, Company, Geo, Address classes as ready for serialization to JSON." />
+    <option name="LAST_COMMIT_MESSAGE" value="Annotate User, Company, Geo, Address classes as ready for serialization to JSON." />
   </component>
 </project>
