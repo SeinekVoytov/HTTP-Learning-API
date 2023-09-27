@@ -6,12 +6,12 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
 
-    private static final SessionFactory sessionFactory;
+    private static final SessionFactory SESSION_FACTORY;
 
     static {
         try {
             Configuration configuration = new Configuration().configure();
-            sessionFactory = configuration.buildSessionFactory();
+            SESSION_FACTORY = configuration.buildSessionFactory();
         } catch (HibernateException e) {
             System.err.println("Error creating Session: " + e);
             throw new ExceptionInInitializerError();
@@ -21,13 +21,13 @@ public class HibernateUtil {
     private HibernateUtil() {}
 
     public static SessionFactory getSessionFactory() {
-        return sessionFactory;
+        return SESSION_FACTORY;
     }
 
     public static void closeSessionFactory() {
-        if (sessionFactory != null) {
+        if (SESSION_FACTORY != null) {
             try {
-                sessionFactory.close();
+                SESSION_FACTORY.close();
             }
             catch (HibernateException e) {
                 System.err.println("Couldn't close SessionFactory");
