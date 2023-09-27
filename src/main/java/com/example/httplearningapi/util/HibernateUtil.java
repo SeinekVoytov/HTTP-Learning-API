@@ -1,4 +1,4 @@
-package com.example.httplearningapi;
+package com.example.httplearningapi.util;
 
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
@@ -17,6 +17,8 @@ public class HibernateUtil {
             throw new ExceptionInInitializerError();
         }
     }
+
+    private HibernateUtil() {}
 
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
