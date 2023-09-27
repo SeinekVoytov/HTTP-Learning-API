@@ -1,15 +1,20 @@
 package com.example.httplearningapi.model.user;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "Companies")
+@Entity @Table(name = "Companies")
+@JsonAutoDetect
 public class Company {
+
     @Id
+    @JsonIgnore
     private int id;
+
     private String name;
 
     @Column(name = "catch_phrase")

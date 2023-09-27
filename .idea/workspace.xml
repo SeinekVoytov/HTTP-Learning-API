@@ -9,9 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: static class hasn't private constructor. Add private constructor to HibernateUtil class.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JsonSerializationUtil.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: util class has public constructor. Add private no-args construstor to JsonSerializationUtil class.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Geo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/Geo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/user/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +249,7 @@
       <workItem from="1695754838573" duration="155000" />
       <workItem from="1695817633006" duration="292000" />
       <workItem from="1695819156504" duration="974000" />
-      <workItem from="1695820333977" duration="353000" />
+      <workItem from="1695820333977" duration="1120000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -400,7 +403,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695819523038</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add class JsonSerializationUtil class that is responsible for serializing objects to JSON.">
+      <option name="closed" value="true" />
+      <created>1695825690635</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1695825690635</updated>
+    </task>
+    <task id="LOCAL-00021" summary="FIX: util class has public constructor. Add private no-args construstor to JsonSerializationUtil class.">
+      <option name="closed" value="true" />
+      <created>1695825940317</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1695825940317</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,6 +446,8 @@
     <MESSAGE value="FIX: bug in testGetUserById method" />
     <MESSAGE value="Create util package. Move HibernateUtil class to this package." />
     <MESSAGE value="FIX: static class hasn't private constructor. Add private constructor to HibernateUtil class." />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX: static class hasn't private constructor. Add private constructor to HibernateUtil class." />
+    <MESSAGE value="Add class JsonSerializationUtil class that is responsible for serializing objects to JSON." />
+    <MESSAGE value="FIX: util class has public constructor. Add private no-args construstor to JsonSerializationUtil class." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: util class has public constructor. Add private no-args construstor to JsonSerializationUtil class." />
   </component>
 </project>

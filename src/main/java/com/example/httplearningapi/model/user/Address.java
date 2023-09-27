@@ -1,12 +1,15 @@
 package com.example.httplearningapi.model.user;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "Addresses")
+@Entity @Table(name = "Addresses")
+@JsonAutoDetect
 public class Address {
 
     @Id
+    @JsonIgnore
     private int id;
 
     private String country;
