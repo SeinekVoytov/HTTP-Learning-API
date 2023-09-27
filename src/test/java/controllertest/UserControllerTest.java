@@ -18,19 +18,20 @@ public class UserControllerTest {
     public void testGetUserById() {
         Optional<User> testUserOptional = USER_CONTROLLER.getUserById(1);
         if (testUserOptional.isEmpty()) {
-            fail();
+            fail("User is not retrieved from Database");
         }
 
         User testUser = testUserOptional.get();
         assertTrue(testUser.getAddress() != null &&
                 testUser.getAddress().getGeo() != null &&
-                testUser.getCompany() != null);
+                testUser.getCompany() != null, "User fields are null");
     }
 
     @Test
     public void testGetUsers() {
         List<User> users = USER_CONTROLLER.getUsers();
-        assertEquals(NUMBER_OF_USERS_IN_DATABASE, users.size());
+        assertEquals(NUMBER_OF_USERS_IN_DATABASE, users.size(),
+                "Actual number of Users in Database is not equal to Expected number");
     }
 
 }
