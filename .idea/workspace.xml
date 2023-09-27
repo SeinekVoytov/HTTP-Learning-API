@@ -9,8 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Provide tests for methods gerUserById() and getAllUsers() from UserController class">
-      <change beforePath="$PROJECT_DIR$/src/test/java/controllertest/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controllertest/UserControllerTest.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: bug in testGetUserById method">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JSONSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +78,7 @@
       <module name="HTTPLearningService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.httplearningapi.*" />
+          <option name="PATTERN" value="com.example.httplearningapi.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -240,7 +243,10 @@
       <workItem from="1695673335759" duration="1437000" />
       <workItem from="1695706829756" duration="2489000" />
       <workItem from="1695723432492" duration="6322000" />
-      <workItem from="1695735647497" duration="8238000" />
+      <workItem from="1695735647497" duration="8576000" />
+      <workItem from="1695754369947" duration="338000" />
+      <workItem from="1695754838573" duration="155000" />
+      <workItem from="1695817633006" duration="292000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -370,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695747143612</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="FIX: bug in testGetUserById method">
+      <option name="closed" value="true" />
+      <created>1695747583947</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1695747583947</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,6 +408,7 @@
     <MESSAGE value="Add UserController class which provide R-read operation from DB for one or all users." />
     <MESSAGE value="FIX: bug with connection establishing in UserController" />
     <MESSAGE value="Provide tests for methods gerUserById() and getAllUsers() from UserController class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Provide tests for methods gerUserById() and getAllUsers() from UserController class" />
+    <MESSAGE value="FIX: bug in testGetUserById method" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: bug in testGetUserById method" />
   </component>
 </project>

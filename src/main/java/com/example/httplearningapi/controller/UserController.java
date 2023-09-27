@@ -1,6 +1,6 @@
 package com.example.httplearningapi.controller;
 
-import com.example.httplearningapi.HibernateUtil;
+import com.example.httplearningapi.util.HibernateUtil;
 import com.example.httplearningapi.model.user.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
