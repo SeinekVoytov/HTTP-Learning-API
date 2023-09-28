@@ -14,7 +14,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JsonSerializationUtilTest {
 
-    private static final String USER1_JSON = "{\"id\":1,\"name\":\"Seinek Voytov\",\"email\":\"seinek@neuroverse.net\",\"address\":{\"country\":\"Belarus\",\"city\":\"Minsk\",\"street\":\"214 Independence Avenue\",\"geo\":{\"lat\":-27.9394,\"lon\":86.9083}},\"phone\":\"454-11-89390\",\"website\":\"dreamtechgenius.org\",\"company\":{\"name\":\"Tech Innovators\",\"catchPhrase\":\"Unlocking the Future\"}}";
+    private static final String USER1_JSON = "{\n" +
+            "  \"id\" : 1,\n" +
+            "  \"name\" : \"Seinek Voytov\",\n" +
+            "  \"email\" : \"seinek@neuroverse.net\",\n" +
+            "  \"address\" : {\n" +
+            "    \"country\" : \"Belarus\",\n" +
+            "    \"city\" : \"Minsk\",\n" +
+            "    \"street\" : \"214 Independence Avenue\",\n" +
+            "    \"geo\" : {\n" +
+            "      \"lat\" : -27.9394,\n" +
+            "      \"lon\" : 86.9083\n" +
+            "    }\n" +
+            "  },\n" +
+            "  \"phone\" : \"454-11-89390\",\n" +
+            "  \"website\" : \"dreamtechgenius.org\",\n" +
+            "  \"company\" : {\n" +
+            "    \"name\" : \"Tech Innovators\",\n" +
+            "    \"catchPhrase\" : \"Unlocking the Future\"\n" +
+            "  }\n" +
+            "}";
     @Test
     public void jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest() {
         UserController userController = new UserController();

@@ -2,13 +2,19 @@ package com.example.httplearningapi.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.io.IOException;
 import java.io.Writer;
 
 public class JsonSerializationUtil {
 
-    private static final ObjectMapper MAPPER = new ObjectMapper();
+    private static final ObjectMapper MAPPER;
+
+    static {
+        MAPPER = new ObjectMapper();
+        MAPPER.enable(SerializationFeature.INDENT_OUTPUT);
+    }
 
     private JsonSerializationUtil() {}
 

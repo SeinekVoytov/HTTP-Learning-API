@@ -9,13 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add class JsonSerializationUtilTest which provide test for JsonSerializationUtil class.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency.">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JsonSerializationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JsonSerializationUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +82,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
+  <component name="RunManager" selected="JUnit.JsonSerializationUtilTest">
     <configuration name="HibernateUtilTest.sessionFactoryInitializationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -117,7 +114,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
         <pattern>
@@ -127,7 +124,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="utiltest" />
       <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
-      <option name="METHOD_NAME" value="jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
+      <option name="METHOD_NAME" value="jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -252,11 +249,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JsonSerializationUtilTest" />
+        <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" />
         <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.UserControllerTest.retrievedUserFromDBIsNotNullTest" />
         <item itemvalue="JUnit.HibernateUtilTest.sessionFactoryInitializationTest" />
-        <item itemvalue="JUnit.JsonSerializationUtilTest" />
-        <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +281,7 @@
       <workItem from="1695817633006" duration="292000" />
       <workItem from="1695819156504" duration="974000" />
       <workItem from="1695820333977" duration="13312000" />
-      <workItem from="1695884130557" duration="881000" />
+      <workItem from="1695884130557" duration="1682000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -502,7 +499,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695834450137</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency.">
+      <option name="closed" value="true" />
+      <created>1695885384371</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1695885384371</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,7 +515,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add dependencies for Jackson core/databind/annotations to pom.xml" />
     <MESSAGE value="Add model of User data" />
     <MESSAGE value="Prepare classes Address, Company, Geo, User for next utilizing with Hibernate" />
     <MESSAGE value="Add field country to Address class." />
@@ -535,17 +539,7 @@
     <MESSAGE value="Add HibernateUtilTest class in which functionality of HibernateUtil class is tested." />
     <MESSAGE value="Provide better test methods names" />
     <MESSAGE value="Add class JsonSerializationUtilTest which provide test for JsonSerializationUtil class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add class JsonSerializationUtilTest which provide test for JsonSerializationUtil class." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/HibernateUtil.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency." />
   </component>
 </project>
