@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Enable pretty json serialization. FIX: testcases: expected user has changed after enabling pretty serialization.">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JsonSerializationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JsonSerializationUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +65,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.27182046",
-    "settings.editor.selected.configurable": "inlay.hints",
+    "settings.editor.selected.configurable": "editing.templates",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -82,7 +81,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JsonSerializationUtilTest">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
     <configuration name="HibernateUtilTest.sessionFactoryInitializationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -281,7 +280,7 @@
       <workItem from="1695817633006" duration="292000" />
       <workItem from="1695819156504" duration="974000" />
       <workItem from="1695820333977" duration="13312000" />
-      <workItem from="1695884130557" duration="1682000" />
+      <workItem from="1695884130557" duration="11266000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -507,7 +506,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695885384371</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Enable pretty json serialization. FIX: testcases: expected user has changed after enabling pretty serialization.">
+      <option name="closed" value="true" />
+      <created>1695886540330</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1695886540330</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +522,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add model of User data" />
     <MESSAGE value="Prepare classes Address, Company, Geo, User for next utilizing with Hibernate" />
     <MESSAGE value="Add field country to Address class." />
     <MESSAGE value="Create database. Add data to Addreses &amp; Geos tables." />
@@ -540,6 +546,7 @@
     <MESSAGE value="Provide better test methods names" />
     <MESSAGE value="Add class JsonSerializationUtilTest which provide test for JsonSerializationUtil class." />
     <MESSAGE value="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency." />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency." />
+    <MESSAGE value="Enable pretty json serialization. FIX: testcases: expected user has changed after enabling pretty serialization." />
+    <option name="LAST_COMMIT_MESSAGE" value="Enable pretty json serialization. FIX: testcases: expected user has changed after enabling pretty serialization." />
   </component>
 </project>
