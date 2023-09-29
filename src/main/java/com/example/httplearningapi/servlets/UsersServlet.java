@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class UsersServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 
         try {
             String pathInfo = req.getPathInfo();
@@ -57,8 +57,9 @@ public class UsersServlet extends HttpServlet {
 
                 JsonSerializationUtil.serializeObjectToJsonStream(users, resp.getWriter());
             }
+
         } catch (Exception e) {
-            resp.setStatus(404);
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
     }
 
@@ -73,8 +74,30 @@ public class UsersServlet extends HttpServlet {
     }
 
     @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) {
 
+        String pathInfo = req.getPathInfo();
+
+        if (pathInfo == null || pathInfo.length() <= 1) {
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+
+        String[] pathSegments = pathInfo.substring(1).split("/");
+        try {
+            int userId = Integer.parseInt(pathSegments[0]);
+            if (pathSegments.length > 1) {
+                req.setAttribute("userId", userId);
+                // forward to another servlet if next parts of uri are correct
+            }
+            else {
+                // simulating successful DELETE operation
+                resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+            }
+
+        } catch (NumberFormatException e) {
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        }
     }
 
     @Override
