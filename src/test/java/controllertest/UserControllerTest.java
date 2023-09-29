@@ -2,13 +2,16 @@ package controllertest;
 
 import com.example.httplearningapi.controller.UserController;
 import com.example.httplearningapi.model.user.User;
+import extensions.HibernateUtilSetupExtension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@ExtendWith(HibernateUtilSetupExtension.class)
 public class UserControllerTest {
 
     private static final int NUMBER_OF_USERS_IN_DATABASE = 10;

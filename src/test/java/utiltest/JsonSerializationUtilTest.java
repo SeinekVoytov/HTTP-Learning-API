@@ -4,14 +4,17 @@ import com.example.httplearningapi.controller.UserController;
 import com.example.httplearningapi.model.user.User;
 import com.example.httplearningapi.util.JsonSerializationUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import extensions.HibernateUtilSetupExtension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.*;
 
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@ExtendWith(HibernateUtilSetupExtension.class)
 public class JsonSerializationUtilTest {
 
     private static final String USER1_JSON = "{\n" +

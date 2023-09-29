@@ -17,19 +17,6 @@ import java.util.stream.Collectors;
 @WebServlet(name = "Users Servlet", urlPatterns = {"/users", "/users/*"})
 public class UsersServlet extends HttpServlet {
 
-    private static Predicate<User> createPredicateForFilteringUsersByQueryParams(String id,
-                                                                                 String name,
-                                                                                 String email,
-                                                                                 String phone,
-                                                                                 String website) {
-        return user ->
-                (id == null || id.equals(String.valueOf(user.getId()))) &&
-                        (name == null || name.equals(user.getName())) &&
-                        (email == null || email.equals(user.getEmail())) &&
-                        (phone == null || phone.equals(user.getPhone())) &&
-                        (website == null || website.equals(user.getWebsite()));
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -103,5 +90,18 @@ public class UsersServlet extends HttpServlet {
     @Override
     protected void doTrace(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+    }
+
+    private Predicate<User> createPredicateForFilteringUsersByQueryParams(String id,
+                                                                          String name,
+                                                                          String email,
+                                                                          String phone,
+                                                                          String website) {
+        return user ->
+                (id == null || id.equals(String.valueOf(user.getId()))) &&
+                        (name == null || name.equals(user.getName())) &&
+                        (email == null || email.equals(user.getEmail())) &&
+                        (phone == null || phone.equals(user.getPhone())) &&
+                        (website == null || website.equals(user.getWebsite()));
     }
 }

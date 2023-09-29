@@ -9,10 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add UsersServlet class which is responsible for all requests matching patterns */users and .../users/*">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/AppLifecycleListener.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create AppLifecycleListener to catch moments of initializing and destroying servlets to init and close Session Factory in HibernateUtil class.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/extensions/HibernateUtilSetupExtension.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controllertest/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controllertest/UserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utiltest/HibernateUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utiltest/HibernateUtilTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,81 +84,13 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
-    <configuration name="HibernateUtilTest.sessionFactoryInitializationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.Tests">
+    <configuration name="Tests" type="JUnit" factoryName="JUnit">
       <module name="HTTPLearningService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utiltest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="utiltest" />
-      <option name="MAIN_CLASS_NAME" value="utiltest.HibernateUtilTest" />
-      <option name="METHOD_NAME" value="sessionFactoryInitializationTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JsonSerializationUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HTTPLearningService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utiltest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="utiltest" />
-      <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HTTPLearningService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utiltest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="utiltest" />
-      <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
-      <option name="METHOD_NAME" value="jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HTTPLearningService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controllertest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controllertest" />
-      <option name="MAIN_CLASS_NAME" value="controllertest.UserControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserControllerTest.retrievedUserFromDBIsNotNullTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HTTPLearningService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controllertest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controllertest" />
-      <option name="MAIN_CLASS_NAME" value="controllertest.UserControllerTest" />
-      <option name="METHOD_NAME" value="retrievedUserFromDBIsNotNullTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -247,15 +181,10 @@
         </option>
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.JsonSerializationUtilTest" />
-        <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" />
-        <item itemvalue="JUnit.UserControllerTest" />
-        <item itemvalue="JUnit.UserControllerTest.retrievedUserFromDBIsNotNullTest" />
-        <item itemvalue="JUnit.HibernateUtilTest.sessionFactoryInitializationTest" />
-      </list>
-    </recent_temporary>
+    <list>
+      <item itemvalue="JUnit.Tests" />
+      <item itemvalue="Tomcat Server.Tomcat 10.1.13" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -282,7 +211,7 @@
       <workItem from="1695819156504" duration="974000" />
       <workItem from="1695820333977" duration="13312000" />
       <workItem from="1695884130557" duration="12132000" />
-      <workItem from="1695967315313" duration="669000" />
+      <workItem from="1695967315313" duration="3623000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -524,7 +453,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695927197579</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Create AppLifecycleListener to catch moments of initializing and destroying servlets to init and close Session Factory in HibernateUtil class.">
+      <option name="closed" value="true" />
+      <created>1695968102014</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1695968102015</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +469,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add field country to Address class." />
     <MESSAGE value="Create database. Add data to Addreses &amp; Geos tables." />
     <MESSAGE value="Add Hibernate dependency to pom.xml project. Configure Hibernate by hibernate.cfg.xml." />
     <MESSAGE value="Change com.example.httplearningservice to com example.httplearningapi" />
@@ -557,6 +493,7 @@
     <MESSAGE value="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency." />
     <MESSAGE value="Enable pretty json serialization. FIX: testcases: expected user has changed after enabling pretty serialization." />
     <MESSAGE value="Add UsersServlet class which is responsible for all requests matching patterns */users and .../users/*" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add UsersServlet class which is responsible for all requests matching patterns */users and .../users/*" />
+    <MESSAGE value="Create AppLifecycleListener to catch moments of initializing and destroying servlets to init and close Session Factory in HibernateUtil class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create AppLifecycleListener to catch moments of initializing and destroying servlets to init and close Session Factory in HibernateUtil class." />
   </component>
 </project>
