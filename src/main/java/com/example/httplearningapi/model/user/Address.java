@@ -4,33 +4,23 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-@Entity @Table(name = "Addresses")
+import java.util.Objects;
+
+@Entity
+@Table(name = "Addresses")
 @JsonAutoDetect
 public class Address {
 
     @Id
     @JsonIgnore
     private int id;
-
     private String country;
     private String city;
     private String street;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Geo geo;
-
     public Address() {
-    }
-
-    @Override
-    public String toString() {
-        return "Address{" +
-                "country='" + country + '\'' +
-                ", city='" + city + '\'' +
-                ", street='" + street + '\'' +
-                ", geo=" + geo +
-                '}';
     }
 
     public String getCountry() {
@@ -63,5 +53,28 @@ public class Address {
 
     public void setGeo(Geo geo) {
         this.geo = geo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return id == address.id && Objects.equals(country, address.country) && Objects.equals(city, address.city) && Objects.equals(street, address.street) && Objects.equals(geo, address.geo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, country, city, street, geo);
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", geo=" + geo +
+                '}';
     }
 }

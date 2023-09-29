@@ -7,7 +7,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity @Table(name = "Companies")
+import java.util.Objects;
+
+@Entity
+@Table(name = "Companies")
 @JsonAutoDetect
 public class Company {
 
@@ -21,15 +24,6 @@ public class Company {
     private String catchPhrase;
 
     public Company() {
-    }
-
-    @Override
-    public String toString() {
-        return "Company{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", catchPhrase='" + catchPhrase + '\'' +
-                '}';
     }
 
     public int getId() {
@@ -54,5 +48,27 @@ public class Company {
 
     public void setCatchPhrase(String catchPhrase) {
         this.catchPhrase = catchPhrase;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Company company = (Company) o;
+        return id == company.id && Objects.equals(name, company.name) && Objects.equals(catchPhrase, company.catchPhrase);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, catchPhrase);
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", catchPhrase='" + catchPhrase + '\'' +
+                '}';
     }
 }

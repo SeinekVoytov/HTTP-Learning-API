@@ -3,7 +3,10 @@ package com.example.httplearningapi.model.user;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import jakarta.persistence.*;
 
-@Entity @Table(name = "Users")
+import java.util.Objects;
+
+@Entity
+@Table(name = "Users")
 @JsonAutoDetect
 public class User {
 
@@ -13,34 +16,17 @@ public class User {
 
     private String name;
     private String email;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Address address;
-
     @Column(name = "phone_number")
     private String phone;
-
     private String website;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Company company;
 
     public User() {
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", address=" + address +
-                ", phone='" + phone + '\'' +
-                ", website='" + website + '\'' +
-                ", company=" + company +
-                '}';
     }
 
     public int getId() {
@@ -97,5 +83,31 @@ public class User {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && Objects.equals(name, user.name) && Objects.equals(email, user.email) && Objects.equals(address, user.address) && Objects.equals(phone, user.phone) && Objects.equals(website, user.website) && Objects.equals(company, user.company);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, email, address, phone, website, company);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", address=" + address +
+                ", phone='" + phone + '\'' +
+                ", website='" + website + '\'' +
+                ", company=" + company +
+                '}';
     }
 }
