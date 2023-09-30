@@ -9,9 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create extension for tests to create and close SessionFactory only once.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: equals and hashcode methods: delete id parameter from comparing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JsonSerializationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JsonSerializationUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utiltest/JsonSerializationUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utiltest/JsonSerializationUtilTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.27182046&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
@@ -81,7 +82,55 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
+  <component name="RunManager" selected="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser">
+    <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utiltest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="utiltest" />
+      <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
+      <option name="METHOD_NAME" value="jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utiltest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="utiltest" />
+      <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
+      <option name="METHOD_NAME" value="testUserJsonDeserializationAndEqualityWithDBUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utiltest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="utiltest" />
+      <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
+      <option name="METHOD_NAME" value="userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tests" type="JUnit" factoryName="JUnit">
       <module name="HTTPLearningService" />
       <option name="PACKAGE_NAME" value="" />
@@ -180,8 +229,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
+      <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
+      <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
+      <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
       <item itemvalue="Tomcat Server.Tomcat 10.1.13" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
+        <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
+        <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -209,7 +268,8 @@
       <workItem from="1695820333977" duration="13312000" />
       <workItem from="1695884130557" duration="12132000" />
       <workItem from="1695967315313" duration="6489000" />
-      <workItem from="1696003900560" duration="3295000" />
+      <workItem from="1696003900560" duration="5864000" />
+      <workItem from="1696054518086" duration="2146000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -467,7 +527,31 @@
       <option name="project" value="LOCAL" />
       <updated>1695971344182</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Add doDelete method implementation to UsersServlet.">
+      <option name="closed" value="true" />
+      <created>1696007635146</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1696007635146</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Add equals and hashcode methods to User, Company, Address and Geo classes.">
+      <option name="closed" value="true" />
+      <created>1696009944559</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1696009944559</updated>
+    </task>
+    <task id="LOCAL-00035" summary="FIX: equals and hashcode methods: delete id parameter from comparing">
+      <option name="closed" value="true" />
+      <created>1696056048149</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1696056048149</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,9 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change com.example.httplearningservice to com example.httplearningapi" />
-    <MESSAGE value="Add mapping classes to hibernate.cfg.xml." />
-    <MESSAGE value="Annotate mapped by Hibernate classes User, Address, Geo, Company." />
     <MESSAGE value="Add HibernateUtil class that is responsive for storing SessionFactory object while application is running." />
     <MESSAGE value="Provide User, Address, Company, Geo classes with toString() method for testing;" />
     <MESSAGE value="Add UserController class which provide R-read operation from DB for one or all users." />
@@ -500,6 +581,20 @@
     <MESSAGE value="Create AppLifecycleListener to catch moments of initializing and destroying servlets to init and close Session Factory in HibernateUtil class." />
     <MESSAGE value="Create extension for tests to create and close SessionFactory only once" />
     <MESSAGE value="Create extension for tests to create and close SessionFactory only once." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create extension for tests to create and close SessionFactory only once." />
+    <MESSAGE value="Add doDelete method implementation to UsersServlet." />
+    <MESSAGE value="Add equals and hashcode methods to User, Company, Address and Geo classes." />
+    <MESSAGE value="FIX: equals and hashcode methods: delete id parameter from comparing" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: equals and hashcode methods: delete id parameter from comparing" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/utiltest/JsonSerializationUtilTest.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
