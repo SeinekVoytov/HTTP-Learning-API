@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.Reader;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -22,45 +22,49 @@ public class UsersServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 
         try {
+            final UserController userController = new UserController();
             String pathInfo = req.getPathInfo();
 
-            if (pathInfo != null && pathInfo.length() > 1) {
-                String[] pathSegments = pathInfo.substring(1).split("/");
-                int userId = Integer.parseInt(pathSegments[0]);
+            if (pathInfo == null || pathInfo.length() <= 1) {
 
-                if (pathSegments.length > 1) {
-                    req.setAttribute("userId", userId);
-                    // forward to another servlet
-                } else {
-                    UserController userController = new UserController();
-                    User requestedUser = userController.getUserById(userId).orElseThrow();
-                    JsonSerializationUtil.serializeObjectToJsonStream(requestedUser, resp.getWriter());
-                }
-            } else {
-                UserController userController = new UserController();
                 List<User> users = userController.getUsers();
 
                 String queryString = req.getQueryString();
                 if (queryString != null) {
-
-                    Predicate<User> predicateForFiltering = createPredicateForFilteringUsersByQueryParams(
-                            req.getParameter("id"),
-                            req.getParameter("name"),
-                            req.getParameter("email"),
-                            req.getParameter("phone"),
-                            req.getParameter("website")
-                    );
-
                     users = users.stream()
-                            .filter(predicateForFiltering)
+                            .filter(this.createPredicateForFilteringUsersByQueryParams(req))
                             .collect(Collectors.toList());
                 }
 
                 JsonSerializationUtil.serializeObjectToJsonStream(users, resp.getWriter());
+                resp.setStatus(HttpServletResponse.SC_OK);
+                return;
+            }
+
+            String[] pathSegments = pathInfo.substring(1).split("/");
+            int userId = 0;
+
+            try {
+                userId = Integer.parseInt(pathSegments[0]);
+            } catch (NumberFormatException e) {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            }
+
+            if (pathSegments.length > 1) {
+                req.setAttribute("userId", userId);
+                // forward to another servlet
+                return;
+            }
+
+            try {
+                User requestedUser = userController.getUserById(userId).orElseThrow();
+                JsonSerializationUtil.serializeObjectToJsonStream(requestedUser, resp.getWriter());
+            } catch (NoSuchElementException e) {
+                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }
 
         } catch (Exception e) {
-            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -70,20 +74,31 @@ public class UsersServlet extends HttpServlet {
         try {
             String pathInfo = req.getPathInfo();
 
-            if (pathInfo == null || pathInfo.equals("/") || pathInfo.matches("/?\\d+/recipes")) {
-
-                if (pathInfo != null && !pathInfo.equals("/"))
-                    processUserIdWithForwardToRecipesServlet(req, resp, pathInfo);
-                else
-                    processPostRequest(req, resp);
-
-            } else {
+            if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("/.+/recipes")) { //    .../users//////
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                return;
             }
-        } catch (IOException e) {
+
+            if (pathInfo == null || pathInfo.equals("/")) {
+
+                JsonSerializationUtil.deserializeObjectFromJson(req.getReader(), User.class);
+                // Simulate successful POST operation
+                resp.setStatus(HttpServletResponse.SC_CREATED);
+                resp.getWriter().println("{\"id\" : 11}");
+                return;
+            }
+
+            try {
+                int userId = Integer.parseInt(pathInfo.substring(1, pathInfo.indexOf('/', 1)));
+                req.setAttribute("userId", userId);
+                // forward to the recipes servlet
+            } catch (NumberFormatException e) {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            }
+
+        } catch (Exception e) {
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
-
     }
 
     @Override
@@ -94,16 +109,24 @@ public class UsersServlet extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) {
 
-        String pathInfo = req.getPathInfo();
-
-        if (pathInfo == null || pathInfo.length() <= 1) {
-            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            return;
-        }
-
-        String[] pathSegments = pathInfo.substring(1).split("/");
         try {
-            int userId = Integer.parseInt(pathSegments[0]);
+            String pathInfo = req.getPathInfo();
+
+            if (pathInfo == null || pathInfo.length() <= 1) {
+                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                return;
+            }
+
+            String[] pathSegments = pathInfo.substring(1).split("/");
+            int userId;
+
+            try {
+                userId = Integer.parseInt(pathSegments[0]);
+            } catch (NumberFormatException e) {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                return;
+            }
+
             if (pathSegments.length > 1) {
                 req.setAttribute("userId", userId);
                 // forward to another servlet if next parts of uri are correct
@@ -112,8 +135,8 @@ public class UsersServlet extends HttpServlet {
                 resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
             }
 
-        } catch (NumberFormatException e) {
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        } catch (Exception e) {
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -132,43 +155,17 @@ public class UsersServlet extends HttpServlet {
 
     }
 
-    private Predicate<User> createPredicateForFilteringUsersByQueryParams(String id,
-                                                                          String name,
-                                                                          String email,
-                                                                          String phone,
-                                                                          String website) {
+    private Predicate<User> createPredicateForFilteringUsersByQueryParams(HttpServletRequest req) {
+        String id = req.getParameter("id");
+        String name = req.getParameter("name");
+        String email = req.getParameter("email");
+        String phone = req.getParameter("phone");
+        String website = req.getParameter("website");
         return user ->
                 (id == null || id.equals(String.valueOf(user.getId()))) &&
                         (name == null || name.equals(user.getName())) &&
                         (email == null || email.equals(user.getEmail())) &&
                         (phone == null || phone.equals(user.getPhone())) &&
                         (website == null || website.equals(user.getWebsite()));
-    }
-
-    private void processUserIdWithForwardToRecipesServlet(HttpServletRequest req, HttpServletResponse resp, String pathInfo) {
-        String[] pathSegments = pathInfo.substring(1).split("/");
-        try {
-            int userId = Integer.parseInt(pathSegments[0]);
-            req.setAttribute("userId", userId);
-            // forward to the recipes servlet
-        } catch (NumberFormatException e) {
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        }
-    }
-
-    private void processPostRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        Reader reader = req.getReader();
-        try {
-            User deserializedUser = JsonSerializationUtil.deserializeObjectFromJson(reader, User.class);
-            int userId = deserializedUser.getId();
-            if (userId <= 10) {
-                throw new IOException();
-            }
-            // Simulate successful POST operation
-            resp.setStatus(HttpServletResponse.SC_CREATED);
-            resp.getWriter().println(String.format("{\"id\" : %d}", userId));
-        } catch (IOException e) {
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        }
     }
 }
