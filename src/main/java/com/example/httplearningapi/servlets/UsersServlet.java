@@ -41,27 +41,32 @@ public class UsersServlet extends HttpServlet {
                 return;
             }
 
-            String[] pathSegments = pathInfo.substring(1).split("/");
-            int userId = 0;
+            int userId;
 
             try {
-                userId = Integer.parseInt(pathSegments[0]);
+                userId = Integer.parseInt(pathInfo.split("/")[1]);
             } catch (NumberFormatException e) {
                 resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                return;
             }
 
-            if (pathSegments.length > 1) {
+            if (pathInfo.matches("/.+/recipes.*$")) {
                 req.setAttribute("userId", userId);
                 // forward to another servlet
                 return;
             }
 
-            try {
-                User requestedUser = userController.getUserById(userId).orElseThrow();
-                JsonSerializationUtil.serializeObjectToJsonStream(requestedUser, resp.getWriter());
-            } catch (NoSuchElementException e) {
-                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            if (pathInfo.matches("/.+/?$")) {
+                try {
+                    User requestedUser = userController.getUserById(userId).orElseThrow();
+                    JsonSerializationUtil.serializeObjectToJsonStream(requestedUser, resp.getWriter());
+                } catch (NoSuchElementException e) {
+                    resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
             }
+
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
 
         } catch (Exception e) {
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
@@ -80,7 +85,6 @@ public class UsersServlet extends HttpServlet {
             }
 
             if (pathInfo == null || pathInfo.equals("/")) {
-
                 JsonSerializationUtil.deserializeObjectFromJson(req.getReader(), User.class);
                 // Simulate successful POST operation
                 resp.setStatus(HttpServletResponse.SC_CREATED);

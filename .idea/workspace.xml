@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add doPost method implementation for UsersServlet">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Improve code readability for doPost, doGet and doDelete methods of UsersServlet.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" afterDir="false" />
     </list>
@@ -141,6 +141,7 @@
       </method>
     </configuration>
     <configuration name="Tomcat 10.1.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.13" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER" value="false" />
       <deployment>
         <artifact name="HTTPLearningService:war exploded">
           <settings>
@@ -268,7 +269,7 @@
       <workItem from="1695884130557" duration="12132000" />
       <workItem from="1695967315313" duration="6489000" />
       <workItem from="1696003900560" duration="5864000" />
-      <workItem from="1696054518086" duration="16084000" />
+      <workItem from="1696054518086" duration="17407000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -582,7 +583,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696068166060</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Improve code readability for doPost, doGet and doDelete methods of UsersServlet.">
+      <option name="closed" value="true" />
+      <created>1696082675513</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1696082675513</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +599,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Provide tests for methods gerUserById() and getAllUsers() from UserController class" />
     <MESSAGE value="FIX: bug in testGetUserById method" />
     <MESSAGE value="Create util package. Move HibernateUtil class to this package." />
     <MESSAGE value="FIX: static class hasn't private constructor. Add private constructor to HibernateUtil class." />
@@ -615,6 +623,18 @@
     <MESSAGE value="Provide test for JsonSerializationUtil.deserializeObjectFromJson method" />
     <MESSAGE value="FIX: bug in parsing URI like .../users/ with extra slash character" />
     <MESSAGE value="Add doPost method implementation for UsersServlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add doPost method implementation for UsersServlet" />
+    <MESSAGE value="Improve code readability for doPost, doGet and doDelete methods of UsersServlet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve code readability for doPost, doGet and doDelete methods of UsersServlet." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
