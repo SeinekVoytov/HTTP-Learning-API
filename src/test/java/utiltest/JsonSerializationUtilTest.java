@@ -65,4 +65,19 @@ public class JsonSerializationUtilTest {
             fail(e.getMessage());
         }
     }
+
+    @Test
+    public void testUserJsonDeserializationAndEqualityWithDBUser() {
+        UserController userController = new UserController();
+        User expectedUser = userController.getUserById(1)
+                .orElseGet(Assertions::fail);
+
+        try {
+            StringReader reader = new StringReader(USER1_JSON);
+            User deserializedUser = JsonSerializationUtil.deserializeObjectFromJson(reader, User.class);
+            assertEquals(expectedUser, deserializedUser, "Deserialized and expected objects are not equal");
+        } catch (IOException e) {
+            fail(e.getMessage());
+        }
+    }
 }
