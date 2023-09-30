@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Provide test for JsonSerializationUtil.deserializeObjectFromJson method" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: bug in parsing URI like .../users/ with extra slash character">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -265,7 +268,7 @@
       <workItem from="1695884130557" duration="12132000" />
       <workItem from="1695967315313" duration="6489000" />
       <workItem from="1696003900560" duration="5864000" />
-      <workItem from="1696054518086" duration="2478000" />
+      <workItem from="1696054518086" duration="7950000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -563,7 +566,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696062609763</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="FIX: bug in parsing URI like .../users/ with extra slash character">
+      <option name="closed" value="true" />
+      <created>1696062905057</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1696062905057</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add UserController class which provide R-read operation from DB for one or all users." />
     <MESSAGE value="FIX: bug with connection establishing in UserController" />
     <MESSAGE value="Provide tests for methods gerUserById() and getAllUsers() from UserController class" />
     <MESSAGE value="FIX: bug in testGetUserById method" />
@@ -596,6 +606,7 @@
     <MESSAGE value="FIX: equals and hashcode methods: delete id parameter from comparing" />
     <MESSAGE value="Add JsonSerializationUtil.deserializeObjectFromJson method. Add property FAIL_ON_UNKNOWN_PROPERTIES to Mapper." />
     <MESSAGE value="Provide test for JsonSerializationUtil.deserializeObjectFromJson method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Provide test for JsonSerializationUtil.deserializeObjectFromJson method" />
+    <MESSAGE value="FIX: bug in parsing URI like .../users/ with extra slash character" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: bug in parsing URI like .../users/ with extra slash character" />
   </component>
 </project>
