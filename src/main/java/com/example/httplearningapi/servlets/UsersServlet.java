@@ -23,7 +23,7 @@ public class UsersServlet extends HttpServlet {
         try {
             String pathInfo = req.getPathInfo();
 
-            if (pathInfo != null) {
+            if (pathInfo != null && pathInfo.length() > 1) {
                 String[] pathSegments = pathInfo.substring(1).split("/");
                 int userId = Integer.parseInt(pathSegments[0]);
 
