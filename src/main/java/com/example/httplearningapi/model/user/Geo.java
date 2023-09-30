@@ -1,7 +1,7 @@
 package com.example.httplearningapi.model.user;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Geo {
 
     @Id
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private int id;
     private float lat;
     private float lon;
@@ -51,12 +51,12 @@ public class Geo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Geo geo = (Geo) o;
-        return id == geo.id && Float.compare(lat, geo.lat) == 0 && Float.compare(lon, geo.lon) == 0;
+        return Float.compare(lat, geo.lat) == 0 && Float.compare(lon, geo.lon) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, lat, lon);
+        return Objects.hash(lat, lon);
     }
 
     @Override

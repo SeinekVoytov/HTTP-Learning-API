@@ -55,12 +55,12 @@ public class Company {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Company company = (Company) o;
-        return id == company.id && Objects.equals(name, company.name) && Objects.equals(catchPhrase, company.catchPhrase);
+        return Objects.equals(name, company.name) && Objects.equals(catchPhrase, company.catchPhrase);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, catchPhrase);
+        return Objects.hash(name, catchPhrase);
     }
 
     @Override
