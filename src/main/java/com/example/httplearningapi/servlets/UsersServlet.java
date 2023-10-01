@@ -25,7 +25,7 @@ public class UsersServlet extends HttpServlet {
             final UserController userController = new UserController();
             String pathInfo = req.getPathInfo();
 
-            if (pathInfo == null || pathInfo.length() <= 1) {
+            if (pathInfo == null || pathInfo.equals("/")) {
 
                 List<User> users = userController.getUsers();
 
@@ -79,7 +79,7 @@ public class UsersServlet extends HttpServlet {
         try {
             String pathInfo = req.getPathInfo();
 
-            if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("/.+/recipes")) { //    .../users//////
+            if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("/.+/recipes$")) { //
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 return;
             }
@@ -116,28 +116,33 @@ public class UsersServlet extends HttpServlet {
         try {
             String pathInfo = req.getPathInfo();
 
-            if (pathInfo == null || pathInfo.length() <= 1) {
+            if (pathInfo == null || pathInfo.equals("/")) {
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 return;
             }
 
-            String[] pathSegments = pathInfo.substring(1).split("/");
             int userId;
 
             try {
-                userId = Integer.parseInt(pathSegments[0]);
+                userId = Integer.parseInt(pathInfo.substring(1).split("/")[0]);
             } catch (NumberFormatException e) {
                 resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 return;
             }
 
-            if (pathSegments.length > 1) {
+            if (pathInfo.matches("/.+/recipes/.*$")) {
                 req.setAttribute("userId", userId);
-                // forward to another servlet if next parts of uri are correct
-            } else {
+                // forward to another servlet
+                return;
+            }
+
+            if (pathInfo.matches("/[^/]+/?$")) {
                 // simulating successful DELETE operation
                 resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                return;
             }
+
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
 
         } catch (Exception e) {
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
