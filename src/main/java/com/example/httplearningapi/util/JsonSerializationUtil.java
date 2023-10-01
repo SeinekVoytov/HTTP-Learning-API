@@ -16,7 +16,6 @@ public class JsonSerializationUtil {
     static {
         MAPPER = new ObjectMapper();
         MAPPER.enable(SerializationFeature.INDENT_OUTPUT);
-        MAPPER.enable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
     }
 
     private JsonSerializationUtil() {}

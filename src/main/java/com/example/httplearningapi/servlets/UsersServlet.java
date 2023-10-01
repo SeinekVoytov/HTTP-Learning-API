@@ -50,13 +50,13 @@ public class UsersServlet extends HttpServlet {
                 return;
             }
 
-            if (pathInfo.matches("/.+/recipes.*$")) {
+            if (pathInfo.matches("^/.+/recipes.*$")) {
                 req.setAttribute("userId", userId);
                 // forward to another servlet
                 return;
             }
 
-            if (pathInfo.matches("/.+/?$")) {
+            if (pathInfo.matches("^/.+/?$")) {
                 try {
                     User requestedUser = userController.getUserById(userId).orElseThrow();
                     JsonSerializationUtil.serializeObjectToJsonStream(requestedUser, resp.getWriter());
@@ -79,13 +79,12 @@ public class UsersServlet extends HttpServlet {
         try {
             String pathInfo = req.getPathInfo();
 
-            if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("/.+/recipes$")) { //
+            if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/.+/recipes$")) { //
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 return;
             }
 
             if (pathInfo == null || pathInfo.equals("/")) {
-                JsonSerializationUtil.deserializeObjectFromJson(req.getReader(), User.class);
                 // Simulate successful POST operation
                 resp.setStatus(HttpServletResponse.SC_CREATED);
                 resp.getWriter().println("{\"id\" : 11}");
@@ -106,8 +105,49 @@ public class UsersServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) {
 
+        try {
+
+            String pathInfo = req.getPathInfo();
+
+            if (pathInfo == null || pathInfo.equals("/")) {
+                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                return;
+            }
+
+            int userId;
+
+            try {
+                userId = Integer.parseInt(pathInfo.substring(1).split("/")[0]);
+            } catch (NumberFormatException e) {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                return;
+            }
+
+            if (userId <= 0 || userId > 10) {
+                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                return;
+            }
+
+            if (pathInfo.matches("^/[^/]+/recipes/[^/]+$")) {
+                req.setAttribute("userId", userId);
+                // forward
+                return;
+            }
+
+            if (pathInfo.matches("^/[^/]+/?$")) {
+                // simulating successful PUT operation
+                resp.setStatus(HttpServletResponse.SC_OK);
+                resp.getWriter().println(String.format("{\"id\" : %d}", userId));
+                return;
+            }
+
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+
+        } catch (Exception e) {
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        }
     }
 
     @Override
@@ -130,13 +170,18 @@ public class UsersServlet extends HttpServlet {
                 return;
             }
 
-            if (pathInfo.matches("/.+/recipes/.*$")) {
+            if (userId <= 0 || userId > 10) {
+                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                return;
+            }
+
+            if (pathInfo.matches("^/[^/]+/recipes/[^/]+$")) {
                 req.setAttribute("userId", userId);
                 // forward to another servlet
                 return;
             }
 
-            if (pathInfo.matches("/[^/]+/?$")) {
+            if (pathInfo.matches("^/[^/]+/?$")) {
                 // simulating successful DELETE operation
                 resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 return;
