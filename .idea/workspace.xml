@@ -9,8 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create CharsetRequestFilter and CharsetResponseFilter classes that are responsible for setting UTF-8 charset for both request and response.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/ExceptionHandleUtil.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create ExceptionHandleUtil utility class that is responsible for handling all exceptions in servlets and setting corresponding status codes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" afterDir="false" />
     </list>
@@ -273,7 +272,7 @@
       <workItem from="1696054518086" duration="19420000" />
       <workItem from="1696087033675" duration="8138000" />
       <workItem from="1696179669715" duration="20000" />
-      <workItem from="1696426575032" duration="5574000" />
+      <workItem from="1696426575032" duration="6072000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -651,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696427748159</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Create ExceptionHandleUtil utility class that is responsible for handling all exceptions in servlets and setting corresponding status codes.">
+      <option name="closed" value="true" />
+      <created>1696437896669</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1696437896669</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -659,7 +666,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="FIX: code style in HibernateUtil class: name of private static field is not uppercase." />
     <MESSAGE value="Add HibernateUtilTest class in which functionality of HibernateUtil class is tested." />
     <MESSAGE value="Provide better test methods names" />
     <MESSAGE value="Add class JsonSerializationUtilTest which provide test for JsonSerializationUtil class." />
@@ -684,6 +690,7 @@
     <MESSAGE value="Move servlets package to controller package." />
     <MESSAGE value="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory." />
     <MESSAGE value="Create CharsetRequestFilter and CharsetResponseFilter classes that are responsible for setting UTF-8 charset for both request and response." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create CharsetRequestFilter and CharsetResponseFilter classes that are responsible for setting UTF-8 charset for both request and response." />
+    <MESSAGE value="Create ExceptionHandleUtil utility class that is responsible for handling all exceptions in servlets and setting corresponding status codes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create ExceptionHandleUtil utility class that is responsible for handling all exceptions in servlets and setting corresponding status codes." />
   </component>
 </project>

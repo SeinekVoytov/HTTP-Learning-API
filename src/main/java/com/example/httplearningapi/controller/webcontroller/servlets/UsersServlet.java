@@ -2,6 +2,7 @@ package com.example.httplearningapi.controller.webcontroller.servlets;
 
 import com.example.httplearningapi.model.user.User;
 import com.example.httplearningapi.controller.UserController;
+import com.example.httplearningapi.util.ExceptionHandleUtil;
 import com.example.httplearningapi.util.JsonSerializationUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -30,9 +31,7 @@ public class UsersServlet extends HttpServlet {
 
                 String queryString = req.getQueryString();
                 if (queryString != null) {
-                    users = users.stream()
-                            .filter(this.createPredicateForFilteringUsersByQueryParams(req))
-                            .collect(Collectors.toList());
+                    users = this.filterUsersByQueryParams(req, users);
                 }
 
                 JsonSerializationUtil.serializeObjectToJsonStream(users, resp.getWriter());
@@ -40,14 +39,7 @@ public class UsersServlet extends HttpServlet {
                 return;
             }
 
-            int userId;
-
-            try {
-                userId = Integer.parseInt(pathInfo.split("/")[1]);
-            } catch (NumberFormatException e) {
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                return;
-            }
+            int userId = Integer.parseInt(pathInfo.split("/")[1]);
 
             if (pathInfo.matches("^/.+/recipes.*$")) {
                 req.setAttribute("userId", userId);
@@ -56,19 +48,15 @@ public class UsersServlet extends HttpServlet {
             }
 
             if (pathInfo.matches("^/.+/?$")) {
-                try {
-                    User requestedUser = userController.getUserById(userId).orElseThrow();
-                    JsonSerializationUtil.serializeObjectToJsonStream(requestedUser, resp.getWriter());
-                } catch (NoSuchElementException e) {
-                    resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-                }
+                User requestedUser = userController.getUserById(userId).orElseThrow();
+                JsonSerializationUtil.serializeObjectToJsonStream(requestedUser, resp.getWriter());
                 return;
             }
 
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
 
         } catch (Exception e) {
-            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            ExceptionHandleUtil.processException(e, resp);
         }
     }
 
@@ -78,7 +66,7 @@ public class UsersServlet extends HttpServlet {
         try {
             String pathInfo = req.getPathInfo();
 
-            if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/.+/recipes$")) { //
+            if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/[^/]+/recipes$")) { //
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 return;
             }
@@ -90,16 +78,12 @@ public class UsersServlet extends HttpServlet {
                 return;
             }
 
-            try {
-                int userId = Integer.parseInt(pathInfo.substring(1, pathInfo.indexOf('/', 1)));
-                req.setAttribute("userId", userId);
-                // forward to the recipes servlet
-            } catch (NumberFormatException e) {
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            }
+            int userId = Integer.parseInt(pathInfo.substring(1, pathInfo.indexOf('/', 1)));
+            req.setAttribute("userId", userId);
+            // forward to the recipes servlet
 
         } catch (Exception e) {
-            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            ExceptionHandleUtil.processException(e, resp);
         }
     }
 
@@ -115,14 +99,7 @@ public class UsersServlet extends HttpServlet {
                 return;
             }
 
-            int userId;
-
-            try {
-                userId = Integer.parseInt(pathInfo.substring(1).split("/")[0]);
-            } catch (NumberFormatException e) {
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                return;
-            }
+            int userId = Integer.parseInt(pathInfo.substring(1).split("/")[0]);
 
             if (userId <= 0 || userId > 10) {
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
@@ -145,7 +122,7 @@ public class UsersServlet extends HttpServlet {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
 
         } catch (Exception e) {
-            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            ExceptionHandleUtil.processException(e, resp);
         }
     }
 
@@ -160,14 +137,7 @@ public class UsersServlet extends HttpServlet {
                 return;
             }
 
-            int userId;
-
-            try {
-                userId = Integer.parseInt(pathInfo.substring(1).split("/")[0]);
-            } catch (NumberFormatException e) {
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                return;
-            }
+            int userId = Integer.parseInt(pathInfo.substring(1).split("/")[0]);
 
             if (userId <= 0 || userId > 10) {
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
@@ -189,19 +159,13 @@ public class UsersServlet extends HttpServlet {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
 
         } catch (Exception e) {
-            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            ExceptionHandleUtil.processException(e, resp);
         }
     }
 
     @Override
     protected void doHead(HttpServletRequest req, HttpServletResponse resp) {
 
-        try {
-
-
-        } catch (Exception e) {
-            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        }
     }
 
     @Override
@@ -226,5 +190,11 @@ public class UsersServlet extends HttpServlet {
                         (email == null || email.equals(user.getEmail())) &&
                         (phone == null || phone.equals(user.getPhone())) &&
                         (website == null || website.equals(user.getWebsite()));
+    }
+
+    private List<User> filterUsersByQueryParams(HttpServletRequest req, List<User> targetList) {
+        return targetList.stream()
+                .filter(this.createPredicateForFilteringUsersByQueryParams(req))
+                .collect(Collectors.toList());
     }
 }
