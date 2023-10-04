@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Replace manual URI checking with regural expression mapping.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add doPut method implementation to UsersServlet.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JsonSerializationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/JsonSerializationUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +270,8 @@
       <workItem from="1695967315313" duration="6489000" />
       <workItem from="1696003900560" duration="5864000" />
       <workItem from="1696054518086" duration="19420000" />
-      <workItem from="1696087033675" duration="3711000" />
+      <workItem from="1696087033675" duration="8138000" />
+      <workItem from="1696179669715" duration="20000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -617,7 +617,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696142012163</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Add doPut method implementation to UsersServlet.">
+      <option name="closed" value="true" />
+      <created>1696146088992</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1696146088992</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +633,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add class JsonSerializationUtil class that is responsible for serializing objects to JSON." />
     <MESSAGE value="FIX: util class has public constructor. Add private no-args construstor to JsonSerializationUtil class." />
     <MESSAGE value="Annotate User, Company, Geo, Address classes as ready for serialization to JSON." />
     <MESSAGE value="Add messages for each test method." />
@@ -650,6 +657,18 @@
     <MESSAGE value="FIX: bug with user id validating in doGet method" />
     <MESSAGE value="Add ContentTypeResponseFilter class which is responsible for setting content type to &quot;application/json&quot; for each response." />
     <MESSAGE value="Replace manual URI checking with regural expression mapping." />
-    <option name="LAST_COMMIT_MESSAGE" value="Replace manual URI checking with regural expression mapping." />
+    <MESSAGE value="Add doPut method implementation to UsersServlet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add doPut method implementation to UsersServlet." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/httplearningapi/servlets/UsersServlet.java</url>
+          <line>201</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
