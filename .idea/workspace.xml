@@ -9,7 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Move servlets package to controller package." />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/filters/CharsetRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/filters/CharsetResponseFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -269,7 +273,7 @@
       <workItem from="1696054518086" duration="19420000" />
       <workItem from="1696087033675" duration="8138000" />
       <workItem from="1696179669715" duration="20000" />
-      <workItem from="1696426575032" duration="335000" />
+      <workItem from="1696426575032" duration="1019000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -631,7 +635,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696426874496</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory.">
+      <option name="closed" value="true" />
+      <created>1696427142851</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1696427142851</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +651,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Annotate User, Company, Geo, Address classes as ready for serialization to JSON." />
     <MESSAGE value="Add messages for each test method." />
     <MESSAGE value="FIX: code style in HibernateUtil class: name of private static field is not uppercase." />
     <MESSAGE value="Add HibernateUtilTest class in which functionality of HibernateUtil class is tested." />
@@ -664,6 +675,7 @@
     <MESSAGE value="Replace manual URI checking with regural expression mapping." />
     <MESSAGE value="Add doPut method implementation to UsersServlet." />
     <MESSAGE value="Move servlets package to controller package." />
-    <option name="LAST_COMMIT_MESSAGE" value="Move servlets package to controller package." />
+    <MESSAGE value="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory." />
   </component>
 </project>
