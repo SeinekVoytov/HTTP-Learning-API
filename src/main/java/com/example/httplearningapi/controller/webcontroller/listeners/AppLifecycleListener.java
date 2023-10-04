@@ -1,4 +1,4 @@
-package com.example.httplearningapi.controller.servlets;
+package com.example.httplearningapi.controller.webcontroller.listeners;
 
 import com.example.httplearningapi.util.HibernateUtil;
 import jakarta.servlet.ServletContextEvent;

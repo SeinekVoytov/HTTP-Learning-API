@@ -1,4 +1,4 @@
-package com.example.httplearningapi.controller.servlets;
+package com.example.httplearningapi.controller.webcontroller.servlets;
 
 import com.example.httplearningapi.model.user.User;
 import com.example.httplearningapi.controller.UserController;

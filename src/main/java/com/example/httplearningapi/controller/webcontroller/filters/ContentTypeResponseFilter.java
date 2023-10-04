@@ -1,4 +1,4 @@
-package com.example.httplearningapi.controller.servlets;
+package com.example.httplearningapi.controller.webcontroller.filters;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
