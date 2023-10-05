@@ -41,13 +41,13 @@ public class UsersServlet extends HttpServlet {
 
             int userId = extractUserIdFromURI(pathInfo);
 
-            if (pathInfo.matches("^/.+/recipes.*$")) {
+            if (pathInfo.matches("^/[^/]+/recipes.*$")) {
                 req.setAttribute("userId", userId);
                 // forward to another servlet
                 return;
             }
 
-            if (pathInfo.matches("^/.+/?$")) {
+            if (pathInfo.matches("^/[^/]+/?$")) {
                 User requestedUser = userController.getUserById(userId).orElseThrow();
                 JsonSerializationUtil.serializeObjectToJsonStream(requestedUser, resp.getWriter());
                 return;
@@ -97,17 +97,17 @@ public class UsersServlet extends HttpServlet {
 
     @Override
     protected void doHead(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.  doHead(req, resp);
+        super.doHead(req, resp);
     }
 
     @Override
     protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        super.doOptions(req, resp);
     }
 
     @Override
     protected void doTrace(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        super.doTrace(req, resp);
     }
 
     private void processPutOrDeleteRequest(HttpServletRequest req, HttpServletResponse resp) {
