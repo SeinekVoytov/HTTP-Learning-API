@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create ExceptionHandleUtil utility class that is responsible for handling all exceptions in servlets and setting corresponding status codes.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Improve exception handling with ExceptionHandleUtil class. Remove unnecessary try/catch statements.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" afterDir="false" />
     </list>
@@ -272,7 +275,7 @@
       <workItem from="1696054518086" duration="19420000" />
       <workItem from="1696087033675" duration="8138000" />
       <workItem from="1696179669715" duration="20000" />
-      <workItem from="1696426575032" duration="6072000" />
+      <workItem from="1696426575032" duration="16370000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -658,7 +661,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696437896669</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Improve exception handling with ExceptionHandleUtil class. Remove unnecessary try/catch statements.">
+      <option name="closed" value="true" />
+      <created>1696438375568</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1696438375568</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,7 +677,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add HibernateUtilTest class in which functionality of HibernateUtil class is tested." />
     <MESSAGE value="Provide better test methods names" />
     <MESSAGE value="Add class JsonSerializationUtilTest which provide test for JsonSerializationUtil class." />
     <MESSAGE value="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency." />
@@ -691,6 +701,7 @@
     <MESSAGE value="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory." />
     <MESSAGE value="Create CharsetRequestFilter and CharsetResponseFilter classes that are responsible for setting UTF-8 charset for both request and response." />
     <MESSAGE value="Create ExceptionHandleUtil utility class that is responsible for handling all exceptions in servlets and setting corresponding status codes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create ExceptionHandleUtil utility class that is responsible for handling all exceptions in servlets and setting corresponding status codes." />
+    <MESSAGE value="Improve exception handling with ExceptionHandleUtil class. Remove unnecessary try/catch statements." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve exception handling with ExceptionHandleUtil class. Remove unnecessary try/catch statements." />
   </component>
 </project>
