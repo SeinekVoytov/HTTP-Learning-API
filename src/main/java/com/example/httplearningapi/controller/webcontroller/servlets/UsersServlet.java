@@ -39,7 +39,7 @@ public class UsersServlet extends HttpServlet {
                 return;
             }
 
-            int userId = Integer.parseInt(pathInfo.split("/")[1]);
+            int userId = extractUserIdFromURI(pathInfo);
 
             if (pathInfo.matches("^/.+/recipes.*$")) {
                 req.setAttribute("userId", userId);
@@ -76,7 +76,7 @@ public class UsersServlet extends HttpServlet {
                 return;
             }
 
-            int userId = Integer.parseInt(pathInfo.substring(1, pathInfo.indexOf('/', 1)));
+            int userId = extractUserIdFromURI(pathInfo);
             req.setAttribute("userId", userId);
             // forward to the recipes servlet
 
@@ -93,11 +93,11 @@ public class UsersServlet extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) {
         processPutOrDeleteRequest(req, resp);
-;    }
+    }
 
     @Override
-    protected void doHead(HttpServletRequest req, HttpServletResponse resp) {
-
+    protected void doHead(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.  doHead(req, resp);
     }
 
     @Override
@@ -120,7 +120,7 @@ public class UsersServlet extends HttpServlet {
                 return;
             }
 
-            int userId = Integer.parseInt(pathInfo.substring(1).split("/")[0]);
+            int userId = extractUserIdFromURI(pathInfo);
 
             if (userId <= 0 || userId > 10) {
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
@@ -155,12 +155,12 @@ public class UsersServlet extends HttpServlet {
 
     private void simulateSuccessfulPostOperation(HttpServletResponse resp) throws IOException {
         resp.setStatus(HttpServletResponse.SC_CREATED);
-        resp.getWriter().println("{\"id\" : 11}");
+        resp.getWriter().print("{\"id\" : 11}");
     }
 
     private void simulateSuccessfulPutOperation(HttpServletResponse resp, int id) throws IOException {
         resp.setStatus(HttpServletResponse.SC_OK);
-        resp.getWriter().println(String.format("{\"id\" : %d}", id));
+        resp.getWriter().print(String.format("{\"id\" : %d}", id));
     }
 
     private Predicate<User> createPredicateForFilteringUsersByQueryParams(HttpServletRequest req) {
@@ -181,5 +181,9 @@ public class UsersServlet extends HttpServlet {
         return targetList.stream()
                 .filter(this.createPredicateForFilteringUsersByQueryParams(req))
                 .collect(Collectors.toList());
+    }
+
+    private int extractUserIdFromURI(String pathInfo) {
+        return Integer.parseInt(pathInfo.substring(1).split("/")[0]);
     }
 }
