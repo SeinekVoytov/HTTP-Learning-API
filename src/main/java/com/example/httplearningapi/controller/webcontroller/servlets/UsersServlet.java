@@ -16,42 +16,22 @@ public class UsersServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        try {
-            Service service = new UserService();
-            service.handleGet(req.getPathInfo(), req, resp);
-        } catch (Exception e) {
-            ExceptionHandleUtil.processException(e, resp);
-        }
+        this.handleRequest((service) -> service.handleGet(req.getPathInfo(), req, resp), resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
-        try {
-            Service service = new UserService();
-            service.handlePost(req.getPathInfo(), req, resp);
-        } catch (Exception e) {
-            ExceptionHandleUtil.processException(e, resp);
-        }
+        this.handleRequest((service) -> service.handlePost(req.getPathInfo(), req, resp), resp);
     }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) {
-        try {
-            Service service = new UserService();
-            service.handlePut(req.getPathInfo(), req, resp);
-        } catch (Exception e) {
-            ExceptionHandleUtil.processException(e, resp);
-        }
+        this.handleRequest((service) -> service.handlePut(req.getPathInfo(), req, resp), resp);
     }
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) {
-        try {
-            Service service = new UserService();
-            service.handleDelete(req.getPathInfo(), req, resp);
-        } catch (Exception e) {
-            ExceptionHandleUtil.processException(e, resp);
-        }
+        this.handleRequest((service) -> service.handleDelete(req.getPathInfo(), req, resp), resp);
     }
 
     @Override
@@ -67,5 +47,19 @@ public class UsersServlet extends HttpServlet {
     @Override
     protected void doTrace(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doTrace(req, resp);
+    }
+
+    private void handleRequest(HandleProcessor<Service> handleProcessor, HttpServletResponse resp) {
+        try {
+            Service service = new UserService();
+            handleProcessor.process(service);
+        } catch (Exception e) {
+            ExceptionHandleUtil.processException(e, resp);
+        }
+    }
+
+    @FunctionalInterface
+    private interface HandleProcessor<T> {
+        void process(T t) throws IOException;
     }
 }
