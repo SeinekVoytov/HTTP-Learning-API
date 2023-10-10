@@ -9,12 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Rename UserControllerTest to UserDaoTest.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,23 +292,7 @@
       <workItem from="1696179669715" duration="20000" />
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
-      <workItem from="1696939037410" duration="7111000" />
-    </task>
-    <task id="LOCAL-00006" summary="Add field country to Address class.">
-      <option name="closed" value="true" />
-      <created>1695667405175</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1695667405175</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Create database. Add data to Addreses &amp; Geos tables.">
-      <option name="closed" value="true" />
-      <created>1695669089056</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1695669089056</updated>
+      <workItem from="1696939037410" duration="10411000" />
     </task>
     <task id="LOCAL-00008" summary="Add Hibernate dependency to pom.xml project. Configure Hibernate by hibernate.cfg.xml.">
       <option name="closed" value="true" />
@@ -689,7 +670,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696942859645</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Remove all business logic from servlet and move it to new UserService class.">
+      <option name="closed" value="true" />
+      <created>1696948073255</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1696948073255</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface.">
+      <option name="closed" value="true" />
+      <created>1696948712015</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1696948712015</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -697,8 +694,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create AppLifecycleListener to catch moments of initializing and destroying servlets to init and close Session Factory in HibernateUtil class." />
-    <MESSAGE value="Create extension for tests to create and close SessionFactory only once" />
     <MESSAGE value="Create extension for tests to create and close SessionFactory only once." />
     <MESSAGE value="Add doDelete method implementation to UsersServlet." />
     <MESSAGE value="Add equals and hashcode methods to User, Company, Address and Geo classes." />
@@ -722,6 +717,8 @@
     <MESSAGE value="Add implementations for doTrace and doOptions methods of UsersServlet." />
     <MESSAGE value="Create separate Dao interface. Rename UserController to UserDao. Create separate directories for dao's and for entities." />
     <MESSAGE value="Rename UserControllerTest to UserDaoTest." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename UserControllerTest to UserDaoTest." />
+    <MESSAGE value="Remove all business logic from servlet and move it to new UserService class." />
+    <MESSAGE value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
   </component>
 </project>

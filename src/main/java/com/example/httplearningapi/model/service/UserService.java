@@ -29,21 +29,20 @@ public class UserService implements Service {
             }
 
             JsonSerializationUtil.serializeObjectToJsonStream(users, resp.getWriter());
-            resp.setStatus(HttpServletResponse.SC_OK);
             return;
         }
 
         int userId = extractUserIdFromURI(pathInfo);
+        User user = userDao.getById(userId).orElseThrow();
 
         if (pathInfo.matches("^/[^/]+/recipes.*$")) {
-            req.setAttribute("userId", userId);
+            req.setAttribute("user", user);
             // forward to another servlet
             return;
         }
 
         if (pathInfo.matches("^/[^/]+/?$")) {
-            User requestedUser = userDao.getById(userId).orElseThrow();
-            JsonSerializationUtil.serializeObjectToJsonStream(requestedUser, resp.getWriter());
+            JsonSerializationUtil.serializeObjectToJsonStream(user, resp.getWriter());
             return;
         }
 
@@ -64,7 +63,9 @@ public class UserService implements Service {
         }
 
         int userId = extractUserIdFromURI(pathInfo);
-        req.setAttribute("userId", userId);
+        User user = userDao.getById(userId).orElseThrow();
+
+        req.setAttribute("user", user);
         // forward to the recipes servlet
     }
 
@@ -87,13 +88,10 @@ public class UserService implements Service {
 
             int userId = extractUserIdFromURI(pathInfo);
 
-            if (userId <= 0 || userId > 10) {
-                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-                return;
-            }
+            User user = userDao.getById(userId).orElseThrow();
 
             if (pathInfo.matches("^/[^/]+/recipes/[^/]+$")) {
-                req.setAttribute("userId", userId);
+                req.setAttribute("user", user);
                 // forward to another servlet
                 return;
             }
