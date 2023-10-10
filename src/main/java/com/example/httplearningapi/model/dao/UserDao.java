@@ -1,7 +1,7 @@
-package com.example.httplearningapi.controller;
+package com.example.httplearningapi.model.dao;
 
 import com.example.httplearningapi.util.HibernateUtil;
-import com.example.httplearningapi.model.user.User;
+import com.example.httplearningapi.model.entities.user.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -9,8 +9,9 @@ import org.hibernate.Transaction;
 import java.util.List;
 import java.util.Optional;
 
-public class UserController {
-    public Optional<User> getUserById(int id) {
+public class UserDao implements Dao<User> {
+    @Override
+    public Optional<User> getById(int id) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Transaction transaction = null;
         User user = null;
@@ -29,7 +30,8 @@ public class UserController {
         return Optional.ofNullable(user);
     }
 
-    public List<User> getUsers() {
+    @Override
+    public List<User> getAll() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Transaction transaction = null;
         List<User> users = null;

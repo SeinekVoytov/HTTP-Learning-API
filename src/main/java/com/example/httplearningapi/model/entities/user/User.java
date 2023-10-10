@@ -1,4 +1,4 @@
-package com.example.httplearningapi.model.user;
+package com.example.httplearningapi.model.entities.user;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import jakarta.persistence.*;

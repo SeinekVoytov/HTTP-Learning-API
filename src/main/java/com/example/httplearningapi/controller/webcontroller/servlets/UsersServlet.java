@@ -1,7 +1,7 @@
 package com.example.httplearningapi.controller.webcontroller.servlets;
 
-import com.example.httplearningapi.model.user.User;
-import com.example.httplearningapi.controller.UserController;
+import com.example.httplearningapi.model.entities.user.User;
+import com.example.httplearningapi.model.dao.UserDao;
 import com.example.httplearningapi.util.ExceptionHandleUtil;
 import com.example.httplearningapi.util.JsonSerializationUtil;
 import jakarta.servlet.ServletException;
@@ -22,12 +22,12 @@ public class UsersServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 
         try {
-            final UserController userController = new UserController();
+            final UserDao userDao = new UserDao();
             String pathInfo = req.getPathInfo();
 
             if (pathInfo == null || pathInfo.equals("/")) {
 
-                List<User> users = userController.getUsers();
+                List<User> users = userDao.getAll();
 
                 String queryString = req.getQueryString();
                 if (queryString != null) {
@@ -48,7 +48,7 @@ public class UsersServlet extends HttpServlet {
             }
 
             if (pathInfo.matches("^/[^/]+/?$")) {
-                User requestedUser = userController.getUserById(userId).orElseThrow();
+                User requestedUser = userDao.getById(userId).orElseThrow();
                 JsonSerializationUtil.serializeObjectToJsonStream(requestedUser, resp.getWriter());
                 return;
             }

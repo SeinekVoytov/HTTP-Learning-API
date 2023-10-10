@@ -1,7 +1,7 @@
 package controllertest;
 
-import com.example.httplearningapi.controller.UserController;
-import com.example.httplearningapi.model.user.User;
+import com.example.httplearningapi.model.dao.UserDao;
+import com.example.httplearningapi.model.entities.user.User;
 import extensions.HibernateUtilSetupExtension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,11 +15,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class UserControllerTest {
 
     private static final int NUMBER_OF_USERS_IN_DATABASE = 10;
-    private static final UserController USER_CONTROLLER = new UserController();
+    private static final UserDao USER_CONTROLLER = new UserDao();
 
     @Test
     public void retrievedUserFromDBIsNotNullTest() {
-        Optional<User> testUserOptional = USER_CONTROLLER.getUserById(1);
+        Optional<User> testUserOptional = USER_CONTROLLER.getById(1);
         if (testUserOptional.isEmpty()) {
             fail("User is not retrieved from Database");
         }
@@ -32,7 +32,7 @@ public class UserControllerTest {
 
     @Test
     public void numberOfUsersRetrievedFromDBIsEqualToExpectedNumberTest() {
-        List<User> users = USER_CONTROLLER.getUsers();
+        List<User> users = USER_CONTROLLER.getAll();
         assertEquals(NUMBER_OF_USERS_IN_DATABASE, users.size(),
                 "Actual number of Users in Database is not equal to Expected number");
     }

@@ -8,10 +8,10 @@
         <property name="hibernate.show_sql ">true</property>
         <property name="hbm2ddl.auto">validate</property>
 
-        <mapping class="com.example.httplearningapi.model.user.User"/>
-        <mapping class="com.example.httplearningapi.model.user.Company"/>
-        <mapping class="com.example.httplearningapi.model.user.Address"/>
-        <mapping class="com.example.httplearningapi.model.user.Geo"/>
+        <mapping class="com.example.httplearningapi.model.entities.user.User"/>
+        <mapping class="com.example.httplearningapi.model.entities.user.Company"/>
+        <mapping class="com.example.httplearningapi.model.entities.user.Address"/>
+        <mapping class="com.example.httplearningapi.model.entities.user.Geo"/>
 
     </session-factory>
 </hibernate-configuration>

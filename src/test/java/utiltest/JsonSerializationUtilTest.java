@@ -1,7 +1,7 @@
 package utiltest;
 
-import com.example.httplearningapi.controller.UserController;
-import com.example.httplearningapi.model.user.User;
+import com.example.httplearningapi.model.dao.UserDao;
+import com.example.httplearningapi.model.entities.user.User;
 import com.example.httplearningapi.util.JsonSerializationUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import extensions.HibernateUtilSetupExtension;
@@ -39,8 +39,8 @@ public class JsonSerializationUtilTest {
             "}";
     @Test
     public void jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest() {
-        UserController userController = new UserController();
-        User user = userController.getUserById(1)
+        UserDao userController = new UserDao();
+        User user = userController.getById(1)
                         .orElseGet(Assertions::fail);
 
         try {
@@ -53,8 +53,8 @@ public class JsonSerializationUtilTest {
 
     @Test
     public void jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest() {
-        UserController userController = new UserController();
-        User user = userController.getUserById(1)
+        UserDao userDao = new UserDao();
+        User user = userDao.getById(1)
                 .orElseGet(Assertions::fail);
 
         try {
@@ -68,8 +68,8 @@ public class JsonSerializationUtilTest {
 
     @Test
     public void testUserJsonDeserializationAndEqualityWithDBUser() {
-        UserController userController = new UserController();
-        User expectedUser = userController.getUserById(1)
+        UserDao userDao = new UserDao();
+        User expectedUser = userDao.getById(1)
                 .orElseGet(Assertions::fail);
 
         try {
