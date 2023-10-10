@@ -1,4 +1,4 @@
-package controllertest;
+package daotest;
 
 import com.example.httplearningapi.model.dao.UserDao;
 import com.example.httplearningapi.model.entities.user.User;
@@ -12,7 +12,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(HibernateUtilSetupExtension.class)
-public class UserControllerTest {
+public class UserDaoTest {
 
     private static final int NUMBER_OF_USERS_IN_DATABASE = 10;
     private static final UserDao USER_CONTROLLER = new UserDao();
