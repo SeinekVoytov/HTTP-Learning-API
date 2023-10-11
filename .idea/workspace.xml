@@ -9,9 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Prescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Prescription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/User.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PrescriptionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/daotest/PrescriptionDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
+  <component name="RunManager" selected="JUnit.Tests">
     <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -144,6 +145,21 @@
       <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
       <option name="METHOD_NAME" value="userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrescriptionDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daotest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daotest" />
+      <option name="MAIN_CLASS_NAME" value="daotest.PrescriptionDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -262,6 +278,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
+      <item itemvalue="JUnit.PrescriptionDaoTest" />
       <item itemvalue="JUnit.UserDaoTest" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
@@ -270,6 +287,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PrescriptionDaoTest" />
         <item itemvalue="JUnit.UserDaoTest" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
@@ -309,15 +327,7 @@
       <workItem from="1696179669715" duration="20000" />
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
-      <workItem from="1696939037410" duration="24415000" />
-    </task>
-    <task id="LOCAL-00013" summary="Provide User, Address, Company, Geo classes with toString() method for testing;">
-      <option name="closed" value="true" />
-      <created>1695736475777</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1695736475777</updated>
+      <workItem from="1696939037410" duration="26133000" />
     </task>
     <task id="LOCAL-00014" summary="Add UserController class which provide R-read operation from DB for one or all users.">
       <option name="closed" value="true" />
@@ -703,7 +713,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697027258060</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method.">
+      <option name="closed" value="true" />
+      <created>1697028735402</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1697028735402</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -754,7 +772,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Provide test for JsonSerializationUtil.deserializeObjectFromJson method" />
     <MESSAGE value="FIX: bug in parsing URI like .../users/ with extra slash character" />
     <MESSAGE value="Add doPost method implementation for UsersServlet" />
     <MESSAGE value="Improve code readability for doPost, doGet and doDelete methods of UsersServlet." />
@@ -779,17 +796,7 @@
     <MESSAGE value="Add patient_id field to Prescription class which represents corresponding User object id." />
     <MESSAGE value="FIX: problem with serializing java.sql.Date to JSON by Jackson. Add JsonFormat annotation to ensure correct deserialization format" />
     <MESSAGE value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method." />
   </component>
 </project>

@@ -19,7 +19,6 @@ public class UserService implements Service {
     @Override
     public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-
         if (pathInfo == null || pathInfo.equals("/")) {
 
             List<User> users = userDao.getAll();
