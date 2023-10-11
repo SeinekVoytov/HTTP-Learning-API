@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 
 import java.util.Objects;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "Addresses")
 @JsonAutoDetect

@@ -8,6 +8,7 @@ import jakarta.persistence.Table;
 
 import java.util.Objects;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "Geos")
 @JsonAutoDetect

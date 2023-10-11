@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 import java.sql.Date;
 import java.util.Objects;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "Prescriptions")
 @JsonAutoDetect
