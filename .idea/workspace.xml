@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add patient_id field to Prescription class which represents corresponding User object id.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes.">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Prescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Prescription.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/User.java" afterDir="false" />
     </list>
@@ -309,23 +309,7 @@
       <workItem from="1696179669715" duration="20000" />
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
-      <workItem from="1696939037410" duration="23499000" />
-    </task>
-    <task id="LOCAL-00011" summary="Annotate mapped by Hibernate classes User, Address, Geo, Company.">
-      <option name="closed" value="true" />
-      <created>1695724719176</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1695724719176</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add HibernateUtil class that is responsive for storing SessionFactory object while application is running.">
-      <option name="closed" value="true" />
-      <created>1695731705828</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1695731705828</updated>
+      <workItem from="1696939037410" duration="24415000" />
     </task>
     <task id="LOCAL-00013" summary="Provide User, Address, Company, Geo classes with toString() method for testing;">
       <option name="closed" value="true" />
@@ -703,7 +687,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697026666810</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="FIX: problem with serializing java.sql.Date to JSON by Jackson. Add JsonFormat annotation to ensure correct deserialization format">
+      <option name="closed" value="true" />
+      <created>1697027076424</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1697027076424</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes.">
+      <option name="closed" value="true" />
+      <created>1697027258060</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1697027258060</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -754,8 +754,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="FIX: equals and hashcode methods: delete id parameter from comparing" />
-    <MESSAGE value="Add JsonSerializationUtil.deserializeObjectFromJson method. Add property FAIL_ON_UNKNOWN_PROPERTIES to Mapper." />
     <MESSAGE value="Provide test for JsonSerializationUtil.deserializeObjectFromJson method" />
     <MESSAGE value="FIX: bug in parsing URI like .../users/ with extra slash character" />
     <MESSAGE value="Add doPost method implementation for UsersServlet" />
@@ -779,6 +777,19 @@
     <MESSAGE value="Rearrange code in UserService class to provide better readability." />
     <MESSAGE value="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate." />
     <MESSAGE value="Add patient_id field to Prescription class which represents corresponding User object id." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add patient_id field to Prescription class which represents corresponding User object id." />
+    <MESSAGE value="FIX: problem with serializing java.sql.Date to JSON by Jackson. Add JsonFormat annotation to ensure correct deserialization format" />
+    <MESSAGE value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

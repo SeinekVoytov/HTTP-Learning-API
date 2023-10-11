@@ -126,7 +126,7 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", website='" + website + '\'' +
                 ", company=" + company +
-//                ", prescriptions=" + prescriptions +
+                ", prescriptions=" + prescriptions +
                 '}';
     }
 }

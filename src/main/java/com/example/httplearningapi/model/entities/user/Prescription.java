@@ -18,7 +18,7 @@ public class Prescription {
     private int id;
 
     @Column(name = "patient_id", insertable = false, updatable = false)
-    private int patient_id;
+    private int patientId;
 
     @ManyToOne
     @JoinColumn(name = "patient_id")
@@ -46,12 +46,12 @@ public class Prescription {
         this.id = id;
     }
 
-    public int getPatient_id() {
-        return patient_id;
+    public int getPatientId() {
+        return patientId;
     }
 
-    public void setPatient_id(int patient_id) {
-        this.patient_id = patient_id;
+    public void setPatientId(int patient_id) {
+        this.patientId = patient_id;
     }
 
     public User getPatient() {
@@ -103,7 +103,7 @@ public class Prescription {
     public String toString() {
         return "Prescription{" +
                 "id=" + id +
-                ", patient=" + patient +
+                ", patientId=" + patientId +
                 ", pharmacistName='" + pharmacistName + '\'' +
                 ", medicationName='" + medicationName + '\'' +
                 ", expiryDate=" + expiryDate +
