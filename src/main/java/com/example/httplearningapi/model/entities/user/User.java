@@ -1,9 +1,11 @@
 package com.example.httplearningapi.model.entities.user;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Objects;
+import java.util.List;
 
 @Entity
 @Table(name = "Users")
@@ -16,17 +18,32 @@ public class User {
 
     private String name;
     private String email;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Address address;
+
     @Column(name = "phone_number")
     private String phone;
     private String website;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Company company;
 
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<Prescription> prescriptions;
+
     public User() {
+    }
+
+    public List<Prescription> getPrescriptions() {
+        return prescriptions;
+    }
+
+    public void setPrescriptions(List<Prescription> prescriptions) {
+        this.prescriptions = prescriptions;
     }
 
     public int getId() {
@@ -108,6 +125,7 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", website='" + website + '\'' +
                 ", company=" + company +
+//                ", prescriptions=" + prescriptions +
                 '}';
     }
 }
