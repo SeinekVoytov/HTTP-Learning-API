@@ -1,6 +1,7 @@
 package com.example.httplearningapi.model.entities.user;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -30,6 +31,7 @@ public class Prescription {
     private String medicationName;
 
     @Column(name = "expiry_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "EST")
     private Date expiryDate;
 
     public Prescription() {

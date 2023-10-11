@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add patient_id field to Prescription class which represents corresponding User object id.">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Prescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Prescription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +29,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -296,15 +309,7 @@
       <workItem from="1696179669715" duration="20000" />
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
-      <workItem from="1696939037410" duration="23149000" />
-    </task>
-    <task id="LOCAL-00010" summary="Add mapping classes to hibernate.cfg.xml.">
-      <option name="closed" value="true" />
-      <created>1695710357210</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1695710357210</updated>
+      <workItem from="1696939037410" duration="23499000" />
     </task>
     <task id="LOCAL-00011" summary="Annotate mapped by Hibernate classes User, Address, Geo, Company.">
       <option name="closed" value="true" />
@@ -690,15 +695,65 @@
       <option name="project" value="LOCAL" />
       <updated>1697025764454</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Add patient_id field to Prescription class which represents corresponding User object id.">
+      <option name="closed" value="true" />
+      <created>1697026666810</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1697026666810</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="presciptions_branch" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add equals and hashcode methods to User, Company, Address and Geo classes." />
     <MESSAGE value="FIX: equals and hashcode methods: delete id parameter from comparing" />
     <MESSAGE value="Add JsonSerializationUtil.deserializeObjectFromJson method. Add property FAIL_ON_UNKNOWN_PROPERTIES to Mapper." />
     <MESSAGE value="Provide test for JsonSerializationUtil.deserializeObjectFromJson method" />
@@ -723,6 +778,7 @@
     <MESSAGE value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
     <MESSAGE value="Rearrange code in UserService class to provide better readability." />
     <MESSAGE value="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate." />
+    <MESSAGE value="Add patient_id field to Prescription class which represents corresponding User object id." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add patient_id field to Prescription class which represents corresponding User object id." />
   </component>
 </project>
