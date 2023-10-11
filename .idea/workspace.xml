@@ -9,15 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Rearrange code in UserService class to provide better readability.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Prescription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Prescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Prescription.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,15 +296,7 @@
       <workItem from="1696179669715" duration="20000" />
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
-      <workItem from="1696939037410" duration="22235000" />
-    </task>
-    <task id="LOCAL-00009" summary="Change com.example.httplearningservice to com example.httplearningapi">
-      <option name="closed" value="true" />
-      <created>1695709156609</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1695709156609</updated>
+      <workItem from="1696939037410" duration="23149000" />
     </task>
     <task id="LOCAL-00010" summary="Add mapping classes to hibernate.cfg.xml.">
       <option name="closed" value="true" />
@@ -696,7 +682,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696956556311</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate.">
+      <option name="closed" value="true" />
+      <created>1697025764454</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1697025764454</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -704,7 +698,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add doDelete method implementation to UsersServlet." />
     <MESSAGE value="Add equals and hashcode methods to User, Company, Address and Geo classes." />
     <MESSAGE value="FIX: equals and hashcode methods: delete id parameter from comparing" />
     <MESSAGE value="Add JsonSerializationUtil.deserializeObjectFromJson method. Add property FAIL_ON_UNKNOWN_PROPERTIES to Mapper." />
@@ -729,17 +722,7 @@
     <MESSAGE value="Remove all business logic from servlet and move it to new UserService class." />
     <MESSAGE value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
     <MESSAGE value="Rearrange code in UserService class to provide better readability." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rearrange code in UserService class to provide better readability." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate." />
   </component>
 </project>
