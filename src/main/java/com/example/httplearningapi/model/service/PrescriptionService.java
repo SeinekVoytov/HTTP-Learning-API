@@ -78,7 +78,7 @@ public class PrescriptionService extends Service<Prescription> {
         resp.getWriter().print(String.format("{\"id\" : %d}", id));
     }
 
-    private void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    private void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         if (pathInfo == null || pathInfo.equals("/")) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
