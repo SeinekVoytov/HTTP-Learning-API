@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "Users Servlet", urlPatterns = {"/users", "/users/*"})
+@WebServlet(urlPatterns = {"/users", "/users/*"})
 public class UsersServlet extends HttpServlet {
 
     @Override
