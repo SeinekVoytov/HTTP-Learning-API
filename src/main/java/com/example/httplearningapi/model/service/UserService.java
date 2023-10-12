@@ -4,6 +4,8 @@ import com.example.httplearningapi.model.dao.UserDao;
 import com.example.httplearningapi.model.entities.user.User;
 import com.example.httplearningapi.model.dao.Dao;
 import com.example.httplearningapi.util.JsonSerializationUtil;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -17,7 +19,7 @@ public class UserService implements Service {
     private final Dao<User> userDao = new UserDao();
 
     @Override
-    public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         if (pathInfo == null || pathInfo.equals("/")) {
 
@@ -37,7 +39,7 @@ public class UserService implements Service {
 
         if (pathInfo.matches("^/[^/]+/recipes.*$")) {
             req.setAttribute("user", user);
-            // forward to another servlet
+            this.forwardToPrescriptionsServlet(req, resp);
             return;
         }
 
@@ -50,7 +52,7 @@ public class UserService implements Service {
     }
 
     @Override
-    public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/[^/]+/recipes$")) { //
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
@@ -66,49 +68,49 @@ public class UserService implements Service {
         User user = userDao.getById(userId).orElseThrow();
 
         req.setAttribute("user", user);
-        // forward to the recipes servlet
+        this.forwardToPrescriptionsServlet(req, resp);
     }
 
     @Override
-    public void handlePut(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void handlePut(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processPutOrDeleteRequest(pathInfo, req, resp);
     }
 
     @Override
-    public void handleDelete(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void handleDelete(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processPutOrDeleteRequest(pathInfo, req, resp);
     }
 
-    private void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    private void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-            if (pathInfo == null || pathInfo.equals("/")) {
-                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-                return;
-            }
-
-            int userId = extractUserIdFromURI(pathInfo);
-
-            User user = userDao.getById(userId).orElseThrow();
-
-            if (pathInfo.matches("^/[^/]+/recipes/[^/]+$")) {
-                req.setAttribute("user", user);
-                // forward to another servlet
-                return;
-            }
-
-            if (pathInfo.matches("^/[^/]+/?$")) {
-                switch (req.getMethod()) {
-                    case "PUT":
-                        simulateSuccessfulPutOperation(resp, userId);
-                        break;
-                    case "DELETE":
-                        resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
-                        break;
-                }
-                return;
-            }
-
+        if (pathInfo == null || pathInfo.equals("/")) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+
+        int userId = extractUserIdFromURI(pathInfo);
+
+        User user = userDao.getById(userId).orElseThrow();
+
+        if (pathInfo.matches("^/[^/]+/recipes/[^/]+$")) {
+            req.setAttribute("user", user);
+            this.forwardToPrescriptionsServlet(req, resp);
+            return;
+        }
+
+        if (pathInfo.matches("^/[^/]+/?$")) {
+            switch (req.getMethod()) {
+                case "PUT":
+                    simulateSuccessfulPutOperation(resp, userId);
+                    break;
+                case "DELETE":
+                    resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                    break;
+            }
+            return;
+        }
+
+        resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
     }
 
     private void simulateSuccessfulPutOperation(HttpServletResponse resp, int id) throws IOException {
@@ -145,4 +147,8 @@ public class UserService implements Service {
         return Integer.parseInt(pathInfo.substring(1).split("/")[0]);
     }
 
+    private void forwardToPrescriptionsServlet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/prescriptions");
+        dispatcher.forward(req, resp);
+    }
 }

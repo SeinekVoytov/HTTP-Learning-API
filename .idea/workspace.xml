@@ -9,9 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PrescriptionDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/daotest/PrescriptionDaoTest.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create PrescriptionsServlet class. Change UsersServlet name to Default.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -327,23 +329,7 @@
       <workItem from="1696179669715" duration="20000" />
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
-      <workItem from="1696939037410" duration="26133000" />
-    </task>
-    <task id="LOCAL-00014" summary="Add UserController class which provide R-read operation from DB for one or all users.">
-      <option name="closed" value="true" />
-      <created>1695739049162</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1695739049162</updated>
-    </task>
-    <task id="LOCAL-00015" summary="FIX: bug with connection establishing in UserController">
-      <option name="closed" value="true" />
-      <created>1695739175504</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1695739175504</updated>
+      <workItem from="1696939037410" duration="33355000" />
     </task>
     <task id="LOCAL-00016" summary="Provide tests for methods gerUserById() and getAllUsers() from UserController class">
       <option name="closed" value="true" />
@@ -721,7 +707,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697028735402</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Add PrescriptionDao class for managing Prescription entities and implement test for class.">
+      <option name="closed" value="true" />
+      <created>1697032140923</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1697032140923</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Create PrescriptionsServlet class. Change UsersServlet name to Default.">
+      <option name="closed" value="true" />
+      <created>1697095567983</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1697095567983</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -772,8 +774,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="FIX: bug in parsing URI like .../users/ with extra slash character" />
-    <MESSAGE value="Add doPost method implementation for UsersServlet" />
     <MESSAGE value="Improve code readability for doPost, doGet and doDelete methods of UsersServlet." />
     <MESSAGE value="FIX: bug with user id validating in doGet method" />
     <MESSAGE value="Add ContentTypeResponseFilter class which is responsible for setting content type to &quot;application/json&quot; for each response." />
@@ -797,6 +797,8 @@
     <MESSAGE value="FIX: problem with serializing java.sql.Date to JSON by Jackson. Add JsonFormat annotation to ensure correct deserialization format" />
     <MESSAGE value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
     <MESSAGE value="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method." />
-    <option name="LAST_COMMIT_MESSAGE" value="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method." />
+    <MESSAGE value="Add PrescriptionDao class for managing Prescription entities and implement test for class." />
+    <MESSAGE value="Create PrescriptionsServlet class. Change UsersServlet name to Default." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create PrescriptionsServlet class. Change UsersServlet name to Default." />
   </component>
 </project>

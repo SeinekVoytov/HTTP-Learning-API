@@ -60,6 +60,6 @@ public class UsersServlet extends HttpServlet {
 
     @FunctionalInterface
     private interface HandleProcessor<T> {
-        void process(T t) throws IOException;
+        void process(T t) throws ServletException, IOException;
     }
 }
