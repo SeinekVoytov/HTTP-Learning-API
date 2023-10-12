@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Implement PrescriptionService.handleGet method">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Change Service interface to Service abstract class to place here common package-private methods.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/HandleProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +22,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -332,14 +331,6 @@
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
       <workItem from="1696939037410" duration="36887000" />
-    </task>
-    <task id="LOCAL-00019" summary="FIX: static class hasn't private constructor. Add private constructor to HibernateUtil class.">
-      <option name="closed" value="true" />
-      <created>1695819523038</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1695819523038</updated>
     </task>
     <task id="LOCAL-00020" summary="Add class JsonSerializationUtil class that is responsible for serializing objects to JSON.">
       <option name="closed" value="true" />
@@ -725,7 +716,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697122142423</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Change Service interface to Service abstract class to place here common package-private methods.">
+      <option name="closed" value="true" />
+      <created>1697123139393</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1697123139393</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -776,7 +775,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Replace manual URI checking with regural expression mapping." />
     <MESSAGE value="Add doPut method implementation to UsersServlet." />
     <MESSAGE value="Move servlets package to controller package." />
     <MESSAGE value="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory." />
@@ -801,6 +799,7 @@
     <MESSAGE value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
     <MESSAGE value="FIX: forwardToPrescriptionsServlet() method. Previous path for requestDispatcher was &quot;prescriptions&quot; which ignores other URI parts." />
     <MESSAGE value="Implement PrescriptionService.handleGet method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement PrescriptionService.handleGet method" />
+    <MESSAGE value="Change Service interface to Service abstract class to place here common package-private methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Service interface to Service abstract class to place here common package-private methods." />
   </component>
 </project>

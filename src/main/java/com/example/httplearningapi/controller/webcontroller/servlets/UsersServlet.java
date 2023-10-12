@@ -1,5 +1,6 @@
 package com.example.httplearningapi.controller.webcontroller.servlets;
 
+import com.example.httplearningapi.model.entities.user.User;
 import com.example.httplearningapi.model.service.Service;
 import com.example.httplearningapi.model.service.UserService;
 import com.example.httplearningapi.util.ExceptionHandleUtil;
@@ -49,17 +50,12 @@ public class UsersServlet extends HttpServlet {
         super.doTrace(req, resp);
     }
 
-    private void handleRequest(HandleProcessor<Service> handleProcessor, HttpServletResponse resp) {
+    private void handleRequest(HandleProcessor<Service<User>> handleProcessor, HttpServletResponse resp) {
         try {
-            Service service = new UserService();
+            Service<User> service = new UserService();
             handleProcessor.process(service);
         } catch (Exception e) {
             ExceptionHandleUtil.processException(e, resp);
         }
-    }
-
-    @FunctionalInterface
-    private interface HandleProcessor<T> {
-        void process(T t) throws ServletException, IOException;
     }
 }
