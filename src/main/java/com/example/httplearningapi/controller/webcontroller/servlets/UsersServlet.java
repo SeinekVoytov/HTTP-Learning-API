@@ -3,7 +3,6 @@ package com.example.httplearningapi.controller.webcontroller.servlets;
 import com.example.httplearningapi.model.service.Service;
 import com.example.httplearningapi.model.service.UserService;
 import com.example.httplearningapi.util.ExceptionHandleUtil;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -35,18 +34,30 @@ public class UsersServlet extends HttpServlet {
     }
 
     @Override
-    protected void doHead(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doHead(req, resp);
+    protected void doHead(HttpServletRequest req, HttpServletResponse resp) {
+        try {
+            super.doHead(req, resp);
+        } catch (Exception e) {
+            ExceptionHandleUtil.processException(e, resp);
+        }
     }
 
     @Override
-    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doOptions(req, resp);
+    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) {
+        try {
+            super.doOptions(req, resp);
+        } catch (Exception e) {
+            ExceptionHandleUtil.processException(e, resp);
+        }
     }
 
     @Override
-    protected void doTrace(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doTrace(req, resp);
+    protected void doTrace(HttpServletRequest req, HttpServletResponse resp) {
+        try {
+            super.doTrace(req, resp);
+        } catch (Exception e) {
+            ExceptionHandleUtil.processException(e, resp);
+        }
     }
 
     private void handleRequest(HandleProcessor<Service> handleProcessor, HttpServletResponse resp) {
