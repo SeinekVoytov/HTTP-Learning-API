@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: forwardToPrescriptionsServlet() method. Previous path for requestDispatcher was &quot;prescriptions&quot; which ignores other URI parts.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +23,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -330,15 +330,7 @@
       <workItem from="1696179669715" duration="20000" />
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
-      <workItem from="1696939037410" duration="34983000" />
-    </task>
-    <task id="LOCAL-00017" summary="FIX: bug in testGetUserById method">
-      <option name="closed" value="true" />
-      <created>1695747583947</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1695747583947</updated>
+      <workItem from="1696939037410" duration="36887000" />
     </task>
     <task id="LOCAL-00018" summary="Create util package. Move HibernateUtil class to this package.">
       <option name="closed" value="true" />
@@ -724,7 +716,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697109707560</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="FIX: forwardToPrescriptionsServlet() method. Previous path for requestDispatcher was &quot;prescriptions&quot; which ignores other URI parts.">
+      <option name="closed" value="true" />
+      <created>1697111411833</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1697111411833</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -775,7 +775,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="FIX: bug with user id validating in doGet method" />
     <MESSAGE value="Add ContentTypeResponseFilter class which is responsible for setting content type to &quot;application/json&quot; for each response." />
     <MESSAGE value="Replace manual URI checking with regural expression mapping." />
     <MESSAGE value="Add doPut method implementation to UsersServlet." />
@@ -800,6 +799,7 @@
     <MESSAGE value="Add PrescriptionDao class for managing Prescription entities and implement test for class." />
     <MESSAGE value="Create PrescriptionsServlet class. Change UsersServlet name to Default." />
     <MESSAGE value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
+    <MESSAGE value="FIX: forwardToPrescriptionsServlet() method. Previous path for requestDispatcher was &quot;prescriptions&quot; which ignores other URI parts." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: forwardToPrescriptionsServlet() method. Previous path for requestDispatcher was &quot;prescriptions&quot; which ignores other URI parts." />
   </component>
 </project>
