@@ -12,9 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
-public class PrescriptionService implements Service {
+public class PrescriptionService extends Service<Prescription> {
 
     private final Dao<Prescription> prescriptionDao = new PrescriptionDao();
 
@@ -62,22 +61,13 @@ public class PrescriptionService implements Service {
 
     }
 
-    private Predicate<Prescription> createPredicateForFilteringByQueryParams(HttpServletRequest req) {
+    @Override
+    Predicate<Prescription> createPredicateForFilteringByQueryParams(HttpServletRequest req) {
         String id = req.getParameter("id");
         String medicationName = req.getParameter("medication");
         return prescription ->
                 (id == null || id.equals(String.valueOf(prescription.getId()))) &&
                 (medicationName == null || medicationName.equals(prescription.getMedicationName()));
-    }
-
-    private List<Prescription> filterByQueryParams(HttpServletRequest req, List<Prescription> targetList) {
-        return targetList.stream()
-                .filter(this.createPredicateForFilteringByQueryParams(req))
-                .collect(Collectors.toList());
-    }
-
-    private int extractIdFromURI(String pathInfo) {
-        return Integer.parseInt(pathInfo.substring(1).split("/")[0]);
     }
 
 }

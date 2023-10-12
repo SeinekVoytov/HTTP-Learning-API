@@ -12,9 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
-public class UserService implements Service {
+public class UserService extends Service<User> {
 
     private final Dao<User> userDao = new UserDao();
 
@@ -27,14 +26,14 @@ public class UserService implements Service {
 
             String queryString = req.getQueryString();
             if (queryString != null) {
-                users = this.filterUsersByQueryParams(req, users);
+                users = this.filterByQueryParams(req, users);
             }
 
             JsonSerializationUtil.serializeObjectToJsonStream(users, resp.getWriter());
             return;
         }
 
-        int userId = extractUserIdFromURI(pathInfo);
+        int userId = extractIdFromURI(pathInfo);
         User user = userDao.getById(userId).orElseThrow();
 
         if (pathInfo.matches("^/[^/]+/prescriptions.*$")) {
@@ -64,7 +63,7 @@ public class UserService implements Service {
             return;
         }
 
-        int userId = extractUserIdFromURI(pathInfo);
+        int userId = extractIdFromURI(pathInfo);
         User user = userDao.getById(userId).orElseThrow();
 
         req.setAttribute("user", user);
@@ -88,7 +87,7 @@ public class UserService implements Service {
             return;
         }
 
-        int userId = extractUserIdFromURI(pathInfo);
+        int userId = extractIdFromURI(pathInfo);
 
         User user = userDao.getById(userId).orElseThrow();
 
@@ -113,17 +112,8 @@ public class UserService implements Service {
         resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
     }
 
-    private void simulateSuccessfulPutOperation(HttpServletResponse resp, int id) throws IOException {
-        resp.setStatus(HttpServletResponse.SC_OK);
-        resp.getWriter().print(String.format("{\"id\" : %d}", id));
-    }
-
-    private void simulateSuccessfulPostOperation(HttpServletResponse resp) throws IOException {
-        resp.setStatus(HttpServletResponse.SC_CREATED);
-        resp.getWriter().print("{\"id\" : 11}");
-    }
-
-    private Predicate<User> createPredicateForFilteringUsersByQueryParams(HttpServletRequest req) {
+    @Override
+    Predicate<User> createPredicateForFilteringByQueryParams(HttpServletRequest req) {
         String id = req.getParameter("id");
         String name = req.getParameter("name");
         String email = req.getParameter("email");
@@ -137,14 +127,14 @@ public class UserService implements Service {
                         (website == null || website.equals(user.getWebsite()));
     }
 
-    private List<User> filterUsersByQueryParams(HttpServletRequest req, List<User> targetList) {
-        return targetList.stream()
-                .filter(this.createPredicateForFilteringUsersByQueryParams(req))
-                .collect(Collectors.toList());
+    private void simulateSuccessfulPutOperation(HttpServletResponse resp, int id) throws IOException {
+        resp.setStatus(HttpServletResponse.SC_OK);
+        resp.getWriter().print(String.format("{\"id\" : %d}", id));
     }
 
-    private int extractUserIdFromURI(String pathInfo) {
-        return Integer.parseInt(pathInfo.substring(1).split("/")[0]);
+    private void simulateSuccessfulPostOperation(HttpServletResponse resp) throws IOException {
+        resp.setStatus(HttpServletResponse.SC_CREATED);
+        resp.getWriter().print("{\"id\" : 11}");
     }
 
     private void forwardToPrescriptionsServlet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
