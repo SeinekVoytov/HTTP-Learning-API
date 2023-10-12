@@ -47,8 +47,14 @@ public class PrescriptionService extends Service<Prescription> {
     }
 
     @Override
-    public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
+        if (pathInfo != null && !pathInfo.equals("/")) {
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+
+        this.simulateSuccessfulPostOperation(resp);
     }
 
     @Override
@@ -59,6 +65,11 @@ public class PrescriptionService extends Service<Prescription> {
     @Override
     public void handleDelete(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+    }
+
+    private void simulateSuccessfulPostOperation(HttpServletResponse resp) throws IOException {
+        resp.setStatus(HttpServletResponse.SC_CREATED);
+        resp.getWriter().print("{\"id\" : 101}");
     }
 
     @Override

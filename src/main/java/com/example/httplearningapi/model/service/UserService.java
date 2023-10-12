@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.function.Predicate;
 
 public class UserService extends Service<User> {
@@ -53,7 +54,7 @@ public class UserService extends Service<User> {
     @Override
     public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/[^/]+/prescriptions$")) { //
+        if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/[^/]+/prescriptions/?$")) { //
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
@@ -64,9 +65,10 @@ public class UserService extends Service<User> {
         }
 
         int userId = extractIdFromURI(pathInfo);
-        User user = userDao.getById(userId).orElseThrow();
+        if (userId <= 0 || userId >= 10) {
+            throw new NoSuchElementException();
+        }
 
-        req.setAttribute("user", user);
         this.forwardToPrescriptionsServlet(req, resp);
     }
 
