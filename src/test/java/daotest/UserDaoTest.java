@@ -15,11 +15,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class UserDaoTest {
 
     private static final int NUMBER_OF_USERS_IN_DATABASE = 10;
-    private static final UserDao USER_CONTROLLER = new UserDao();
+    private static final UserDao USER_DAO = new UserDao();
 
     @Test
     public void retrievedUserFromDBIsNotNullTest() {
-        Optional<User> testUserOptional = USER_CONTROLLER.getById(1);
+        Optional<User> testUserOptional = USER_DAO.getById(1);
         if (testUserOptional.isEmpty()) {
             fail("User is not retrieved from Database");
         }
@@ -32,7 +32,7 @@ public class UserDaoTest {
 
     @Test
     public void numberOfUsersRetrievedFromDBIsEqualToExpectedNumberTest() {
-        List<User> users = USER_CONTROLLER.getAll();
+        List<User> users = USER_DAO.getAll();
         assertEquals(NUMBER_OF_USERS_IN_DATABASE, users.size(),
                 "Actual number of Users in Database is not equal to Expected number");
     }

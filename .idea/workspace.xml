@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add PrescriptionService.handleDelete and PrescriptionService.handlePut methods implementations.">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/AbstractServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/AbstractServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,12 +21,27 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
+        <option value="HTML File" />
+        <option value="Jsp File" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -35,6 +50,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -47,34 +65,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.27182046",
-    "settings.editor.selected.configurable": "editing.templates",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;presciptions__branch&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.27182046&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -127,6 +147,21 @@
       <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
       <option name="METHOD_NAME" value="userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrescriptionDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daotest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daotest" />
+      <option name="MAIN_CLASS_NAME" value="daotest.PrescriptionDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -245,6 +280,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
+      <item itemvalue="JUnit.PrescriptionDaoTest" />
       <item itemvalue="JUnit.UserDaoTest" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
@@ -253,6 +289,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PrescriptionDaoTest" />
         <item itemvalue="JUnit.UserDaoTest" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
@@ -292,135 +329,7 @@
       <workItem from="1696179669715" duration="20000" />
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
-      <workItem from="1696939037410" duration="10411000" />
-    </task>
-    <task id="LOCAL-00008" summary="Add Hibernate dependency to pom.xml project. Configure Hibernate by hibernate.cfg.xml.">
-      <option name="closed" value="true" />
-      <created>1695708492073</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1695708492073</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Change com.example.httplearningservice to com example.httplearningapi">
-      <option name="closed" value="true" />
-      <created>1695709156609</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1695709156609</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Add mapping classes to hibernate.cfg.xml.">
-      <option name="closed" value="true" />
-      <created>1695710357210</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1695710357210</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Annotate mapped by Hibernate classes User, Address, Geo, Company.">
-      <option name="closed" value="true" />
-      <created>1695724719176</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1695724719176</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add HibernateUtil class that is responsive for storing SessionFactory object while application is running.">
-      <option name="closed" value="true" />
-      <created>1695731705828</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1695731705828</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Provide User, Address, Company, Geo classes with toString() method for testing;">
-      <option name="closed" value="true" />
-      <created>1695736475777</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1695736475777</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Add UserController class which provide R-read operation from DB for one or all users.">
-      <option name="closed" value="true" />
-      <created>1695739049162</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1695739049162</updated>
-    </task>
-    <task id="LOCAL-00015" summary="FIX: bug with connection establishing in UserController">
-      <option name="closed" value="true" />
-      <created>1695739175504</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1695739175504</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Provide tests for methods gerUserById() and getAllUsers() from UserController class">
-      <option name="closed" value="true" />
-      <created>1695747143612</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1695747143612</updated>
-    </task>
-    <task id="LOCAL-00017" summary="FIX: bug in testGetUserById method">
-      <option name="closed" value="true" />
-      <created>1695747583947</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1695747583947</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Create util package. Move HibernateUtil class to this package.">
-      <option name="closed" value="true" />
-      <created>1695819457244</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1695819457244</updated>
-    </task>
-    <task id="LOCAL-00019" summary="FIX: static class hasn't private constructor. Add private constructor to HibernateUtil class.">
-      <option name="closed" value="true" />
-      <created>1695819523038</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1695819523038</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Add class JsonSerializationUtil class that is responsible for serializing objects to JSON.">
-      <option name="closed" value="true" />
-      <created>1695825690635</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1695825690635</updated>
-    </task>
-    <task id="LOCAL-00021" summary="FIX: util class has public constructor. Add private no-args construstor to JsonSerializationUtil class.">
-      <option name="closed" value="true" />
-      <created>1695825940317</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1695825940317</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Annotate User, Company, Geo, Address classes as ready for serialization to JSON.">
-      <option name="closed" value="true" />
-      <created>1695826190652</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1695826190652</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Add messages for each test method.">
-      <option name="closed" value="true" />
-      <created>1695831936283</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1695831936283</updated>
+      <workItem from="1696939037410" duration="36887000" />
     </task>
     <task id="LOCAL-00024" summary="FIX: code style in HibernateUtil class: name of private static field is not uppercase.">
       <option name="closed" value="true" />
@@ -686,30 +595,185 @@
       <option name="project" value="LOCAL" />
       <updated>1696948712015</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Rearrange code in UserService class to provide better readability.">
+      <option name="closed" value="true" />
+      <created>1696956556311</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1696956556311</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate.">
+      <option name="closed" value="true" />
+      <created>1697025764454</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1697025764454</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Add patient_id field to Prescription class which represents corresponding User object id.">
+      <option name="closed" value="true" />
+      <created>1697026666810</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1697026666810</updated>
+    </task>
+    <task id="LOCAL-00060" summary="FIX: problem with serializing java.sql.Date to JSON by Jackson. Add JsonFormat annotation to ensure correct deserialization format">
+      <option name="closed" value="true" />
+      <created>1697027076424</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1697027076424</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes.">
+      <option name="closed" value="true" />
+      <created>1697027258060</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1697027258060</updated>
+    </task>
+    <task id="LOCAL-00062" summary="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method.">
+      <option name="closed" value="true" />
+      <created>1697028735402</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1697028735402</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Add PrescriptionDao class for managing Prescription entities and implement test for class.">
+      <option name="closed" value="true" />
+      <created>1697032140923</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1697032140923</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Create PrescriptionsServlet class. Change UsersServlet name to Default.">
+      <option name="closed" value="true" />
+      <created>1697095567983</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1697095567983</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet.">
+      <option name="closed" value="true" />
+      <created>1697109707560</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1697109707560</updated>
+    </task>
+    <task id="LOCAL-00066" summary="FIX: forwardToPrescriptionsServlet() method. Previous path for requestDispatcher was &quot;prescriptions&quot; which ignores other URI parts.">
+      <option name="closed" value="true" />
+      <created>1697111411833</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1697111411833</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Implement PrescriptionService.handleGet method">
+      <option name="closed" value="true" />
+      <created>1697122142423</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1697122142423</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Change Service interface to Service abstract class to place here common package-private methods.">
+      <option name="closed" value="true" />
+      <created>1697123139393</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1697123139393</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Move HandleProcessor interface from UsersServlet class to servlets package to make it available for other servlets">
+      <option name="closed" value="true" />
+      <created>1697127955425</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1697127955425</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Create AbstractServlet class and move here common functionality for all Servlets.">
+      <option name="closed" value="true" />
+      <created>1697128844691</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1697128844691</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Add PrescriptionService.handlePost method implementation.">
+      <option name="closed" value="true" />
+      <created>1697130176480</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1697130176480</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Add PrescriptionService.handleDelete and PrescriptionService.handlePut methods implementations.">
+      <option name="closed" value="true" />
+      <created>1697131416920</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1697131416920</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="presciptions_branch" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create extension for tests to create and close SessionFactory only once." />
-    <MESSAGE value="Add doDelete method implementation to UsersServlet." />
-    <MESSAGE value="Add equals and hashcode methods to User, Company, Address and Geo classes." />
-    <MESSAGE value="FIX: equals and hashcode methods: delete id parameter from comparing" />
-    <MESSAGE value="Add JsonSerializationUtil.deserializeObjectFromJson method. Add property FAIL_ON_UNKNOWN_PROPERTIES to Mapper." />
-    <MESSAGE value="Provide test for JsonSerializationUtil.deserializeObjectFromJson method" />
-    <MESSAGE value="FIX: bug in parsing URI like .../users/ with extra slash character" />
-    <MESSAGE value="Add doPost method implementation for UsersServlet" />
-    <MESSAGE value="Improve code readability for doPost, doGet and doDelete methods of UsersServlet." />
-    <MESSAGE value="FIX: bug with user id validating in doGet method" />
-    <MESSAGE value="Add ContentTypeResponseFilter class which is responsible for setting content type to &quot;application/json&quot; for each response." />
-    <MESSAGE value="Replace manual URI checking with regural expression mapping." />
-    <MESSAGE value="Add doPut method implementation to UsersServlet." />
-    <MESSAGE value="Move servlets package to controller package." />
-    <MESSAGE value="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory." />
-    <MESSAGE value="Create CharsetRequestFilter and CharsetResponseFilter classes that are responsible for setting UTF-8 charset for both request and response." />
     <MESSAGE value="Create ExceptionHandleUtil utility class that is responsible for handling all exceptions in servlets and setting corresponding status codes." />
     <MESSAGE value="Improve exception handling with ExceptionHandleUtil class. Remove unnecessary try/catch statements." />
     <MESSAGE value="Rearrange code in UsersServlet to improve readability" />
@@ -719,6 +783,22 @@
     <MESSAGE value="Rename UserControllerTest to UserDaoTest." />
     <MESSAGE value="Remove all business logic from servlet and move it to new UserService class." />
     <MESSAGE value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
+    <MESSAGE value="Rearrange code in UserService class to provide better readability." />
+    <MESSAGE value="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate." />
+    <MESSAGE value="Add patient_id field to Prescription class which represents corresponding User object id." />
+    <MESSAGE value="FIX: problem with serializing java.sql.Date to JSON by Jackson. Add JsonFormat annotation to ensure correct deserialization format" />
+    <MESSAGE value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
+    <MESSAGE value="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method." />
+    <MESSAGE value="Add PrescriptionDao class for managing Prescription entities and implement test for class." />
+    <MESSAGE value="Create PrescriptionsServlet class. Change UsersServlet name to Default." />
+    <MESSAGE value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
+    <MESSAGE value="FIX: forwardToPrescriptionsServlet() method. Previous path for requestDispatcher was &quot;prescriptions&quot; which ignores other URI parts." />
+    <MESSAGE value="Implement PrescriptionService.handleGet method" />
+    <MESSAGE value="Change Service interface to Service abstract class to place here common package-private methods." />
+    <MESSAGE value="Move HandleProcessor interface from UsersServlet class to servlets package to make it available for other servlets" />
+    <MESSAGE value="Create AbstractServlet class and move here common functionality for all Servlets." />
+    <MESSAGE value="Add PrescriptionService.handlePost method implementation." />
+    <MESSAGE value="Add PrescriptionService.handleDelete and PrescriptionService.handlePut methods implementations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add PrescriptionService.handleDelete and PrescriptionService.handlePut methods implementations." />
   </component>
 </project>

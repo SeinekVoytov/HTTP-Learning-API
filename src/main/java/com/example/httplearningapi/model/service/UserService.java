@@ -4,20 +4,22 @@ import com.example.httplearningapi.model.dao.UserDao;
 import com.example.httplearningapi.model.entities.user.User;
 import com.example.httplearningapi.model.dao.Dao;
 import com.example.httplearningapi.util.JsonSerializationUtil;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
-public class UserService implements Service {
+public class UserService extends Service<User> {
 
     private final Dao<User> userDao = new UserDao();
 
     @Override
-    public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         if (pathInfo == null || pathInfo.equals("/")) {
 
@@ -25,23 +27,23 @@ public class UserService implements Service {
 
             String queryString = req.getQueryString();
             if (queryString != null) {
-                users = this.filterUsersByQueryParams(req, users);
+                users = this.filterByQueryParams(req, users);
             }
 
             JsonSerializationUtil.serializeObjectToJsonStream(users, resp.getWriter());
             return;
         }
 
-        int userId = extractUserIdFromURI(pathInfo);
+        int userId = extractIdFromURI(pathInfo);
         User user = userDao.getById(userId).orElseThrow();
 
-        if (pathInfo.matches("^/[^/]+/recipes.*$")) {
+        if (pathInfo.matches("^/\\d+/prescriptions.*$")) {
             req.setAttribute("user", user);
-            // forward to another servlet
+            this.forwardToPrescriptionsServlet(req, resp);
             return;
         }
 
-        if (pathInfo.matches("^/[^/]+/?$")) {
+        if (pathInfo.matches("^/\\d+/?$")) {
             JsonSerializationUtil.serializeObjectToJsonStream(user, resp.getWriter());
             return;
         }
@@ -50,9 +52,9 @@ public class UserService implements Service {
     }
 
     @Override
-    public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/[^/]+/recipes$")) { //
+        if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/\\d+/prescriptions/?$")) { //
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
@@ -62,66 +64,58 @@ public class UserService implements Service {
             return;
         }
 
-        int userId = extractUserIdFromURI(pathInfo);
+        int userId = extractIdFromURI(pathInfo);
+        if (userId <= 0 || userId >= 10) {
+            throw new NoSuchElementException();
+        }
+
+        this.forwardToPrescriptionsServlet(req, resp);
+    }
+
+    @Override
+    public void handlePut(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        processPutOrDeleteRequest(pathInfo, req, resp);
+    }
+
+    @Override
+    public void handleDelete(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        processPutOrDeleteRequest(pathInfo, req, resp);
+    }
+
+    private void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        if (pathInfo == null || pathInfo.equals("/")) {
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+
+        int userId = extractIdFromURI(pathInfo);
+
         User user = userDao.getById(userId).orElseThrow();
 
-        req.setAttribute("user", user);
-        // forward to the recipes servlet
+        if (pathInfo.matches("^/\\d+/prescriptions/\\d+/?$")) {
+            req.setAttribute("user", user);
+            this.forwardToPrescriptionsServlet(req, resp);
+            return;
+        }
+
+        if (pathInfo.matches("^/\\d+/?$")) {
+            switch (req.getMethod()) {
+                case "PUT":
+                    simulateSuccessfulPutOperation(resp, userId);
+                    break;
+                case "DELETE":
+                    resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                    break;
+            }
+            return;
+        }
+
+        resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
     }
 
     @Override
-    public void handlePut(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        processPutOrDeleteRequest(pathInfo, req, resp);
-    }
-
-    @Override
-    public void handleDelete(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        processPutOrDeleteRequest(pathInfo, req, resp);
-    }
-
-    private void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
-            if (pathInfo == null || pathInfo.equals("/")) {
-                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-                return;
-            }
-
-            int userId = extractUserIdFromURI(pathInfo);
-
-            User user = userDao.getById(userId).orElseThrow();
-
-            if (pathInfo.matches("^/[^/]+/recipes/[^/]+$")) {
-                req.setAttribute("user", user);
-                // forward to another servlet
-                return;
-            }
-
-            if (pathInfo.matches("^/[^/]+/?$")) {
-                switch (req.getMethod()) {
-                    case "PUT":
-                        simulateSuccessfulPutOperation(resp, userId);
-                        break;
-                    case "DELETE":
-                        resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
-                        break;
-                }
-                return;
-            }
-
-            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-    }
-
-    private void simulateSuccessfulPutOperation(HttpServletResponse resp, int id) throws IOException {
-        resp.setStatus(HttpServletResponse.SC_OK);
-        resp.getWriter().print(String.format("{\"id\" : %d}", id));
-    }
-
-    private void simulateSuccessfulPostOperation(HttpServletResponse resp) throws IOException {
-        resp.setStatus(HttpServletResponse.SC_CREATED);
-        resp.getWriter().print("{\"id\" : 11}");
-    }
-
-    private Predicate<User> createPredicateForFilteringUsersByQueryParams(HttpServletRequest req) {
+    Predicate<User> createPredicateForFilteringByQueryParams(HttpServletRequest req) {
         String id = req.getParameter("id");
         String name = req.getParameter("name");
         String email = req.getParameter("email");
@@ -135,14 +129,20 @@ public class UserService implements Service {
                         (website == null || website.equals(user.getWebsite()));
     }
 
-    private List<User> filterUsersByQueryParams(HttpServletRequest req, List<User> targetList) {
-        return targetList.stream()
-                .filter(this.createPredicateForFilteringUsersByQueryParams(req))
-                .collect(Collectors.toList());
+    private void simulateSuccessfulPutOperation(HttpServletResponse resp, int id) throws IOException {
+        resp.setStatus(HttpServletResponse.SC_OK);
+        resp.getWriter().print(String.format("{\"id\" : %d}", id));
     }
 
-    private int extractUserIdFromURI(String pathInfo) {
-        return Integer.parseInt(pathInfo.substring(1).split("/")[0]);
+    private void simulateSuccessfulPostOperation(HttpServletResponse resp) throws IOException {
+        resp.setStatus(HttpServletResponse.SC_CREATED);
+        resp.getWriter().print("{\"id\" : 11}");
     }
 
+    private void forwardToPrescriptionsServlet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String requestURI = req.getRequestURI();
+        int prescriptionsURIPartIndex = requestURI.indexOf("/prescriptions");
+        RequestDispatcher dispatcher = req.getRequestDispatcher(requestURI.substring(prescriptionsURIPartIndex));
+        dispatcher.forward(req, resp);
+    }
 }
