@@ -37,13 +37,13 @@ public class UserService extends Service<User> {
         int userId = extractIdFromURI(pathInfo);
         User user = userDao.getById(userId).orElseThrow();
 
-        if (pathInfo.matches("^/[^/]+/prescriptions.*$")) {
+        if (pathInfo.matches("^/\\d+/prescriptions.*$")) {
             req.setAttribute("user", user);
             this.forwardToPrescriptionsServlet(req, resp);
             return;
         }
 
-        if (pathInfo.matches("^/[^/]+/?$")) {
+        if (pathInfo.matches("^/\\d+/?$")) {
             JsonSerializationUtil.serializeObjectToJsonStream(user, resp.getWriter());
             return;
         }
@@ -54,7 +54,7 @@ public class UserService extends Service<User> {
     @Override
     public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/[^/]+/prescriptions/?$")) { //
+        if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/\\d+/prescriptions/?$")) { //
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
@@ -93,13 +93,13 @@ public class UserService extends Service<User> {
 
         User user = userDao.getById(userId).orElseThrow();
 
-        if (pathInfo.matches("^/[^/]+/prescriptions/[^/]+$")) {
+        if (pathInfo.matches("^/\\d+/prescriptions/\\d+/?$")) {
             req.setAttribute("user", user);
             this.forwardToPrescriptionsServlet(req, resp);
             return;
         }
 
-        if (pathInfo.matches("^/[^/]+/?$")) {
+        if (pathInfo.matches("^/\\d+/?$")) {
             switch (req.getMethod()) {
                 case "PUT":
                     simulateSuccessfulPutOperation(resp, userId);

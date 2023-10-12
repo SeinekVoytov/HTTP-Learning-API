@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.function.Predicate;
 
 public class PrescriptionService extends Service<Prescription> {
@@ -59,17 +60,49 @@ public class PrescriptionService extends Service<Prescription> {
 
     @Override
     public void handlePut(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        processPutOrDeleteRequest(pathInfo, req, resp);
     }
 
     @Override
     public void handleDelete(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        processPutOrDeleteRequest(pathInfo, req, resp);
     }
 
     private void simulateSuccessfulPostOperation(HttpServletResponse resp) throws IOException {
         resp.setStatus(HttpServletResponse.SC_CREATED);
         resp.getWriter().print("{\"id\" : 101}");
+    }
+
+    private void simulateSuccessfulPutOperation(HttpServletResponse resp, int id) throws IOException {
+        resp.setStatus(HttpServletResponse.SC_OK);
+        resp.getWriter().print(String.format("{\"id\" : %d}", id));
+    }
+
+    private void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        if (pathInfo == null || pathInfo.equals("/")) {
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+
+        int prescriptionId = extractIdFromURI(pathInfo);
+        if (prescriptionId <= 0 || prescriptionId > 100) {
+            throw new NoSuchElementException();
+        }
+
+        if (pathInfo.matches("^/\\d+/?$")) {
+            switch (req.getMethod()) {
+                case "PUT":
+                    simulateSuccessfulPutOperation(resp, prescriptionId);
+                    break;
+                case "DELETE":
+                    resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                    break;
+            }
+            return;
+        }
+
+        resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
     }
 
     @Override
@@ -78,7 +111,7 @@ public class PrescriptionService extends Service<Prescription> {
         String medicationName = req.getParameter("medication");
         return prescription ->
                 (id == null || id.equals(String.valueOf(prescription.getId()))) &&
-                (medicationName == null || medicationName.equals(prescription.getMedicationName()));
+                        (medicationName == null || medicationName.equals(prescription.getMedicationName()));
     }
 
 }

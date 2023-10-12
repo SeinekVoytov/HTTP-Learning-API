@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create AbstractServlet class and move here common functionality for all Servlets.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add PrescriptionService.handlePost method implementation.">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
     </list>
@@ -330,14 +330,6 @@
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
       <workItem from="1696939037410" duration="36887000" />
-    </task>
-    <task id="LOCAL-00022" summary="Annotate User, Company, Geo, Address classes as ready for serialization to JSON.">
-      <option name="closed" value="true" />
-      <created>1695826190652</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1695826190652</updated>
     </task>
     <task id="LOCAL-00023" summary="Add messages for each test method.">
       <option name="closed" value="true" />
@@ -723,7 +715,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697128844691</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Add PrescriptionService.handlePost method implementation.">
+      <option name="closed" value="true" />
+      <created>1697130176480</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1697130176480</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -774,7 +774,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory." />
     <MESSAGE value="Create CharsetRequestFilter and CharsetResponseFilter classes that are responsible for setting UTF-8 charset for both request and response." />
     <MESSAGE value="Create ExceptionHandleUtil utility class that is responsible for handling all exceptions in servlets and setting corresponding status codes." />
     <MESSAGE value="Improve exception handling with ExceptionHandleUtil class. Remove unnecessary try/catch statements." />
@@ -799,6 +798,7 @@
     <MESSAGE value="Change Service interface to Service abstract class to place here common package-private methods." />
     <MESSAGE value="Move HandleProcessor interface from UsersServlet class to servlets package to make it available for other servlets" />
     <MESSAGE value="Create AbstractServlet class and move here common functionality for all Servlets." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create AbstractServlet class and move here common functionality for all Servlets." />
+    <MESSAGE value="Add PrescriptionService.handlePost method implementation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add PrescriptionService.handlePost method implementation." />
   </component>
 </project>
