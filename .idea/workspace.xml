@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create PrescriptionsServlet class. Change UsersServlet name to Default.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +51,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -102,7 +103,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Tests">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
     <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -329,15 +330,7 @@
       <workItem from="1696179669715" duration="20000" />
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
-      <workItem from="1696939037410" duration="33355000" />
-    </task>
-    <task id="LOCAL-00016" summary="Provide tests for methods gerUserById() and getAllUsers() from UserController class">
-      <option name="closed" value="true" />
-      <created>1695747143612</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1695747143612</updated>
+      <workItem from="1696939037410" duration="34983000" />
     </task>
     <task id="LOCAL-00017" summary="FIX: bug in testGetUserById method">
       <option name="closed" value="true" />
@@ -723,7 +716,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697095567983</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet.">
+      <option name="closed" value="true" />
+      <created>1697109707560</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1697109707560</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -774,7 +775,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improve code readability for doPost, doGet and doDelete methods of UsersServlet." />
     <MESSAGE value="FIX: bug with user id validating in doGet method" />
     <MESSAGE value="Add ContentTypeResponseFilter class which is responsible for setting content type to &quot;application/json&quot; for each response." />
     <MESSAGE value="Replace manual URI checking with regural expression mapping." />
@@ -799,6 +799,7 @@
     <MESSAGE value="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method." />
     <MESSAGE value="Add PrescriptionDao class for managing Prescription entities and implement test for class." />
     <MESSAGE value="Create PrescriptionsServlet class. Change UsersServlet name to Default." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create PrescriptionsServlet class. Change UsersServlet name to Default." />
+    <MESSAGE value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
   </component>
 </project>

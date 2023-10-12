@@ -37,7 +37,7 @@ public class UserService implements Service {
         int userId = extractUserIdFromURI(pathInfo);
         User user = userDao.getById(userId).orElseThrow();
 
-        if (pathInfo.matches("^/[^/]+/recipes.*$")) {
+        if (pathInfo.matches("^/[^/]+/prescriptions.*$")) {
             req.setAttribute("user", user);
             this.forwardToPrescriptionsServlet(req, resp);
             return;
@@ -54,7 +54,7 @@ public class UserService implements Service {
     @Override
     public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/[^/]+/recipes$")) { //
+        if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/[^/]+/prescriptions$")) { //
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
@@ -92,7 +92,7 @@ public class UserService implements Service {
 
         User user = userDao.getById(userId).orElseThrow();
 
-        if (pathInfo.matches("^/[^/]+/recipes/[^/]+$")) {
+        if (pathInfo.matches("^/[^/]+/prescriptions/[^/]+$")) {
             req.setAttribute("user", user);
             this.forwardToPrescriptionsServlet(req, resp);
             return;
@@ -148,7 +148,9 @@ public class UserService implements Service {
     }
 
     private void forwardToPrescriptionsServlet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/prescriptions");
+        String requestURI = req.getRequestURI();
+        int prescriptionsURIPartIndex = requestURI.indexOf("/prescriptions");
+        RequestDispatcher dispatcher = req.getRequestDispatcher(requestURI.substring(prescriptionsURIPartIndex));
         dispatcher.forward(req, resp);
     }
 }

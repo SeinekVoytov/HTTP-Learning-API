@@ -1,5 +1,7 @@
 package com.example.httplearningapi.controller.webcontroller.servlets;
 
+import com.example.httplearningapi.model.entities.user.User;
+import com.example.httplearningapi.util.JsonSerializationUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -14,6 +16,11 @@ public class PrescriptionsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        User user = (User) req.getAttribute("user");
+        if (user != null) {
+            JsonSerializationUtil.serializeObjectToJsonStream(user.getPrescriptions(), resp.getWriter());
+            System.out.println(req.getRequestURI());
+        }
     }
 
     @Override
