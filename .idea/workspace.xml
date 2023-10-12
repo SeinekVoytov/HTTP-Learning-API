@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Change Service interface to Service abstract class to place here common package-private methods.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/HandleProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Move HandleProcessor interface from UsersServlet class to servlets package to make it available for other servlets">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/AbstractServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -331,14 +331,6 @@
       <workItem from="1696426575032" duration="22592000" />
       <workItem from="1696878565913" duration="1562000" />
       <workItem from="1696939037410" duration="36887000" />
-    </task>
-    <task id="LOCAL-00020" summary="Add class JsonSerializationUtil class that is responsible for serializing objects to JSON.">
-      <option name="closed" value="true" />
-      <created>1695825690635</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1695825690635</updated>
     </task>
     <task id="LOCAL-00021" summary="FIX: util class has public constructor. Add private no-args construstor to JsonSerializationUtil class.">
       <option name="closed" value="true" />
@@ -724,7 +716,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697123139393</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Move HandleProcessor interface from UsersServlet class to servlets package to make it available for other servlets">
+      <option name="closed" value="true" />
+      <created>1697127955425</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1697127955425</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -775,7 +775,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add doPut method implementation to UsersServlet." />
     <MESSAGE value="Move servlets package to controller package." />
     <MESSAGE value="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory." />
     <MESSAGE value="Create CharsetRequestFilter and CharsetResponseFilter classes that are responsible for setting UTF-8 charset for both request and response." />
@@ -800,6 +799,7 @@
     <MESSAGE value="FIX: forwardToPrescriptionsServlet() method. Previous path for requestDispatcher was &quot;prescriptions&quot; which ignores other URI parts." />
     <MESSAGE value="Implement PrescriptionService.handleGet method" />
     <MESSAGE value="Change Service interface to Service abstract class to place here common package-private methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Service interface to Service abstract class to place here common package-private methods." />
+    <MESSAGE value="Move HandleProcessor interface from UsersServlet class to servlets package to make it available for other servlets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move HandleProcessor interface from UsersServlet class to servlets package to make it available for other servlets" />
   </component>
 </project>
