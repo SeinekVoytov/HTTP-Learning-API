@@ -5,7 +5,6 @@ import com.example.httplearningapi.model.dao.PrescriptionDao;
 import com.example.httplearningapi.model.entities.user.Prescription;
 import com.example.httplearningapi.model.entities.user.User;
 import com.example.httplearningapi.util.JsonSerializationUtil;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -59,12 +58,12 @@ public class PrescriptionService extends Service<Prescription> {
     }
 
     @Override
-    public void handlePut(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void handlePut(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
         processPutOrDeleteRequest(pathInfo, req, resp);
     }
 
     @Override
-    public void handleDelete(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void handleDelete(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
         processPutOrDeleteRequest(pathInfo, req, resp);
     }
 

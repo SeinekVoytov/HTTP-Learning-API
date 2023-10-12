@@ -2,12 +2,9 @@ package com.example.httplearningapi.controller.webcontroller.servlets;
 
 import com.example.httplearningapi.model.service.Service;
 import com.example.httplearningapi.util.ExceptionHandleUtil;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-import java.io.IOException;
 
 public abstract class AbstractServlet extends HttpServlet {
     @Override
@@ -31,7 +28,7 @@ public abstract class AbstractServlet extends HttpServlet {
     }
 
     @Override
-    protected void doHead(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doHead(HttpServletRequest req, HttpServletResponse resp) {
         try {
             super.doHead(req, resp);
         } catch (Exception e) {
@@ -40,7 +37,7 @@ public abstract class AbstractServlet extends HttpServlet {
     }
 
     @Override
-    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) {
         try {
             super.doOptions(req, resp);
         } catch (Exception e) {
