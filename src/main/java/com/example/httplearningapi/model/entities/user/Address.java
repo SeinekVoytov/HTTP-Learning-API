@@ -18,6 +18,7 @@ public class Address {
     private String country;
     private String city;
     private String street;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Geo geo;

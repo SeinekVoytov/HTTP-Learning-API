@@ -18,7 +18,6 @@ public class Company {
     @Id
     @JsonIgnore
     private int id;
-
     private String name;
 
     @Column(name = "catch_phrase")

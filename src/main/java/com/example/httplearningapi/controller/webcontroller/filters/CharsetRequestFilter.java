@@ -5,7 +5,7 @@ import jakarta.servlet.annotation.WebFilter;
 
 import java.io.IOException;
 
-@WebFilter(filterName = "Charset Response Filter", urlPatterns = {"/*"})
+@WebFilter(urlPatterns = {"/*"})
 public class CharsetRequestFilter implements Filter {
 
     private static final String CHARSET_UTF_8 = "UTF-8";

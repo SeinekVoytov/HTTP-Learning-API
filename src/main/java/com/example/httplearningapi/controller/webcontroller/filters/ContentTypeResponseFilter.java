@@ -5,7 +5,7 @@ import jakarta.servlet.annotation.WebFilter;
 
 import java.io.IOException;
 
-@WebFilter(filterName = "Content Type Response Filter", urlPatterns = {"/*"})
+@WebFilter(urlPatterns = {"/*"})
 public class ContentTypeResponseFilter implements Filter {
 
     private static final String CONTENT_TYPE_APPLICATION_JSON = "application/json";
