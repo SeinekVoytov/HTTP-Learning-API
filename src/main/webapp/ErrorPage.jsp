@@ -55,6 +55,9 @@
                 case 404:
                     msg = "{\"message\": \"404, page not found\"}";
                     break;
+                case 500:
+                    msg = "{\"message\": \"500, internal server error\"}";
+                    break;
                 default:
                     msg = "{\"message\": \"an unspecified error occurred\"}";
                     break;

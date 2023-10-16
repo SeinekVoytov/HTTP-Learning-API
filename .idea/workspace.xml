@@ -9,8 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Configure 4xxErrorPage.jsp for catching all responses with status codes 400, 404 in web.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: ExceptionHandleUtil.processException method implementation. Replace status code setting for each exception type to HttpServletResponse.sendError method. Change method signatures according to new IOException that can be thrown by ExceptionHandleUtil.processException method.">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/4xxErrorPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ErrorPage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -332,23 +332,7 @@
       <workItem from="1696939037410" duration="36887000" />
       <workItem from="1697268453808" duration="735000" />
       <workItem from="1697269266927" duration="2685000" />
-      <workItem from="1697456634407" duration="4391000" />
-    </task>
-    <task id="LOCAL-00026" summary="Provide better test methods names">
-      <option name="closed" value="true" />
-      <created>1695832655557</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1695832655557</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Add class JsonSerializationUtilTest which provide test for JsonSerializationUtil class.">
-      <option name="closed" value="true" />
-      <created>1695834450137</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1695834450137</updated>
+      <workItem from="1697456634407" duration="5144000" />
     </task>
     <task id="LOCAL-00028" summary="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency.">
       <option name="closed" value="true" />
@@ -726,7 +710,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697462330098</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="FIX: repeated status code for one error page in web.xml.">
+      <option name="closed" value="true" />
+      <created>1697463194119</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1697463194119</updated>
+    </task>
+    <task id="LOCAL-00076" summary="FIX: ExceptionHandleUtil.processException method implementation. Replace status code setting for each exception type to HttpServletResponse.sendError method. Change method signatures according to new IOException that can be thrown by ExceptionHandleUtil.processException method.">
+      <option name="closed" value="true" />
+      <created>1697463573990</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1697463573990</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -777,8 +777,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Rearrange code in UsersServlet to improve readability" />
-    <MESSAGE value="Add HEAD method support." />
     <MESSAGE value="Add implementations for doTrace and doOptions methods of UsersServlet." />
     <MESSAGE value="Create separate Dao interface. Rename UserController to UserDao. Create separate directories for dao's and for entities." />
     <MESSAGE value="Rename UserControllerTest to UserDaoTest." />
@@ -802,6 +800,8 @@
     <MESSAGE value="Add PrescriptionService.handleDelete and PrescriptionService.handlePut methods implementations." />
     <MESSAGE value="Create error page for 4.. status codes" />
     <MESSAGE value="Configure 4xxErrorPage.jsp for catching all responses with status codes 400, 404 in web.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configure 4xxErrorPage.jsp for catching all responses with status codes 400, 404 in web.xml" />
+    <MESSAGE value="FIX: repeated status code for one error page in web.xml." />
+    <MESSAGE value="FIX: ExceptionHandleUtil.processException method implementation. Replace status code setting for each exception type to HttpServletResponse.sendError method. Change method signatures according to new IOException that can be thrown by ExceptionHandleUtil.processException method." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: ExceptionHandleUtil.processException method implementation. Replace status code setting for each exception type to HttpServletResponse.sendError method. Change method signatures according to new IOException that can be thrown by ExceptionHandleUtil.processException method." />
   </component>
 </project>
