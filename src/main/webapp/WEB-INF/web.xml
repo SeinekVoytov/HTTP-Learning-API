@@ -10,6 +10,6 @@
 
     <error-page>
         <location>/4xxErrorPage.jsp</location>
-        <error-code>400</error-code>
+        <error-code>404</error-code>
     </error-page>
 </web-app>

@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Code cleanup (remove unnecessary whitespaces according to the code convention, remove unused filters names).">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/4xxErrorPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Configure 4xxErrorPage.jsp for catching all responses with status codes 400, 404 in web.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -333,23 +332,7 @@
       <workItem from="1696939037410" duration="36887000" />
       <workItem from="1697268453808" duration="735000" />
       <workItem from="1697269266927" duration="2685000" />
-      <workItem from="1697456634407" duration="3204000" />
-    </task>
-    <task id="LOCAL-00024" summary="FIX: code style in HibernateUtil class: name of private static field is not uppercase.">
-      <option name="closed" value="true" />
-      <created>1695832074183</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1695832074183</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Add HibernateUtilTest class in which functionality of HibernateUtil class is tested.">
-      <option name="closed" value="true" />
-      <created>1695832153670</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1695832153670</updated>
+      <workItem from="1697456634407" duration="4391000" />
     </task>
     <task id="LOCAL-00026" summary="Provide better test methods names">
       <option name="closed" value="true" />
@@ -727,7 +710,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697131416920</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Create error page for 4.. status codes">
+      <option name="closed" value="true" />
+      <created>1697462046736</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1697462046736</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Configure 4xxErrorPage.jsp for catching all responses with status codes 400, 404 in web.xml">
+      <option name="closed" value="true" />
+      <created>1697462330098</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1697462330098</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -778,8 +777,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create ExceptionHandleUtil utility class that is responsible for handling all exceptions in servlets and setting corresponding status codes." />
-    <MESSAGE value="Improve exception handling with ExceptionHandleUtil class. Remove unnecessary try/catch statements." />
     <MESSAGE value="Rearrange code in UsersServlet to improve readability" />
     <MESSAGE value="Add HEAD method support." />
     <MESSAGE value="Add implementations for doTrace and doOptions methods of UsersServlet." />
@@ -803,6 +800,8 @@
     <MESSAGE value="Create AbstractServlet class and move here common functionality for all Servlets." />
     <MESSAGE value="Add PrescriptionService.handlePost method implementation." />
     <MESSAGE value="Add PrescriptionService.handleDelete and PrescriptionService.handlePut methods implementations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add PrescriptionService.handleDelete and PrescriptionService.handlePut methods implementations." />
+    <MESSAGE value="Create error page for 4.. status codes" />
+    <MESSAGE value="Configure 4xxErrorPage.jsp for catching all responses with status codes 400, 404 in web.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configure 4xxErrorPage.jsp for catching all responses with status codes 400, 404 in web.xml" />
   </component>
 </project>
