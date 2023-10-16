@@ -1,7 +1,6 @@
 package com.example.httplearningapi.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
@@ -32,6 +31,4 @@ public class JsonSerializationUtil {
     public static <T> T deserializeObjectFromJson(Reader reader, Class<T> clazz) throws IOException {
         return MAPPER.readValue(reader, clazz);
     }
-
-
 }

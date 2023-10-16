@@ -1,6 +1,5 @@
 package com.example.httplearningapi.model.service;
 
-import com.example.httplearningapi.model.entities.user.Prescription;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

@@ -41,6 +41,11 @@
         </map>
       </branch-storage>
     </excluded-from-favorite>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="error-pages_branch" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -288,11 +293,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PrescriptionDaoTest" />
-        <item itemvalue="JUnit.UserDaoTest" />
+        <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
-        <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
+        <item itemvalue="JUnit.UserDaoTest" />
+        <item itemvalue="JUnit.PrescriptionDaoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -332,6 +337,47 @@
       <workItem from="1697268453808" duration="735000" />
       <workItem from="1697269266927" duration="2685000" />
       <workItem from="1697456634407" duration="5488000" />
+      <workItem from="1697178844801" duration="626000" />
+    </task>
+    <task id="LOCAL-00024" summary="FIX: code style in HibernateUtil class: name of private static field is not uppercase.">
+      <option name="closed" value="true" />
+      <created>1695832074183</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1695832074183</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add HibernateUtilTest class in which functionality of HibernateUtil class is tested.">
+      <option name="closed" value="true" />
+      <created>1695832153670</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1695832153670</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Provide better test methods names">
+      <option name="closed" value="true" />
+      <created>1695832655557</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1695832655557</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Add class JsonSerializationUtilTest which provide test for JsonSerializationUtil class.">
+      <option name="closed" value="true" />
+      <created>1695834450137</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1695834450137</updated>
+    </task>
+    <task id="LOCAL-00028" summary="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency.">
+      <option name="closed" value="true" />
+      <created>1695885384371</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1695885384371</updated>
     </task>
     <task id="LOCAL-00029" summary="Enable pretty json serialization. FIX: testcases: expected user has changed after enabling pretty serialization.">
       <option name="closed" value="true" />

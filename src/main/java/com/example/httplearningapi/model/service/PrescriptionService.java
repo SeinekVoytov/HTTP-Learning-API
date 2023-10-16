@@ -112,5 +112,4 @@ public class PrescriptionService extends Service<Prescription> {
                 (id == null || id.equals(String.valueOf(prescription.getId()))) &&
                         (medicationName == null || medicationName.equals(prescription.getMedicationName()));
     }
-
 }
