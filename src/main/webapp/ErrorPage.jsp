@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+         pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             position: absolute;
-            }
+        }
 
         html, body {
             font-family: 'Roboto Mono', monospace;
