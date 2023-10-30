@@ -13,6 +13,7 @@
         <mapping class="com.example.httplearningapi.model.entities.user.Address"/>
         <mapping class="com.example.httplearningapi.model.entities.user.Geo"/>
         <mapping class="com.example.httplearningapi.model.entities.user.Prescription"/>
+        <mapping class="com.example.httplearningapi.model.entities.user.Post"/>
 
     </session-factory>
 </hibernate-configuration>
