@@ -13,13 +13,14 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(HibernateUtilSetupExtension.class)
-public class PostDaoTest {
+public class PostDaoTest implements DaoTest {
 
     private static final int NUMBER_OF_PRESCRIPTIONS_IN_DATABASE = 100;
     private static final Dao<Post> PRESCRIPTION_DAO = new PostDao();
 
     @Test
-    public void retrievedUserFromDBIsNotNullTest() {
+    @Override
+    public void retrievedEntityFromDBIsNotNullTest() {
         Optional<Post> testPrescriptionOptional = PRESCRIPTION_DAO.getById(1);
         if (testPrescriptionOptional.isEmpty()) {
             fail("User is not retrieved from Database");
@@ -32,6 +33,7 @@ public class PostDaoTest {
     }
 
     @Test
+    @Override
     public void numberOfUsersRetrievedFromDBIsEqualToExpectedNumberTest() {
         List<Post> prescriptions = PRESCRIPTION_DAO.getAll();
         assertEquals(NUMBER_OF_PRESCRIPTIONS_IN_DATABASE, prescriptions.size(),

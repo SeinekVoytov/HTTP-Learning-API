@@ -9,8 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add PostDao.java class.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/daotest/PostDaoTest.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Provide PostDao class with some testcases">
+      <change afterPath="$PROJECT_DIR$/src/test/java/daotest/DaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/PostDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/PostDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/PrescriptionDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/PrescriptionDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +24,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Interface" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -109,23 +112,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PostDaoTest">
-    <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HTTPLearningService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utiltest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="utiltest" />
-      <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
-      <option name="METHOD_NAME" value="jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PostDaoTest.retrievedEntityFromDBIsNotNullTest">
     <configuration name="JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -173,17 +160,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests" type="JUnit" factoryName="JUnit">
-      <module name="HTTPLearningService" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PostDaoTest.retrievedEntityFromDBIsNotNullTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
         <pattern>
@@ -192,8 +169,34 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="daotest" />
-      <option name="MAIN_CLASS_NAME" value="daotest.UserDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="daotest.PostDaoTest" />
+      <option name="METHOD_NAME" value="retrievedEntityFromDBIsNotNullTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrescriptionDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daotest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daotest" />
+      <option name="MAIN_CLASS_NAME" value="daotest.PrescriptionDaoTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests" type="JUnit" factoryName="JUnit">
+      <module name="HTTPLearningService" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -288,19 +291,19 @@
     <list>
       <item itemvalue="JUnit.Tests" />
       <item itemvalue="JUnit.PostDaoTest" />
-      <item itemvalue="JUnit.UserDaoTest" />
-      <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
+      <item itemvalue="JUnit.PostDaoTest.retrievedEntityFromDBIsNotNullTest" />
+      <item itemvalue="JUnit.PrescriptionDaoTest" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
       <item itemvalue="Tomcat Server.Tomcat 10.1.13" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PostDaoTest.retrievedEntityFromDBIsNotNullTest" />
+        <item itemvalue="JUnit.PrescriptionDaoTest" />
         <item itemvalue="JUnit.PostDaoTest" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
-        <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
-        <item itemvalue="JUnit.UserDaoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -340,14 +343,6 @@
       <workItem from="1697268453808" duration="735000" />
       <workItem from="1697269266927" duration="2685000" />
       <workItem from="1697456634407" duration="5488000" />
-    </task>
-    <task id="LOCAL-00032" summary="Create extension for tests to create and close SessionFactory only once.">
-      <option name="closed" value="true" />
-      <created>1695971344182</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1695971344182</updated>
     </task>
     <task id="LOCAL-00033" summary="Add doDelete method implementation to UsersServlet.">
       <option name="closed" value="true" />
@@ -733,7 +728,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698684536487</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Provide PostDao class with some testcases">
+      <option name="closed" value="true" />
+      <created>1698684946099</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1698684946099</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -784,7 +787,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
     <MESSAGE value="Rearrange code in UserService class to provide better readability." />
     <MESSAGE value="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate." />
     <MESSAGE value="Add patient_id field to Prescription class which represents corresponding User object id." />
@@ -809,6 +811,7 @@
     <MESSAGE value="Resolve conflicts between branches" />
     <MESSAGE value="Add Post class. Map it with hibernate. Add List&lt;Post&gt; field to User class. Provide one-to-many relationship" />
     <MESSAGE value="Add PostDao.java class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add PostDao.java class." />
+    <MESSAGE value="Provide PostDao class with some testcases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Provide PostDao class with some testcases" />
   </component>
 </project>
