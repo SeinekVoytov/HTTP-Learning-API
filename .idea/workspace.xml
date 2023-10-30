@@ -9,10 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add Post class. Map it with hibernate. Add List&lt;Post&gt; field to User class. Provide one-to-many relationship">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PostDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add PostDao.java class.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/daotest/PostDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +109,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
+  <component name="RunManager" selected="JUnit.PostDaoTest">
     <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -160,7 +158,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PrescriptionDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PostDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
         <pattern>
@@ -169,7 +167,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="daotest" />
-      <option name="MAIN_CLASS_NAME" value="daotest.PrescriptionDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="daotest.PostDaoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -289,7 +287,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.PrescriptionDaoTest" />
+      <item itemvalue="JUnit.PostDaoTest" />
       <item itemvalue="JUnit.UserDaoTest" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
@@ -298,11 +296,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PostDaoTest" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
         <item itemvalue="JUnit.UserDaoTest" />
-        <item itemvalue="JUnit.PrescriptionDaoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -342,14 +340,6 @@
       <workItem from="1697268453808" duration="735000" />
       <workItem from="1697269266927" duration="2685000" />
       <workItem from="1697456634407" duration="5488000" />
-    </task>
-    <task id="LOCAL-00031" summary="Create AppLifecycleListener to catch moments of initializing and destroying servlets to init and close Session Factory in HibernateUtil class.">
-      <option name="closed" value="true" />
-      <created>1695968102014</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1695968102015</updated>
     </task>
     <task id="LOCAL-00032" summary="Create extension for tests to create and close SessionFactory only once.">
       <option name="closed" value="true" />
@@ -735,7 +725,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698684054010</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Add PostDao.java class.">
+      <option name="closed" value="true" />
+      <created>1698684536487</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1698684536487</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -786,7 +784,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Remove all business logic from servlet and move it to new UserService class." />
     <MESSAGE value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
     <MESSAGE value="Rearrange code in UserService class to provide better readability." />
     <MESSAGE value="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate." />
@@ -811,6 +808,7 @@
     <MESSAGE value="Make 4xxErrorPage.jsp common error page for all errors. Rename 4xxErrorPage.jsp to ErrorPage.jsp. Configure ErrorPage.jsp in web.xml." />
     <MESSAGE value="Resolve conflicts between branches" />
     <MESSAGE value="Add Post class. Map it with hibernate. Add List&lt;Post&gt; field to User class. Provide one-to-many relationship" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Post class. Map it with hibernate. Add List&lt;Post&gt; field to User class. Provide one-to-many relationship" />
+    <MESSAGE value="Add PostDao.java class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add PostDao.java class." />
   </component>
 </project>
