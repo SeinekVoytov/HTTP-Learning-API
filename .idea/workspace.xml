@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Make 4xxErrorPage.jsp common error page for all errors. Rename 4xxErrorPage.jsp to ErrorPage.jsp. Configure ErrorPage.jsp in web.xml.">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Add Post class. Map it with hibernate. Add List&lt;Post&gt; field to User class. Provide one-to-many relationship">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PostDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +24,8 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -45,7 +45,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="error-pages_branch" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,7 +86,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "posts__branch",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -342,22 +342,6 @@
       <workItem from="1697268453808" duration="735000" />
       <workItem from="1697269266927" duration="2685000" />
       <workItem from="1697456634407" duration="5488000" />
-    </task>
-    <task id="LOCAL-00029" summary="Enable pretty json serialization. FIX: testcases: expected user has changed after enabling pretty serialization.">
-      <option name="closed" value="true" />
-      <created>1695886540330</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1695886540330</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Add UsersServlet class which is responsible for all requests matching patterns */users and .../users/*">
-      <option name="closed" value="true" />
-      <created>1695927197579</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1695927197579</updated>
     </task>
     <task id="LOCAL-00031" summary="Create AppLifecycleListener to catch moments of initializing and destroying servlets to init and close Session Factory in HibernateUtil class.">
       <option name="closed" value="true" />
@@ -735,7 +719,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697464056768</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Resolve conflicts between branches">
+      <option name="closed" value="true" />
+      <created>1698681677864</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1698681677864</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Add Post class. Map it with hibernate. Add List&lt;Post&gt; field to User class. Provide one-to-many relationship">
+      <option name="closed" value="true" />
+      <created>1698684054010</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1698684054010</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -786,8 +786,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create separate Dao interface. Rename UserController to UserDao. Create separate directories for dao's and for entities." />
-    <MESSAGE value="Rename UserControllerTest to UserDaoTest." />
     <MESSAGE value="Remove all business logic from servlet and move it to new UserService class." />
     <MESSAGE value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
     <MESSAGE value="Rearrange code in UserService class to provide better readability." />
@@ -811,6 +809,8 @@
     <MESSAGE value="FIX: repeated status code for one error page in web.xml." />
     <MESSAGE value="FIX: ExceptionHandleUtil.processException method implementation. Replace status code setting for each exception type to HttpServletResponse.sendError method. Change method signatures according to new IOException that can be thrown by ExceptionHandleUtil.processException method." />
     <MESSAGE value="Make 4xxErrorPage.jsp common error page for all errors. Rename 4xxErrorPage.jsp to ErrorPage.jsp. Configure ErrorPage.jsp in web.xml." />
-    <option name="LAST_COMMIT_MESSAGE" value="Make 4xxErrorPage.jsp common error page for all errors. Rename 4xxErrorPage.jsp to ErrorPage.jsp. Configure ErrorPage.jsp in web.xml." />
+    <MESSAGE value="Resolve conflicts between branches" />
+    <MESSAGE value="Add Post class. Map it with hibernate. Add List&lt;Post&gt; field to User class. Provide one-to-many relationship" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Post class. Map it with hibernate. Add List&lt;Post&gt; field to User class. Provide one-to-many relationship" />
   </component>
 </project>
