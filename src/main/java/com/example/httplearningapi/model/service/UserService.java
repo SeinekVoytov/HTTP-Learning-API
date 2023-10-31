@@ -21,7 +21,7 @@ public class UserService extends Service<User> {
     @Override
     public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if (pathInfo == null || pathInfo.equals("/")) {
+        if (isPathInfoNullOrEmpty(pathInfo)) {
 
             List<User> users = userDao.getAll();
 
@@ -59,7 +59,7 @@ public class UserService extends Service<User> {
             return;
         }
 
-        if (pathInfo == null || pathInfo.equals("/")) {
+        if (isPathInfoNullOrEmpty(pathInfo)) {
             this.simulateSuccessfulPostOperation(resp);
             return;
         }
@@ -84,7 +84,7 @@ public class UserService extends Service<User> {
 
     private void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if (pathInfo == null || pathInfo.equals("/")) {
+        if (isPathInfoNullOrEmpty(pathInfo)) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }

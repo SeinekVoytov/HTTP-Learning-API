@@ -19,6 +19,9 @@ public abstract class Service<T> {
         return Integer.parseInt(pathInfo.substring(1).split("/")[0]);
     }
 
+    boolean isPathInfoNullOrEmpty(String pathInfo) {
+        return (pathInfo == null || pathInfo.equals("/"));
+    }
     List<T> filterByQueryParams(HttpServletRequest req, List<T> targetList) {
         return targetList.stream()
                 .filter(createPredicateForFilteringByQueryParams(req))

@@ -20,7 +20,7 @@ public class PrescriptionService extends Service<Prescription> {
     @Override
     public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-        if (pathInfo == null || pathInfo.equals("/")) {
+        if (isPathInfoNullOrEmpty(pathInfo)) {
 
             User userAttribute = (User) req.getAttribute("user");
             List<Prescription> prescriptions = (userAttribute == null) ?
@@ -49,7 +49,7 @@ public class PrescriptionService extends Service<Prescription> {
     @Override
     public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-        if (pathInfo != null && !pathInfo.equals("/")) {
+        if (isPathInfoNullOrEmpty(pathInfo)) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
@@ -79,7 +79,7 @@ public class PrescriptionService extends Service<Prescription> {
 
     private void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-        if (pathInfo == null || pathInfo.equals("/")) {
+        if (isPathInfoNullOrEmpty(pathInfo)) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
