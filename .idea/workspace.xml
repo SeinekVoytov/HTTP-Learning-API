@@ -9,16 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Move common check for (pathInfo == null || pathInfo.equals(&quot;/&quot;)) to abstract class Service.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Rename Service.java to AbstractService.java">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/TopLevelResourceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/AbstractServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/AbstractServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/AbstractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/AbstractService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/AbstractService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -351,14 +347,6 @@
       <workItem from="1697456634407" duration="5488000" />
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
-    </task>
-    <task id="LOCAL-00035" summary="FIX: equals and hashcode methods: delete id parameter from comparing">
-      <option name="closed" value="true" />
-      <created>1696056048149</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1696056048149</updated>
     </task>
     <task id="LOCAL-00036" summary="Add JsonSerializationUtil.deserializeObjectFromJson method. Add property FAIL_ON_UNKNOWN_PROPERTIES to Mapper.">
       <option name="closed" value="true" />
@@ -744,7 +732,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698758132468</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Rename Service.java to AbstractService.java">
+      <option name="closed" value="true" />
+      <created>1698761260307</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1698761260307</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -795,7 +791,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add patient_id field to Prescription class which represents corresponding User object id." />
     <MESSAGE value="FIX: problem with serializing java.sql.Date to JSON by Jackson. Add JsonFormat annotation to ensure correct deserialization format" />
     <MESSAGE value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
     <MESSAGE value="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method." />
@@ -820,6 +815,7 @@
     <MESSAGE value="Provide PostDao class with some testcases" />
     <MESSAGE value="Move two common methods for DaoTest classes to interface DaoTest. Implement this interface by all ...DaoTest classes. Add @Override annotations to methods." />
     <MESSAGE value="Move common check for (pathInfo == null || pathInfo.equals(&quot;/&quot;)) to abstract class Service." />
-    <option name="LAST_COMMIT_MESSAGE" value="Move common check for (pathInfo == null || pathInfo.equals(&quot;/&quot;)) to abstract class Service." />
+    <MESSAGE value="Rename Service.java to AbstractService.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename Service.java to AbstractService.java" />
   </component>
 </project>
