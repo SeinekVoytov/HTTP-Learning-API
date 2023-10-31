@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public abstract class Service<T> {
+public abstract class AbstractService<T> {
     public abstract void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
     public abstract void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
     public abstract void handlePut(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;

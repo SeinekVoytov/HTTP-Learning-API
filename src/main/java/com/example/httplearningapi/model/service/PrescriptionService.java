@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Predicate;
 
-public class PrescriptionService extends Service<Prescription> {
+public class PrescriptionService extends AbstractService<Prescription> {
 
     private final Dao<Prescription> prescriptionDao = new PrescriptionDao();
 

@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Predicate;
 
-public class UserService extends Service<User> {
+public class UserService extends AbstractService<User> {
 
     private final Dao<User> userDao = new UserDao();
 
@@ -37,7 +37,7 @@ public class UserService extends Service<User> {
         int userId = extractIdFromURI(pathInfo);
         User user = userDao.getById(userId).orElseThrow();
 
-        if (pathInfo.matches("^/\\d+/prescriptions.*$")) {
+        if (pathInfo.matches("^/\\d+/[^/]+.*$")) {
             req.setAttribute("user", user);
             this.forwardToPrescriptionsServlet(req, resp);
             return;
@@ -54,7 +54,7 @@ public class UserService extends Service<User> {
     @Override
     public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/\\d+/prescriptions/?$")) { //
+        if (pathInfo != null && !pathInfo.equals("/") && !pathInfo.matches("^/\\d+/[^/]+/?$")) { //
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
@@ -93,7 +93,7 @@ public class UserService extends Service<User> {
 
         User user = userDao.getById(userId).orElseThrow();
 
-        if (pathInfo.matches("^/\\d+/prescriptions/\\d+/?$")) {
+        if (pathInfo.matches("^/\\d+/[^/]+/\\d+/?$")) {
             req.setAttribute("user", user);
             this.forwardToPrescriptionsServlet(req, resp);
             return;

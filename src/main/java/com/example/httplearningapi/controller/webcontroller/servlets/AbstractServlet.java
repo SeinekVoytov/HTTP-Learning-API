@@ -1,6 +1,6 @@
 package com.example.httplearningapi.controller.webcontroller.servlets;
 
-import com.example.httplearningapi.model.service.Service;
+import com.example.httplearningapi.model.service.AbstractService;
 import com.example.httplearningapi.util.ExceptionHandleUtil;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -54,5 +54,5 @@ public abstract class AbstractServlet extends HttpServlet {
         }
     }
 
-    abstract void handleRequest(HandleProcessor<Service<?>> handleProcessor, HttpServletResponse resp);
+    abstract void handleRequest(HandleProcessor<AbstractService<?>> handleProcessor, HttpServletResponse resp);
 }
