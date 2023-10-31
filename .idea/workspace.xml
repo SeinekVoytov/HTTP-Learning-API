@@ -9,15 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Move two common methods for DaoTest classes to interface DaoTest. Implement this interface by all ...DaoTest classes. Add @Override annotations to methods.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Move common check for (pathInfo == null || pathInfo.equals(&quot;/&quot;)) to abstract class Service.">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PostService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/util/MainResourceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,15 +345,7 @@
       <workItem from="1697269266927" duration="2685000" />
       <workItem from="1697456634407" duration="5488000" />
       <workItem from="1698736975494" duration="13000" />
-      <workItem from="1698756807442" duration="1249000" />
-    </task>
-    <task id="LOCAL-00034" summary="Add equals and hashcode methods to User, Company, Address and Geo classes.">
-      <option name="closed" value="true" />
-      <created>1696009944559</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1696009944559</updated>
+      <workItem from="1698756807442" duration="2569000" />
     </task>
     <task id="LOCAL-00035" summary="FIX: equals and hashcode methods: delete id parameter from comparing">
       <option name="closed" value="true" />
@@ -742,7 +731,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698685329902</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Move common check for (pathInfo == null || pathInfo.equals(&quot;/&quot;)) to abstract class Service.">
+      <option name="closed" value="true" />
+      <created>1698758132468</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1698758132468</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -793,7 +790,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate." />
     <MESSAGE value="Add patient_id field to Prescription class which represents corresponding User object id." />
     <MESSAGE value="FIX: problem with serializing java.sql.Date to JSON by Jackson. Add JsonFormat annotation to ensure correct deserialization format" />
     <MESSAGE value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
@@ -818,6 +814,7 @@
     <MESSAGE value="Add PostDao.java class." />
     <MESSAGE value="Provide PostDao class with some testcases" />
     <MESSAGE value="Move two common methods for DaoTest classes to interface DaoTest. Implement this interface by all ...DaoTest classes. Add @Override annotations to methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="Move two common methods for DaoTest classes to interface DaoTest. Implement this interface by all ...DaoTest classes. Add @Override annotations to methods." />
+    <MESSAGE value="Move common check for (pathInfo == null || pathInfo.equals(&quot;/&quot;)) to abstract class Service." />
+    <option name="LAST_COMMIT_MESSAGE" value="Move common check for (pathInfo == null || pathInfo.equals(&quot;/&quot;)) to abstract class Service." />
   </component>
 </project>
