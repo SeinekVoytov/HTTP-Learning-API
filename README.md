@@ -37,8 +37,7 @@ HttpLearningAPI comes with a set of 4 common resources:
 The HTTP Study API is designed to be user-friendly and educational. You can perform the following tasks with the API:
 
 - Send various types of HTTP requests.
-- Observe responses and simulate success for non-idempotent requests.
-- Explore the provided fake data.
+- Explore the provided fake data, headers and body corresponding to request.
 
 ### Example usage:
 ```
