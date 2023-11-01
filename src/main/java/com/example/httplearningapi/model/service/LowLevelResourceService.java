@@ -2,7 +2,6 @@ package com.example.httplearningapi.model.service;
 
 import com.example.httplearningapi.model.dao.Dao;
 import com.example.httplearningapi.util.JsonSerializationUtil;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -19,7 +18,7 @@ public abstract class LowLevelResourceService<T, P> extends MidLevelResourceServ
     }
 
     @Override
-    public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         P parentEntity = getParentResourceAttribute(req);
 
@@ -49,7 +48,7 @@ public abstract class LowLevelResourceService<T, P> extends MidLevelResourceServ
     }
 
     @Override
-    public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         if (isPathInfoNullOrEmpty(pathInfo)) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
@@ -60,17 +59,17 @@ public abstract class LowLevelResourceService<T, P> extends MidLevelResourceServ
     }
 
     @Override
-    public void handlePut(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void handlePut(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
         processPutOrDeleteRequest(pathInfo, req, resp);
     }
 
     @Override
-    public void handleDelete(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void handleDelete(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
         processPutOrDeleteRequest(pathInfo, req, resp);
     }
 
     @Override
-    void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         if (isPathInfoNullOrEmpty(pathInfo)) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
