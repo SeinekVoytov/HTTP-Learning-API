@@ -1,22 +1,19 @@
 package com.example.httplearningapi.controller.webcontroller.servlets;
 
-import com.example.httplearningapi.model.entities.user.Prescription;
-import com.example.httplearningapi.model.service.PrescriptionService;
+import com.example.httplearningapi.model.entities.user.Post;
 import com.example.httplearningapi.model.service.AbstractService;
+import com.example.httplearningapi.model.service.PostService;
 import com.example.httplearningapi.util.ExceptionHandleUtil;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletResponse;
 
-import java.io.IOException;
-
-
-@WebServlet(urlPatterns = {"/prescriptions", "/prescriptions/*"})
-public class PrescriptionsServlet extends AbstractServlet {
+@WebServlet(urlPatterns = {"/posts", "/posts/*"})
+public class PostsServlet extends AbstractServlet {
 
     @Override
     void handleRequest(HandleProcessor<AbstractService<?>> handleProcessor, HttpServletResponse resp) {
         try {
-            AbstractService<Prescription> service = new PrescriptionService();
+            AbstractService<Post> service = new PostService();
             handleProcessor.process(service);
         } catch (Exception e) {
             ExceptionHandleUtil.processException(e, resp);

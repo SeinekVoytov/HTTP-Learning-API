@@ -1,7 +1,7 @@
 package com.example.httplearningapi.model.service;
 
-import com.example.httplearningapi.model.dao.PrescriptionDao;
-import com.example.httplearningapi.model.entities.user.Prescription;
+import com.example.httplearningapi.model.dao.PostDao;
+import com.example.httplearningapi.model.entities.user.Post;
 import com.example.httplearningapi.model.entities.user.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,20 +11,14 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Predicate;
 
-public class PrescriptionService extends LowLevelResourceService<Prescription, User> {
-
-    public PrescriptionService() {
-        super(new PrescriptionDao());
+public class PostService extends MidLevelResourceService<Post, User> {
+    public PostService() {
+        super(new PostDao());
     }
 
     @Override
-    User getParentResourceAttribute(HttpServletRequest req) {
-        return (User) req.getAttribute("parentResource");
-    }
-
-    @Override
-    List<Prescription> getResourceList(User parentEntity) {
-        return parentEntity.getPrescriptions();
+    List<Post> getResourceList(User parentEntity) {
+        return parentEntity.getPosts();
     }
 
     @Override
@@ -43,6 +37,11 @@ public class PrescriptionService extends LowLevelResourceService<Prescription, U
     }
 
     @Override
+    User getParentResourceAttribute(HttpServletRequest req) {
+        return (User) req.getAttribute("parentResource");
+    }
+
+    @Override
     void simulateSuccessfulPostOperation(HttpServletResponse resp) throws IOException {
         resp.setStatus(HttpServletResponse.SC_CREATED);
         resp.getWriter().print("{\"id\" : 101}");
@@ -55,11 +54,9 @@ public class PrescriptionService extends LowLevelResourceService<Prescription, U
     }
 
     @Override
-    Predicate<Prescription> createPredicateForFilteringByQueryParams(HttpServletRequest req) {
+    Predicate<Post> createPredicateForFilteringByQueryParams(HttpServletRequest req) {
         String id = req.getParameter("id");
-        String medicationName = req.getParameter("medication");
-        return prescription ->
-                (id == null || id.equals(String.valueOf(prescription.getId()))) &&
-                        (medicationName == null || medicationName.equals(prescription.getMedicationName()));
+        return post ->
+                (id == null || id.equals(String.valueOf(post.getId())));
     }
 }

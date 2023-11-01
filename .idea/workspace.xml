@@ -111,22 +111,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
-    <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HTTPLearningService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utiltest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="utiltest" />
-      <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
-      <option name="METHOD_NAME" value="jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -159,6 +143,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PostDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daotest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daotest" />
+      <option name="MAIN_CLASS_NAME" value="daotest.PostDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostDaoTest.retrievedEntityFromDBIsNotNullTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daotest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daotest" />
+      <option name="MAIN_CLASS_NAME" value="daotest.PostDaoTest" />
+      <option name="METHOD_NAME" value="retrievedEntityFromDBIsNotNullTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PrescriptionDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -180,21 +195,6 @@
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HTTPLearningService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="daotest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="daotest" />
-      <option name="MAIN_CLASS_NAME" value="daotest.UserDaoTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -288,8 +288,8 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
-      <item itemvalue="JUnit.UserDaoTest" />
+      <item itemvalue="JUnit.PostDaoTest" />
+      <item itemvalue="JUnit.PostDaoTest.retrievedEntityFromDBIsNotNullTest" />
       <item itemvalue="JUnit.PrescriptionDaoTest" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
@@ -297,11 +297,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PostDaoTest.retrievedEntityFromDBIsNotNullTest" />
+        <item itemvalue="JUnit.PrescriptionDaoTest" />
+        <item itemvalue="JUnit.PostDaoTest" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
-        <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
-        <item itemvalue="JUnit.UserDaoTest" />
-        <item itemvalue="JUnit.PrescriptionDaoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -343,6 +343,135 @@
       <workItem from="1697456634407" duration="5488000" />
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
+      <workItem from="1697178844801" duration="626000" />
+    </task>
+    <task id="LOCAL-00024" summary="FIX: code style in HibernateUtil class: name of private static field is not uppercase.">
+      <option name="closed" value="true" />
+      <created>1695832074183</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1695832074183</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add HibernateUtilTest class in which functionality of HibernateUtil class is tested.">
+      <option name="closed" value="true" />
+      <created>1695832153670</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1695832153670</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Provide better test methods names">
+      <option name="closed" value="true" />
+      <created>1695832655557</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1695832655557</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Add class JsonSerializationUtilTest which provide test for JsonSerializationUtil class.">
+      <option name="closed" value="true" />
+      <created>1695834450137</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1695834450137</updated>
+    </task>
+    <task id="LOCAL-00028" summary="FIX: hibernate configuration settings. Replace manual mysql connector adding with maven dependency.">
+      <option name="closed" value="true" />
+      <created>1695885384371</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1695885384371</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Enable pretty json serialization. FIX: testcases: expected user has changed after enabling pretty serialization.">
+      <option name="closed" value="true" />
+      <created>1695886540330</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1695886540330</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Add UsersServlet class which is responsible for all requests matching patterns */users and .../users/*">
+      <option name="closed" value="true" />
+      <created>1695927197579</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1695927197579</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Create AppLifecycleListener to catch moments of initializing and destroying servlets to init and close Session Factory in HibernateUtil class.">
+      <option name="closed" value="true" />
+      <created>1695968102014</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1695968102015</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Create extension for tests to create and close SessionFactory only once.">
+      <option name="closed" value="true" />
+      <created>1695971344182</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1695971344182</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Add doDelete method implementation to UsersServlet.">
+      <option name="closed" value="true" />
+      <created>1696007635146</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1696007635146</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Add equals and hashcode methods to User, Company, Address and Geo classes.">
+      <option name="closed" value="true" />
+      <created>1696009944559</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1696009944559</updated>
+    </task>
+    <task id="LOCAL-00035" summary="FIX: equals and hashcode methods: delete id parameter from comparing">
+      <option name="closed" value="true" />
+      <created>1696056048149</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1696056048149</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Add JsonSerializationUtil.deserializeObjectFromJson method. Add property FAIL_ON_UNKNOWN_PROPERTIES to Mapper.">
+      <option name="closed" value="true" />
+      <created>1696062567518</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1696062567518</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Provide test for JsonSerializationUtil.deserializeObjectFromJson method">
+      <option name="closed" value="true" />
+      <created>1696062609763</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1696062609763</updated>
+    </task>
+    <task id="LOCAL-00038" summary="FIX: bug in parsing URI like .../users/ with extra slash character">
+      <option name="closed" value="true" />
+      <created>1696062905057</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1696062905057</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Add doPost method implementation for UsersServlet">
+      <option name="closed" value="true" />
+      <created>1696068166060</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1696068166060</updated>
     </task>
     <task id="LOCAL-00040" summary="Improve code readability for doPost, doGet and doDelete methods of UsersServlet.">
       <option name="closed" value="true" />
@@ -787,6 +916,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Create separate Dao interface. Rename UserController to UserDao. Create separate directories for dao's and for entities." />
+    <MESSAGE value="Rename UserControllerTest to UserDaoTest." />
+    <MESSAGE value="Remove all business logic from servlet and move it to new UserService class." />
+    <MESSAGE value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
+    <MESSAGE value="Rearrange code in UserService class to provide better readability." />
+    <MESSAGE value="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate." />
+    <MESSAGE value="Add patient_id field to Prescription class which represents corresponding User object id." />
+    <MESSAGE value="FIX: problem with serializing java.sql.Date to JSON by Jackson. Add JsonFormat annotation to ensure correct deserialization format" />
+    <MESSAGE value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
+    <MESSAGE value="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method." />
     <MESSAGE value="Add PrescriptionDao class for managing Prescription entities and implement test for class." />
     <MESSAGE value="Create PrescriptionsServlet class. Change UsersServlet name to Default." />
     <MESSAGE value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
