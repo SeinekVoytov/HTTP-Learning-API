@@ -56,6 +56,6 @@ public abstract class AbstractServlet extends HttpServlet {
         }
     }
 
-    abstract void handleRequest(HandleProcessor<AbstractService<?>> handleProcessor, HttpServletResponse resp);
+    abstract void handleRequest(HandleProcessor<AbstractService<?>> handleProcessor, HttpServletResponse resp) throws IOException;
 
 }

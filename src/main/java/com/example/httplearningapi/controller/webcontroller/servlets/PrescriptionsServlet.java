@@ -14,7 +14,7 @@ import java.io.IOException;
 public class PrescriptionsServlet extends AbstractServlet {
 
     @Override
-    void handleRequest(HandleProcessor<AbstractService<?>> handleProcessor, HttpServletResponse resp) {
+    void handleRequest(HandleProcessor<AbstractService<?>> handleProcessor, HttpServletResponse resp) throws IOException {
         try {
             AbstractService<Prescription> service = new PrescriptionService();
             handleProcessor.process(service);

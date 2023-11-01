@@ -7,11 +7,13 @@ import com.example.httplearningapi.util.ExceptionHandleUtil;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.IOException;
+
 @WebServlet(urlPatterns = {"/posts", "/posts/*"})
 public class PostsServlet extends AbstractServlet {
 
     @Override
-    void handleRequest(HandleProcessor<AbstractService<?>> handleProcessor, HttpServletResponse resp) {
+    void handleRequest(HandleProcessor<AbstractService<?>> handleProcessor, HttpServletResponse resp) throws IOException {
         try {
             AbstractService<Post> service = new PostService();
             handleProcessor.process(service);

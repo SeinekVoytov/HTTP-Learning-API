@@ -13,7 +13,7 @@ import java.io.IOException;
 public class UsersServlet extends AbstractServlet {
 
     @Override
-    void handleRequest(HandleProcessor<AbstractService<?>> handleProcessor, HttpServletResponse resp) {
+    void handleRequest(HandleProcessor<AbstractService<?>> handleProcessor, HttpServletResponse resp) throws IOException {
         try {
             AbstractService<User> service = new UserService();
             handleProcessor.process(service);
