@@ -36,7 +36,19 @@ public class User {
     @JsonIgnore
     private List<Prescription> prescriptions;
 
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<Post> posts;
+
     public User() {
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
     public List<Prescription> getPrescriptions() {

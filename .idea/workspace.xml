@@ -9,8 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Make 4xxErrorPage.jsp common error page for all errors. Rename 4xxErrorPage.jsp to ErrorPage.jsp. Configure ErrorPage.jsp in web.xml.">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ErrorPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ErrorPage.jsp" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PostsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +22,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -43,7 +44,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="error-pages_branch" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,6 +58,9 @@
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -81,16 +85,16 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;error-pages__branch&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;posts__branch&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.27182046&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -107,22 +111,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
-    <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HTTPLearningService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utiltest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="utiltest" />
-      <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
-      <option name="METHOD_NAME" value="jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -155,6 +143,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PostDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daotest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daotest" />
+      <option name="MAIN_CLASS_NAME" value="daotest.PostDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostDaoTest.retrievedEntityFromDBIsNotNullTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTPLearningService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daotest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daotest" />
+      <option name="MAIN_CLASS_NAME" value="daotest.PostDaoTest" />
+      <option name="METHOD_NAME" value="retrievedEntityFromDBIsNotNullTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PrescriptionDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -176,21 +195,6 @@
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HTTPLearningService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="daotest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="daotest" />
-      <option name="MAIN_CLASS_NAME" value="daotest.UserDaoTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -284,20 +288,20 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
+      <item itemvalue="JUnit.PostDaoTest" />
+      <item itemvalue="JUnit.PostDaoTest.retrievedEntityFromDBIsNotNullTest" />
       <item itemvalue="JUnit.PrescriptionDaoTest" />
-      <item itemvalue="JUnit.UserDaoTest" />
-      <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
       <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
       <item itemvalue="Tomcat Server.Tomcat 10.1.13" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PostDaoTest.retrievedEntityFromDBIsNotNullTest" />
+        <item itemvalue="JUnit.PrescriptionDaoTest" />
+        <item itemvalue="JUnit.PostDaoTest" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
         <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
-        <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
-        <item itemvalue="JUnit.UserDaoTest" />
-        <item itemvalue="JUnit.PrescriptionDaoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -337,6 +341,8 @@
       <workItem from="1697268453808" duration="735000" />
       <workItem from="1697269266927" duration="2685000" />
       <workItem from="1697456634407" duration="5488000" />
+      <workItem from="1698736975494" duration="13000" />
+      <workItem from="1698756807442" duration="2569000" />
       <workItem from="1697178844801" duration="626000" />
     </task>
     <task id="LOCAL-00024" summary="FIX: code style in HibernateUtil class: name of private static field is not uppercase.">
@@ -771,7 +777,95 @@
       <option name="project" value="LOCAL" />
       <updated>1697464056768</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Resolve conflicts between branches">
+      <option name="closed" value="true" />
+      <created>1698681677864</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1698681677864</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Add Post class. Map it with hibernate. Add List&lt;Post&gt; field to User class. Provide one-to-many relationship">
+      <option name="closed" value="true" />
+      <created>1698684054010</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1698684054010</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Add PostDao.java class.">
+      <option name="closed" value="true" />
+      <created>1698684536487</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1698684536487</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Provide PostDao class with some testcases">
+      <option name="closed" value="true" />
+      <created>1698684946099</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1698684946099</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Move two common methods for DaoTest classes to interface DaoTest. Implement this interface by all ...DaoTest classes. Add @Override annotations to methods.">
+      <option name="closed" value="true" />
+      <created>1698685329902</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1698685329902</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Move common check for (pathInfo == null || pathInfo.equals(&quot;/&quot;)) to abstract class Service.">
+      <option name="closed" value="true" />
+      <created>1698758132468</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1698758132468</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Rename Service.java to AbstractService.java">
+      <option name="closed" value="true" />
+      <created>1698761260307</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1698761260307</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Create TopLevelResourceService.java class to move all common logic from UserService.java class.">
+      <option name="closed" value="true" />
+      <created>1698766105153</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1698766105153</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Create MidLevelResourceService.java class to move all common logic from PostService.java class.">
+      <option name="closed" value="true" />
+      <created>1698848085027</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1698848085027</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class.">
+      <option name="closed" value="true" />
+      <created>1698849475356</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1698849475357</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class.">
+      <option name="closed" value="true" />
+      <created>1698849545480</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1698849545480</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -847,6 +941,16 @@
     <MESSAGE value="FIX: repeated status code for one error page in web.xml." />
     <MESSAGE value="FIX: ExceptionHandleUtil.processException method implementation. Replace status code setting for each exception type to HttpServletResponse.sendError method. Change method signatures according to new IOException that can be thrown by ExceptionHandleUtil.processException method." />
     <MESSAGE value="Make 4xxErrorPage.jsp common error page for all errors. Rename 4xxErrorPage.jsp to ErrorPage.jsp. Configure ErrorPage.jsp in web.xml." />
-    <option name="LAST_COMMIT_MESSAGE" value="Make 4xxErrorPage.jsp common error page for all errors. Rename 4xxErrorPage.jsp to ErrorPage.jsp. Configure ErrorPage.jsp in web.xml." />
+    <MESSAGE value="Resolve conflicts between branches" />
+    <MESSAGE value="Add Post class. Map it with hibernate. Add List&lt;Post&gt; field to User class. Provide one-to-many relationship" />
+    <MESSAGE value="Add PostDao.java class." />
+    <MESSAGE value="Provide PostDao class with some testcases" />
+    <MESSAGE value="Move two common methods for DaoTest classes to interface DaoTest. Implement this interface by all ...DaoTest classes. Add @Override annotations to methods." />
+    <MESSAGE value="Move common check for (pathInfo == null || pathInfo.equals(&quot;/&quot;)) to abstract class Service." />
+    <MESSAGE value="Rename Service.java to AbstractService.java" />
+    <MESSAGE value="Create TopLevelResourceService.java class to move all common logic from UserService.java class." />
+    <MESSAGE value="Create MidLevelResourceService.java class to move all common logic from PostService.java class." />
+    <MESSAGE value="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class." />
   </component>
 </project>
