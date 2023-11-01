@@ -1,10 +1,8 @@
 package com.example.httplearningapi.model.service;
 
-import com.example.httplearningapi.model.dao.Dao;
 import com.example.httplearningapi.model.dao.PrescriptionDao;
 import com.example.httplearningapi.model.entities.user.Prescription;
 import com.example.httplearningapi.model.entities.user.User;
-import com.example.httplearningapi.util.JsonSerializationUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -13,95 +11,47 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Predicate;
 
-public class PrescriptionService extends AbstractService<Prescription> {
+public class PrescriptionService extends LowLevelResourceService<Prescription, User> {
 
-    private final Dao<Prescription> prescriptionDao = new PrescriptionDao();
+    public PrescriptionService() {
+        super(new PrescriptionDao());
+    }
 
     @Override
-    public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    User getParentResourceAttribute(HttpServletRequest req) {
+        return (User) req.getAttribute("parentResource");
+    }
 
-        if (isPathInfoNullOrEmpty(pathInfo)) {
+    @Override
+    List<Prescription> getResourceList(User parentEntity) {
+        return parentEntity.getPrescriptions();
+    }
 
-            User userAttribute = (User) req.getAttribute("user");
-            List<Prescription> prescriptions = (userAttribute == null) ?
-                    prescriptionDao.getAll() : userAttribute.getPrescriptions();
+    @Override
+    void validateId(int id, User parentEntity) {
 
-            String queryString = req.getQueryString();
-            if (queryString != null) {
-                prescriptions = this.filterByQueryParams(req, prescriptions);
-            }
+        boolean isIdValidAccordingToParent = true;
 
-            JsonSerializationUtil.serializeObjectToJsonStream(prescriptions, resp.getWriter());
-            return;
+        if (parentEntity != null) {
+            int allowedLowId = (parentEntity.getId() - 1) * 10 + 1;
+            isIdValidAccordingToParent = id >= allowedLowId && id <= allowedLowId + 9;
         }
 
-        int prescriptionId = extractIdFromURI(pathInfo);
-        Prescription prescription = prescriptionDao.getById(prescriptionId).orElseThrow();
-
-        if (pathInfo.matches("^/[^/]+/?$")) {
-            JsonSerializationUtil.serializeObjectToJsonStream(prescription, resp.getWriter());
-            return;
+        if (!(id > 0 && id <= 100 && isIdValidAccordingToParent)) {
+            throw new NoSuchElementException();
         }
-
-        resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
     }
 
     @Override
-    public void handlePost(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
-        if (isPathInfoNullOrEmpty(pathInfo)) {
-            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            return;
-        }
-
-        this.simulateSuccessfulPostOperation(resp);
-    }
-
-    @Override
-    public void handlePut(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        processPutOrDeleteRequest(pathInfo, req, resp);
-    }
-
-    @Override
-    public void handleDelete(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        processPutOrDeleteRequest(pathInfo, req, resp);
-    }
-
-    private void simulateSuccessfulPostOperation(HttpServletResponse resp) throws IOException {
+    void simulateSuccessfulPostOperation(HttpServletResponse resp) throws IOException {
         resp.setStatus(HttpServletResponse.SC_CREATED);
         resp.getWriter().print("{\"id\" : 101}");
     }
 
-    private void simulateSuccessfulPutOperation(HttpServletResponse resp, int id) throws IOException {
+    @Override
+    void simulateSuccessfulPutOperation(HttpServletResponse resp, int id) throws IOException {
         resp.setStatus(HttpServletResponse.SC_OK);
         resp.getWriter().print(String.format("{\"id\" : %d}", id));
-    }
-
-    private void processPutOrDeleteRequest(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
-        if (isPathInfoNullOrEmpty(pathInfo)) {
-            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            return;
-        }
-
-        int prescriptionId = extractIdFromURI(pathInfo);
-        if (prescriptionId <= 0 || prescriptionId > 100) {
-            throw new NoSuchElementException();
-        }
-
-        if (pathInfo.matches("^/\\d+/?$")) {
-            switch (req.getMethod()) {
-                case "PUT":
-                    simulateSuccessfulPutOperation(resp, prescriptionId);
-                    break;
-                case "DELETE":
-                    resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
-                    break;
-            }
-            return;
-        }
-
-        resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
     }
 
     @Override
