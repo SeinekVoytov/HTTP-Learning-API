@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create MidLevelResourceService.java class to move all common logic from PostService.java class.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/LowLevelResourceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PostsServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,22 +343,6 @@
       <workItem from="1697456634407" duration="5488000" />
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
-    </task>
-    <task id="LOCAL-00038" summary="FIX: bug in parsing URI like .../users/ with extra slash character">
-      <option name="closed" value="true" />
-      <created>1696062905057</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1696062905057</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Add doPost method implementation for UsersServlet">
-      <option name="closed" value="true" />
-      <created>1696068166060</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1696068166060</updated>
     </task>
     <task id="LOCAL-00040" summary="Improve code readability for doPost, doGet and doDelete methods of UsersServlet.">
       <option name="closed" value="true" />
@@ -738,7 +720,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698848085027</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class.">
+      <option name="closed" value="true" />
+      <created>1698849475356</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1698849475357</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class.">
+      <option name="closed" value="true" />
+      <created>1698849545480</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1698849545480</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -789,7 +787,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method." />
     <MESSAGE value="Add PrescriptionDao class for managing Prescription entities and implement test for class." />
     <MESSAGE value="Create PrescriptionsServlet class. Change UsersServlet name to Default." />
     <MESSAGE value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
@@ -814,6 +811,7 @@
     <MESSAGE value="Rename Service.java to AbstractService.java" />
     <MESSAGE value="Create TopLevelResourceService.java class to move all common logic from UserService.java class." />
     <MESSAGE value="Create MidLevelResourceService.java class to move all common logic from PostService.java class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create MidLevelResourceService.java class to move all common logic from PostService.java class." />
+    <MESSAGE value="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class." />
   </component>
 </project>
