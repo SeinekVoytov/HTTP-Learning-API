@@ -9,11 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Code rearrangement">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/AbstractServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/AbstractServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PostsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PostsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/UsersServlet.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: conflicts after merging with posts_branch">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Post.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -346,14 +343,6 @@
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
       <workItem from="1697178844801" duration="626000" />
-    </task>
-    <task id="LOCAL-00040" summary="Improve code readability for doPost, doGet and doDelete methods of UsersServlet.">
-      <option name="closed" value="true" />
-      <created>1696082675513</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1696082675513</updated>
     </task>
     <task id="LOCAL-00041" summary="FIX: bug with user id validating in doGet method">
       <option name="closed" value="true" />
@@ -739,7 +728,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698849545480</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="FIX: conflicts after merging with posts_branch">
+      <option name="closed" value="true" />
+      <created>1698858069023</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1698858069023</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -790,7 +787,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create separate Dao interface. Rename UserController to UserDao. Create separate directories for dao's and for entities." />
     <MESSAGE value="Rename UserControllerTest to UserDaoTest." />
     <MESSAGE value="Remove all business logic from servlet and move it to new UserService class." />
     <MESSAGE value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
@@ -825,6 +821,7 @@
     <MESSAGE value="Create TopLevelResourceService.java class to move all common logic from UserService.java class." />
     <MESSAGE value="Create MidLevelResourceService.java class to move all common logic from PostService.java class." />
     <MESSAGE value="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class." />
+    <MESSAGE value="FIX: conflicts after merging with posts_branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: conflicts after merging with posts_branch" />
   </component>
 </project>

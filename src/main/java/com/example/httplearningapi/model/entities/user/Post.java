@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @SuppressWarnings("unused")
 @Entity
-@Table(name ="Posts")
+@Table(name = "Posts")
 @JsonAutoDetect
 public class Post {
 
@@ -27,6 +27,14 @@ public class Post {
     private String body;
 
     public Post() {
+    }
+
+    public int getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
     }
 
     public int getId() {
