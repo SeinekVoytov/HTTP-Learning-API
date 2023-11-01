@@ -10,22 +10,29 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public abstract class TopLevelResourceService<T> extends AbstractService<T> {
+public abstract class MidLevelResourceService<T, P> extends AbstractService<T> {
 
     private final Dao<T> dao;
 
-    public TopLevelResourceService(Dao<T> dao) {
+    public MidLevelResourceService(Dao<T> dao) {
         this.dao = dao;
     }
 
-    abstract void validateId(int id);
+    abstract P getParentResourceAttribute(HttpServletRequest req);
+
+    abstract List<T> getResourceList(P parentEntity);
+
+    abstract void validateId(int id, P parentEntity);
 
     @Override
     public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        P parentEntity = getParentResourceAttribute(req);
+
         if (isPathInfoNullOrEmpty(pathInfo)) {
 
-            List<T> entities = dao.getAll();
+            List<T> entities = (parentEntity == null) ?
+                    dao.getAll() : getResourceList(parentEntity);
 
             if (req.getQueryString() != null) {
                 entities = filterByQueryParams(req, entities);
@@ -36,6 +43,7 @@ public abstract class TopLevelResourceService<T> extends AbstractService<T> {
         }
 
         int entityId = extractIdFromURI(pathInfo);
+        validateId(entityId, parentEntity);
         T entity = dao.getById(entityId).orElseThrow();
 
         if (pathInfo.matches("^/\\d+/[^/]+.*$")) {
@@ -44,7 +52,7 @@ public abstract class TopLevelResourceService<T> extends AbstractService<T> {
             return;
         }
 
-        if (pathInfo.matches("^/\\d+/?$")) {
+        if (pathInfo.matches("^/[^/]+/?$")) {
             JsonSerializationUtil.serializeObjectToJsonStream(entity, resp.getWriter());
             return;
         }
@@ -65,8 +73,9 @@ public abstract class TopLevelResourceService<T> extends AbstractService<T> {
             return;
         }
 
+        P parentEntity = getParentResourceAttribute(req);
         int entityId = extractIdFromURI(pathInfo);
-        validateId(entityId);
+        validateId(entityId, parentEntity);
 
         forwardToNestedResourceServlet(req, resp);
     }
@@ -89,7 +98,9 @@ public abstract class TopLevelResourceService<T> extends AbstractService<T> {
             return;
         }
 
+        P parentEntity = getParentResourceAttribute(req);
         int id = extractIdFromURI(pathInfo);
+        validateId(id, parentEntity);
         T entity = dao.getById(id).orElseThrow();
 
         if (pathInfo.matches("^/\\d+/[^/]+/\\d+/?$")) {

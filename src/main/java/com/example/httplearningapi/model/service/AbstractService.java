@@ -23,7 +23,6 @@ public abstract class AbstractService<T> {
     int extractIdFromURI(String pathInfo) {
         return Integer.parseInt(pathInfo.substring(1).split("/")[0]);
     }
-
     boolean isPathInfoNullOrEmpty(String pathInfo) {
         return (pathInfo == null || pathInfo.equals("/"));
     }
