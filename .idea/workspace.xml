@@ -9,8 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Commit to allow push">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/CommentDao.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create CommentDao class. Implement getAll() and getById() methods.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/CommentServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/post/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/post/Post.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -346,14 +348,6 @@
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
       <workItem from="1697178844801" duration="626000" />
-    </task>
-    <task id="LOCAL-00045" summary="Move servlets package to controller package.">
-      <option name="closed" value="true" />
-      <created>1696426874496</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1696426874496</updated>
     </task>
     <task id="LOCAL-00046" summary="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory.">
       <option name="closed" value="true" />
@@ -739,7 +733,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698909543684</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Create CommentDao class. Implement getAll() and getById() methods.">
+      <option name="closed" value="true" />
+      <created>1698949049956</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1698949049956</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -790,7 +792,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add new field Prescription for User objects. Add data for Prescription objects to DB. Configure Presciption class for Hibernate." />
     <MESSAGE value="Add patient_id field to Prescription class which represents corresponding User object id." />
     <MESSAGE value="FIX: problem with serializing java.sql.Date to JSON by Jackson. Add JsonFormat annotation to ensure correct deserialization format" />
     <MESSAGE value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
@@ -825,6 +826,7 @@
     <MESSAGE value="Create separate packages for Prescription, User and Post classes." />
     <MESSAGE value="Create Comment entity. Map Comment class to Hibernate in hibernate.cfg.xml. &#10;FIX: toString(), equals() and hashcode() methods in User, Post classes to adopt new nested resources" />
     <MESSAGE value="Commit to allow push" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit to allow push" />
+    <MESSAGE value="Create CommentDao class. Implement getAll() and getById() methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create CommentDao class. Implement getAll() and getById() methods." />
   </component>
 </project>
