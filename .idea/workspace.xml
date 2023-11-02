@@ -9,10 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create CommentDao class. Implement getAll() and getById() methods.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create CommentService class. Implement inherited abstract methods. Add getter and setter for field comments to Post class.">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/CommentServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/post/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/post/Post.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,14 +346,6 @@
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
       <workItem from="1697178844801" duration="626000" />
-    </task>
-    <task id="LOCAL-00046" summary="Rename directory &quot;servlets&quot; to &quot;webcoltroller&quot;. Create &quot;servlets&quot;, &quot;filters&quot; and &quot;listeners&quot; packages inside &quot;webcontroller&quot; directory.">
-      <option name="closed" value="true" />
-      <created>1696427142851</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1696427142851</updated>
     </task>
     <task id="LOCAL-00047" summary="Create CharsetRequestFilter and CharsetResponseFilter classes that are responsible for setting UTF-8 charset for both request and response.">
       <option name="closed" value="true" />
@@ -741,7 +731,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698949049956</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Create CommentService class. Implement inherited abstract methods. Add getter and setter for field comments to Post class.">
+      <option name="closed" value="true" />
+      <created>1698950203691</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1698950203691</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -792,8 +790,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add patient_id field to Prescription class which represents corresponding User object id." />
-    <MESSAGE value="FIX: problem with serializing java.sql.Date to JSON by Jackson. Add JsonFormat annotation to ensure correct deserialization format" />
     <MESSAGE value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
     <MESSAGE value="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method." />
     <MESSAGE value="Add PrescriptionDao class for managing Prescription entities and implement test for class." />
@@ -827,6 +823,7 @@
     <MESSAGE value="Create Comment entity. Map Comment class to Hibernate in hibernate.cfg.xml. &#10;FIX: toString(), equals() and hashcode() methods in User, Post classes to adopt new nested resources" />
     <MESSAGE value="Commit to allow push" />
     <MESSAGE value="Create CommentDao class. Implement getAll() and getById() methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create CommentDao class. Implement getAll() and getById() methods." />
+    <MESSAGE value="Create CommentService class. Implement inherited abstract methods. Add getter and setter for field comments to Post class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create CommentService class. Implement inherited abstract methods. Add getter and setter for field comments to Post class." />
   </component>
 </project>
