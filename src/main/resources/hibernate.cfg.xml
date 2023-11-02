@@ -14,6 +14,7 @@
         <mapping class="com.example.httplearningapi.model.entities.user.Geo"/>
         <mapping class="com.example.httplearningapi.model.entities.prescription.Prescription"/>
         <mapping class="com.example.httplearningapi.model.entities.post.Post"/>
+        <mapping class="com.example.httplearningapi.model.entities.comment.Comment"/>
 
     </session-factory>
 </hibernate-configuration>

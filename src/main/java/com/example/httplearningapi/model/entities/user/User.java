@@ -122,12 +122,12 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && Objects.equals(name, user.name) && Objects.equals(email, user.email) && Objects.equals(address, user.address) && Objects.equals(phone, user.phone) && Objects.equals(website, user.website) && Objects.equals(company, user.company);
+        return id == user.id && Objects.equals(name, user.name) && Objects.equals(email, user.email) && Objects.equals(address, user.address) && Objects.equals(phone, user.phone) && Objects.equals(website, user.website) && Objects.equals(company, user.company) && Objects.equals(prescriptions, user.prescriptions) && Objects.equals(posts, user.posts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, email, address, phone, website, company);
+        return Objects.hash(id, name, email, address, phone, website, company, prescriptions, posts);
     }
 
     @Override
@@ -141,6 +141,7 @@ public class User {
                 ", website='" + website + '\'' +
                 ", company=" + company +
                 ", prescriptions=" + prescriptions +
+                ", posts=" + posts +
                 '}';
     }
 }
