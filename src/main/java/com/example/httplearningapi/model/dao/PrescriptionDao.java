@@ -1,6 +1,6 @@
 package com.example.httplearningapi.model.dao;
 
-import com.example.httplearningapi.model.entities.user.Prescription;
+import com.example.httplearningapi.model.entities.prescription.Prescription;
 import com.example.httplearningapi.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

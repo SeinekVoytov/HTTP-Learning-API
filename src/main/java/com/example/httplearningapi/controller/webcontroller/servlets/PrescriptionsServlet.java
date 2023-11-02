@@ -1,6 +1,6 @@
 package com.example.httplearningapi.controller.webcontroller.servlets;
 
-import com.example.httplearningapi.model.entities.user.Prescription;
+import com.example.httplearningapi.model.entities.prescription.Prescription;
 import com.example.httplearningapi.model.service.PrescriptionService;
 import com.example.httplearningapi.model.service.AbstractService;
 import com.example.httplearningapi.util.ExceptionHandleUtil;

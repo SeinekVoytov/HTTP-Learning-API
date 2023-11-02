@@ -1,5 +1,7 @@
 package com.example.httplearningapi.model.entities.user;
 
+import com.example.httplearningapi.model.entities.post.Post;
+import com.example.httplearningapi.model.entities.prescription.Prescription;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

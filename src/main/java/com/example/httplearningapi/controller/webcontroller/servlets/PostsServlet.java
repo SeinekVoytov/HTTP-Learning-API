@@ -1,6 +1,6 @@
 package com.example.httplearningapi.controller.webcontroller.servlets;
 
-import com.example.httplearningapi.model.entities.user.Post;
+import com.example.httplearningapi.model.entities.post.Post;
 import com.example.httplearningapi.model.service.AbstractService;
 import com.example.httplearningapi.model.service.PostService;
 import com.example.httplearningapi.util.ExceptionHandleUtil;

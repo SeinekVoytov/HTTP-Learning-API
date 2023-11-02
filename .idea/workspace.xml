@@ -9,8 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: conflicts after merging with posts_branch">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Post.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: bug with Post objects serializing to JSON (authorId has no setters/getters). Add corresponding getter and setter.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9640cc67-0bd1-463a-ab5f-070d2218885a/storage_v2/_src_/schema/APIScheme.PzyrxA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PostsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PostsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PostDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PrescriptionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PrescriptionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/post/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/Prescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/prescription/Prescription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/entities/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/PrescriptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/PostDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/PostDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/PrescriptionDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/PrescriptionDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +104,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Facets",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.27182046",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
@@ -199,7 +213,7 @@
       </method>
     </configuration>
     <configuration name="Tomcat 10.1.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.13" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/HTTPLearningService_war_exploded" />
       <deployment>
         <artifact name="HTTPLearningService:war exploded">
           <settings>
@@ -343,14 +357,6 @@
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
       <workItem from="1697178844801" duration="626000" />
-    </task>
-    <task id="LOCAL-00041" summary="FIX: bug with user id validating in doGet method">
-      <option name="closed" value="true" />
-      <created>1696084059492</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1696084059492</updated>
     </task>
     <task id="LOCAL-00042" summary="Add ContentTypeResponseFilter class which is responsible for setting content type to &quot;application/json&quot; for each response.">
       <option name="closed" value="true" />
@@ -736,7 +742,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698858069023</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="FIX: bug with Post objects serializing to JSON (authorId has no setters/getters). Add corresponding getter and setter.">
+      <option name="closed" value="true" />
+      <created>1698858322157</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1698858322157</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -787,7 +801,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Rename UserControllerTest to UserDaoTest." />
     <MESSAGE value="Remove all business logic from servlet and move it to new UserService class." />
     <MESSAGE value="Remove repetitive lines of code from UsersServlet by using inner private HandleProcessor functional interface." />
     <MESSAGE value="Rearrange code in UserService class to provide better readability." />
@@ -822,6 +835,7 @@
     <MESSAGE value="Create MidLevelResourceService.java class to move all common logic from PostService.java class." />
     <MESSAGE value="Create LowLevelResourceService.java class to move all common logic from PostService.java class. Extend this class by PrescriptionService.java class." />
     <MESSAGE value="FIX: conflicts after merging with posts_branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX: conflicts after merging with posts_branch" />
+    <MESSAGE value="FIX: bug with Post objects serializing to JSON (authorId has no setters/getters). Add corresponding getter and setter." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: bug with Post objects serializing to JSON (authorId has no setters/getters). Add corresponding getter and setter." />
   </component>
 </project>

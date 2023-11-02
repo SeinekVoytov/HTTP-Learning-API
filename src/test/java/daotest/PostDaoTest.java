@@ -2,7 +2,7 @@ package daotest;
 
 import com.example.httplearningapi.model.dao.Dao;
 import com.example.httplearningapi.model.dao.PostDao;
-import com.example.httplearningapi.model.entities.user.Post;
+import com.example.httplearningapi.model.entities.post.Post;
 import extensions.HibernateUtilSetupExtension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

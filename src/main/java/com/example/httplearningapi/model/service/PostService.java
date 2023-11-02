@@ -1,7 +1,7 @@
 package com.example.httplearningapi.model.service;
 
 import com.example.httplearningapi.model.dao.PostDao;
-import com.example.httplearningapi.model.entities.user.Post;
+import com.example.httplearningapi.model.entities.post.Post;
 import com.example.httplearningapi.model.entities.user.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
