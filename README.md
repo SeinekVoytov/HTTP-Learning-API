@@ -25,10 +25,10 @@ Notably, non-idempotent requests are handled gracefully, simulating successful r
 
 HttpLearningAPI comes with a set of 4 common resources:
 
-/users	10 users
-/prescriptions 100 prescriptions
-/posts	100 posts
-/comments	500 comments
+- /users	10 users
+- /prescriptions 100 prescriptions
+- /posts	100 posts
+- /comments	500 comments
 
 ***Note***: resources have relations. For example: posts have many comments, albums have many photos, ... see guide for the full list.
 
