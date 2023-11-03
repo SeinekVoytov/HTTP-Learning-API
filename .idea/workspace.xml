@@ -9,13 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: remove unnecessary URL pattern &quot;/prescriptions/*&quot; from PrecriptionsServlet since Precription resource is a Low Level Resource">
-      <change afterPath="$PROJECT_DIR$/src/test/java/daotest/CommentDaoTest.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Provide tests for CommentDao class. FIX: method name in DaoTest interface.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/DaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/DaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/PostDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/PostDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/PrescriptionDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/PrescriptionDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/UserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/CommentDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/CommentDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utiltest/JsonSerializationUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utiltest/JsonSerializationUtilTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,8 +114,8 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Tests">
-    <configuration name="JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest">
+    <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
         <pattern>
@@ -128,13 +125,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="utiltest" />
       <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
-      <option name="METHOD_NAME" value="testUserJsonDeserializationAndEqualityWithDBUser" />
+      <option name="METHOD_NAME" value="jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
         <pattern>
@@ -144,7 +141,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="utiltest" />
       <option name="MAIN_CLASS_NAME" value="utiltest.JsonSerializationUtilTest" />
-      <option name="METHOD_NAME" value="userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
+      <option name="METHOD_NAME" value="jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -295,20 +292,20 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
+      <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" />
+      <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
       <item itemvalue="JUnit.PostDaoTest" />
       <item itemvalue="JUnit.PostDaoTest.retrievedEntityFromDBIsNotNullTest" />
       <item itemvalue="JUnit.PrescriptionDaoTest" />
-      <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
-      <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
       <item itemvalue="Tomcat Server.Tomcat 10.1.13" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" />
+        <item itemvalue="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest" />
         <item itemvalue="JUnit.PostDaoTest.retrievedEntityFromDBIsNotNullTest" />
         <item itemvalue="JUnit.PrescriptionDaoTest" />
         <item itemvalue="JUnit.PostDaoTest" />
-        <item itemvalue="JUnit.JsonSerializationUtilTest.userJsonIsCorrectlyDeserializedToUserObjectThatEqualToUserRetrievedFromDBTest" />
-        <item itemvalue="JUnit.JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" />
       </list>
     </recent_temporary>
   </component>
@@ -351,14 +348,6 @@
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
       <workItem from="1697178844801" duration="626000" />
-    </task>
-    <task id="LOCAL-00049" summary="Improve exception handling with ExceptionHandleUtil class. Remove unnecessary try/catch statements.">
-      <option name="closed" value="true" />
-      <created>1696438375568</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1696438375568</updated>
     </task>
     <task id="LOCAL-00050" summary="Rearrange code in UsersServlet to improve readability">
       <option name="closed" value="true" />
@@ -744,7 +733,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698951302268</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Provide tests for CommentDao class. FIX: method name in DaoTest interface.">
+      <option name="closed" value="true" />
+      <created>1699031642026</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1699031642026</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -795,7 +792,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add PrescriptionDao class for managing Prescription entities and implement test for class." />
     <MESSAGE value="Create PrescriptionsServlet class. Change UsersServlet name to Default." />
     <MESSAGE value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
     <MESSAGE value="FIX: forwardToPrescriptionsServlet() method. Previous path for requestDispatcher was &quot;prescriptions&quot; which ignores other URI parts." />
@@ -829,6 +825,22 @@
     <MESSAGE value="Create CommentService class. Implement inherited abstract methods. Add getter and setter for field comments to Post class." />
     <MESSAGE value="Create CommentServlet to handle all requests with URI pattern: &quot;/comments&quot;" />
     <MESSAGE value="FIX: remove unnecessary URL pattern &quot;/prescriptions/*&quot; from PrecriptionsServlet since Precription resource is a Low Level Resource" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX: remove unnecessary URL pattern &quot;/prescriptions/*&quot; from PrecriptionsServlet since Precription resource is a Low Level Resource" />
+    <MESSAGE value="Provide tests for CommentDao class. FIX: method name in DaoTest interface." />
+    <option name="LAST_COMMIT_MESSAGE" value="Provide tests for CommentDao class. FIX: method name in DaoTest interface." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/utiltest/JsonSerializationUtilTest.java</url>
+          <line>35</line>
+          <properties class="utiltest.JsonSerializationUtilTest" method="jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
