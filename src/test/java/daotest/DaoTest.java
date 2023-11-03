@@ -8,5 +8,5 @@ public interface DaoTest {
     void retrievedEntityFromDBIsNotNullTest();
 
     @Test
-    void numberOfUsersRetrievedFromDBIsEqualToExpectedNumberTest();
+    void numberOfEntitiesRetrievedFromDBIsEqualToExpectedNumberTest();
 }

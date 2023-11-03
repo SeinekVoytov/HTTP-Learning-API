@@ -9,8 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Create CommentService class. Implement inherited abstract methods. Add getter and setter for field comments to Post class.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/CommentServlet.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: remove unnecessary URL pattern &quot;/prescriptions/*&quot; from PrecriptionsServlet since Precription resource is a Low Level Resource">
+      <change afterPath="$PROJECT_DIR$/src/test/java/daotest/CommentDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/DaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/DaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/PostDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/PostDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/PrescriptionDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/PrescriptionDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/UserDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +117,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
+  <component name="RunManager" selected="JUnit.Tests">
     <configuration name="JsonSerializationUtilTest.testUserJsonDeserializationAndEqualityWithDBUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -346,22 +351,6 @@
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
       <workItem from="1697178844801" duration="626000" />
-    </task>
-    <task id="LOCAL-00047" summary="Create CharsetRequestFilter and CharsetResponseFilter classes that are responsible for setting UTF-8 charset for both request and response.">
-      <option name="closed" value="true" />
-      <created>1696427748159</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1696427748159</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Create ExceptionHandleUtil utility class that is responsible for handling all exceptions in servlets and setting corresponding status codes.">
-      <option name="closed" value="true" />
-      <created>1696437896669</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1696437896669</updated>
     </task>
     <task id="LOCAL-00049" summary="Improve exception handling with ExceptionHandleUtil class. Remove unnecessary try/catch statements.">
       <option name="closed" value="true" />
@@ -739,7 +728,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698950203691</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Create CommentServlet to handle all requests with URI pattern: &quot;/comments&quot;">
+      <option name="closed" value="true" />
+      <created>1698950588671</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1698950588671</updated>
+    </task>
+    <task id="LOCAL-00097" summary="FIX: remove unnecessary URL pattern &quot;/prescriptions/*&quot; from PrecriptionsServlet since Precription resource is a Low Level Resource">
+      <option name="closed" value="true" />
+      <created>1698951302268</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1698951302268</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -790,8 +795,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add SuppressWarnings(&quot;unused&quot;) annotation to suppress all warnings for the unused getters and setters provided for Hibernate purposes." />
-    <MESSAGE value="FIS: issue with toString() method in Prescription class. Replace patient field with patientId in toString() method." />
     <MESSAGE value="Add PrescriptionDao class for managing Prescription entities and implement test for class." />
     <MESSAGE value="Create PrescriptionsServlet class. Change UsersServlet name to Default." />
     <MESSAGE value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
@@ -824,6 +827,8 @@
     <MESSAGE value="Commit to allow push" />
     <MESSAGE value="Create CommentDao class. Implement getAll() and getById() methods." />
     <MESSAGE value="Create CommentService class. Implement inherited abstract methods. Add getter and setter for field comments to Post class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create CommentService class. Implement inherited abstract methods. Add getter and setter for field comments to Post class." />
+    <MESSAGE value="Create CommentServlet to handle all requests with URI pattern: &quot;/comments&quot;" />
+    <MESSAGE value="FIX: remove unnecessary URL pattern &quot;/prescriptions/*&quot; from PrecriptionsServlet since Precription resource is a Low Level Resource" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: remove unnecessary URL pattern &quot;/prescriptions/*&quot; from PrecriptionsServlet since Precription resource is a Low Level Resource" />
   </component>
 </project>

@@ -23,7 +23,7 @@ public class PostDaoTest implements DaoTest {
     public void retrievedEntityFromDBIsNotNullTest() {
         Optional<Post> testPrescriptionOptional = PRESCRIPTION_DAO.getById(1);
         if (testPrescriptionOptional.isEmpty()) {
-            fail("User is not retrieved from Database");
+            fail("Post is not retrieved from Database");
         }
 
         Post testPrescription = testPrescriptionOptional.get();
@@ -34,9 +34,9 @@ public class PostDaoTest implements DaoTest {
 
     @Test
     @Override
-    public void numberOfUsersRetrievedFromDBIsEqualToExpectedNumberTest() {
+    public void numberOfEntitiesRetrievedFromDBIsEqualToExpectedNumberTest() {
         List<Post> prescriptions = PRESCRIPTION_DAO.getAll();
         assertEquals(NUMBER_OF_PRESCRIPTIONS_IN_DATABASE, prescriptions.size(),
-                "Actual number of Users in Database is not equal to Expected number");
+                "Actual number of Posts in Database is not equal to Expected number");
     }
 }

@@ -33,7 +33,7 @@ public class UserDaoTest implements DaoTest {
 
     @Test
     @Override
-    public void numberOfUsersRetrievedFromDBIsEqualToExpectedNumberTest() {
+    public void numberOfEntitiesRetrievedFromDBIsEqualToExpectedNumberTest() {
         List<User> users = USER_DAO.getAll();
         assertEquals(NUMBER_OF_USERS_IN_DATABASE, users.size(),
                 "Actual number of Users in Database is not equal to Expected number");
