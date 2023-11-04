@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Remove LowLevelResourceService class inheritance from MidLevelResourceService class.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/CommentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/CommentServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" afterDir="false" />
-    </list>
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="FIX: add url patterns for CommentServlet and PrescriptionsServlet to handle situations where all resource is requested" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -204,11 +200,10 @@
       </method>
     </configuration>
     <configuration name="Tomcat 10.1.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.13" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/HTTPLearningService_war_exploded" />
       <deployment>
         <artifact name="HTTPLearningService:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/HTTPLearningService_war_exploded" />
+            <option name="CONTEXT_PATH" value="/HttpLearningService" />
           </settings>
         </artifact>
       </deployment>
@@ -348,14 +343,6 @@
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
       <workItem from="1697178844801" duration="626000" />
-    </task>
-    <task id="LOCAL-00053" summary="Create separate Dao interface. Rename UserController to UserDao. Create separate directories for dao's and for entities.">
-      <option name="closed" value="true" />
-      <created>1696942700513</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1696942700513</updated>
     </task>
     <task id="LOCAL-00054" summary="Rename UserControllerTest to UserDaoTest.">
       <option name="closed" value="true" />
@@ -741,7 +728,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699088460670</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="FIX: add url patterns for CommentServlet and PrescriptionsServlet to handle situations where all resource is requested">
+      <option name="closed" value="true" />
+      <created>1699091696714</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1699091696714</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -792,7 +787,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implement PrescriptionService.handleGet method" />
     <MESSAGE value="Change Service interface to Service abstract class to place here common package-private methods." />
     <MESSAGE value="Move HandleProcessor interface from UsersServlet class to servlets package to make it available for other servlets" />
     <MESSAGE value="Create AbstractServlet class and move here common functionality for all Servlets." />
@@ -826,7 +820,8 @@
     <MESSAGE value="Remove unnecessary test for JsonSerializationUtil, which tests class ability to deserialize object from JSON." />
     <MESSAGE value="Provide AbstractDao class to place here all common database retrieving logic and avoid code repetitions." />
     <MESSAGE value="Remove LowLevelResourceService class inheritance from MidLevelResourceService class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove LowLevelResourceService class inheritance from MidLevelResourceService class." />
+    <MESSAGE value="FIX: add url patterns for CommentServlet and PrescriptionsServlet to handle situations where all resource is requested" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: add url patterns for CommentServlet and PrescriptionsServlet to handle situations where all resource is requested" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
