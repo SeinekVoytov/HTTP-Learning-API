@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(urlPatterns = {"/prescriptions"})
+@WebServlet(urlPatterns = {"/prescriptions", "/prescriptions/*"})
 public class PrescriptionsServlet extends AbstractServlet {
 
     @Override

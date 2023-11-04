@@ -9,14 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Remove unnecessary test for JsonSerializationUtil, which tests class ability to deserialize object from JSON.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/AbstractDao.java" afterDir="false" />
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Remove LowLevelResourceService class inheritance from MidLevelResourceService class.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/CommentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/Dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PostDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PrescriptionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PrescriptionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/CommentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/CommentServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/controller/webcontroller/servlets/PrescriptionsServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +114,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Tests">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
     <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -352,22 +348,6 @@
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
       <workItem from="1697178844801" duration="626000" />
-    </task>
-    <task id="LOCAL-00051" summary="Add HEAD method support.">
-      <option name="closed" value="true" />
-      <created>1696507144122</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1696507144122</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Add implementations for doTrace and doOptions methods of UsersServlet.">
-      <option name="closed" value="true" />
-      <created>1696513675001</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1696513675001</updated>
     </task>
     <task id="LOCAL-00053" summary="Create separate Dao interface. Rename UserController to UserDao. Create separate directories for dao's and for entities.">
       <option name="closed" value="true" />
@@ -745,7 +725,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699031905854</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Provide AbstractDao class to place here all common database retrieving logic and avoid code repetitions.">
+      <option name="closed" value="true" />
+      <created>1699088277835</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1699088277835</updated>
+    </task>
+    <task id="LOCAL-00101" summary="Remove LowLevelResourceService class inheritance from MidLevelResourceService class.">
+      <option name="closed" value="true" />
+      <created>1699088460670</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1699088460670</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -796,8 +792,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
-    <MESSAGE value="FIX: forwardToPrescriptionsServlet() method. Previous path for requestDispatcher was &quot;prescriptions&quot; which ignores other URI parts." />
     <MESSAGE value="Implement PrescriptionService.handleGet method" />
     <MESSAGE value="Change Service interface to Service abstract class to place here common package-private methods." />
     <MESSAGE value="Move HandleProcessor interface from UsersServlet class to servlets package to make it available for other servlets" />
@@ -830,6 +824,19 @@
     <MESSAGE value="FIX: remove unnecessary URL pattern &quot;/prescriptions/*&quot; from PrecriptionsServlet since Precription resource is a Low Level Resource" />
     <MESSAGE value="Provide tests for CommentDao class. FIX: method name in DaoTest interface." />
     <MESSAGE value="Remove unnecessary test for JsonSerializationUtil, which tests class ability to deserialize object from JSON." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove unnecessary test for JsonSerializationUtil, which tests class ability to deserialize object from JSON." />
+    <MESSAGE value="Provide AbstractDao class to place here all common database retrieving logic and avoid code repetitions." />
+    <MESSAGE value="Remove LowLevelResourceService class inheritance from MidLevelResourceService class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove LowLevelResourceService class inheritance from MidLevelResourceService class." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/service/LowLevelResourceService.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
