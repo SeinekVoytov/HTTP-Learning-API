@@ -8,14 +8,19 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public abstract class LowLevelResourceService<T, P> extends MidLevelResourceService<T, P> {
+public abstract class LowLevelResourceService<T, P> extends AbstractService<T> {
 
     private final Dao<T> dao;
 
     public LowLevelResourceService(Dao<T> dao) {
-        super(dao);
         this.dao = dao;
     }
+
+    abstract P getParentResourceAttribute(HttpServletRequest req);
+
+    abstract List<T> getResourceList(P parentEntity);
+
+    abstract void validateId(int id, P parentEntity);
 
     @Override
     public void handleGet(String pathInfo, HttpServletRequest req, HttpServletResponse resp) throws IOException {
