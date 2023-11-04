@@ -9,10 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Provide tests for CommentDao class. FIX: method name in DaoTest interface.">
+    <list default="true" id="4f8f55c5-a5f3-4fe3-8d3a-8901ce93412a" name="Changes" comment="Remove unnecessary test for JsonSerializationUtil, which tests class ability to deserialize object from JSON.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/AbstractDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daotest/CommentDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daotest/CommentDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utiltest/JsonSerializationUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utiltest/JsonSerializationUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/CommentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PostDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PrescriptionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/PrescriptionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/httplearningapi/model/dao/UserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +118,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest">
+  <component name="RunManager" selected="JUnit.Tests">
     <configuration name="JsonSerializationUtilTest.jsonStringForRetrievedUserFromDBIsEqualToExpectedJsonStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HTTPLearningService" />
       <extension name="coverage">
@@ -348,14 +352,6 @@
       <workItem from="1698736975494" duration="13000" />
       <workItem from="1698756807442" duration="2569000" />
       <workItem from="1697178844801" duration="626000" />
-    </task>
-    <task id="LOCAL-00050" summary="Rearrange code in UsersServlet to improve readability">
-      <option name="closed" value="true" />
-      <created>1696501981047</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1696501981048</updated>
     </task>
     <task id="LOCAL-00051" summary="Add HEAD method support.">
       <option name="closed" value="true" />
@@ -741,7 +737,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699031642026</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Remove unnecessary test for JsonSerializationUtil, which tests class ability to deserialize object from JSON.">
+      <option name="closed" value="true" />
+      <created>1699031905853</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1699031905854</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -792,7 +796,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create PrescriptionsServlet class. Change UsersServlet name to Default." />
     <MESSAGE value="Add forwardToPrescriptionsServlet() method to move from UsersServlet to PrescriptionsServlet." />
     <MESSAGE value="FIX: forwardToPrescriptionsServlet() method. Previous path for requestDispatcher was &quot;prescriptions&quot; which ignores other URI parts." />
     <MESSAGE value="Implement PrescriptionService.handleGet method" />
@@ -826,21 +829,7 @@
     <MESSAGE value="Create CommentServlet to handle all requests with URI pattern: &quot;/comments&quot;" />
     <MESSAGE value="FIX: remove unnecessary URL pattern &quot;/prescriptions/*&quot; from PrecriptionsServlet since Precription resource is a Low Level Resource" />
     <MESSAGE value="Provide tests for CommentDao class. FIX: method name in DaoTest interface." />
-    <option name="LAST_COMMIT_MESSAGE" value="Provide tests for CommentDao class. FIX: method name in DaoTest interface." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/utiltest/JsonSerializationUtilTest.java</url>
-          <line>35</line>
-          <properties class="utiltest.JsonSerializationUtilTest" method="jsonStringForRetrievedUserFromDBIsProperlyWrittenToOutputStreamTest">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Remove unnecessary test for JsonSerializationUtil, which tests class ability to deserialize object from JSON." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove unnecessary test for JsonSerializationUtil, which tests class ability to deserialize object from JSON." />
   </component>
 </project>
