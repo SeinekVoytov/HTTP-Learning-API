@@ -1,13 +1,13 @@
 # HTTP Learning API
 
-The HTTP Study API is a Java-based tool designed to assist newcomers in learning and experimenting 
+The HTTP Learning API is a Java-based tool designed to assist newcomers in learning and experimenting 
 with HTTP requests. It provides users with fake data and supports all types of HTTP requests. 
 Notably, non-idempotent requests are handled gracefully, simulating successful responses without altering data.
 
 ## Features:
 
-1) Support for all types of HTTP requests, including non-idempotent requests.
-2) Simulate successful responses for non-idempotent requests.
+1) Support for all types of HTTP requests.
+2) Simulates successful responses for non-idempotent requests.
 3) Utilizes Java, Hibernate, Apache Tomcat Server, Jackson and JUnit.
 4) Data is stored in a local MySQL database.
 5) Returns all responses in JSON format
@@ -15,11 +15,11 @@ Notably, non-idempotent requests are handled gracefully, simulating successful r
 ## Technologies
 
 - Java 17
-- Hibernate 6.3.1.Final
+- Hibernate 6.3.1
 - Apache Tomcat Server 10.1.13
 - Jackson 2.15.2
 - JUnit 5.9.1
-- MySQL
+- MySQL 8.0.33
 
 ## Fake-Data Model
 
@@ -30,7 +30,7 @@ HttpLearningAPI comes with a set of 4 common resources:
 - /posts	100 posts
 - /comments	500 comments
 
-***Note***: resources have relations. For example: posts have many comments, albums have many photos, ... see guide for the full list.
+***Note***: resources have relations. For example: posts have many comments, users have many prescriptions etc.
 
 ## Usage
 
