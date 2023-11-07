@@ -1,7 +1,7 @@
 package com.example.httplearningapi.model.entities.user;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Geo {
 
     @Id
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonIgnore
     private int id;
     private float lat;
     private float lon;
